@@ -29,12 +29,9 @@
 
 ## Архитектура
 
-Архитектура frontend-части наших web-приложений строится на принципах так называемой [Microfrontend-архитектуры](https://martinfowler.com/articles/micro-frontends.html), вариантов реализации которой существует великое [множество](https://martinfowler.com/articles/micro-frontends.html#IntegrationApproaches).
+Архитектура frontend-части современных web-приложений строится на принципах так называемой [Microfrontend-архитектуры](https://martinfowler.com/articles/micro-frontends.html), вариантов реализации которой существует великое [множество](https://martinfowler.com/articles/micro-frontends.html#IntegrationApproaches).
 
-Для себя же мы выбрали подход [Module Federation](https://webpack.js.org/concepts/module-federation/) предложенный в 2020 году [Zack Jackson](https://github.com/ScriptedAlchemy), который не без помощи [Tobias Koppers](https://github.com/sokra) был включен по умолчанию в 5-й версии [Webpack](https://webpack.js.org/blog/2020-10-10-webpack-5-release/#module-federation).
-
-На данный момент у нас реализован сервис общих компонентов [Shared UI](https://gitlab.rshbdev.ru/rshbintech/crft/dboul/ndbo/frontend/rshb/shared-ui), который взаимодействует с нашими проектами используя подход Module Federation. Данный сервис предназначен для автоматического обновления общих компонентов в проектах Свой Бизнес, без необходимости сборки или развертывания последних.
-
+На учебном проекте нам доступен один репозиторий, поэтому мы не сможем разрабатывать полноценный Microfrontend. Но мы будем применять модульный подход, когда каждая "фича" будет храниться в директории **modules** и не будет иметь каких-либо зависимостей от других модулей.
 ## Структура проекта
 
 Если говорить о подходах в организации файловой структуры проекта, то можно выделить как минимум два наиболее популярных - **структурный** и **feature**-подход.
