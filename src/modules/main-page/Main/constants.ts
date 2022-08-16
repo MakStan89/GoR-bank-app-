@@ -3,4 +3,4 @@ export const russian = {
   subtitle: 'Банк в вашем смартфоне',
   buttonText: 'Узнать больше',
   info: 'Скачать мобильный банк Affinity Online',
-};
+} as const;

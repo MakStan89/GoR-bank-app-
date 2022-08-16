@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { useState, FC } from 'react';
 import cn from 'classnames';
-import './form.scss';
 import { russian } from './constants';
-import { Input } from '../Input/Input';
+import { Input } from '../input/index';
+import './styles.scss';
 
 export const Form: FC = () => {
   const [selectedForm, setSelectedForm] = useState('telephone');
@@ -17,11 +17,6 @@ export const Form: FC = () => {
     const { name } = e.target as HTMLButtonElement;
     e.preventDefault();
     setSelectedForm(name);
-  };
-
-  const handleFormValid = (a: any) => {
-    const valid = { ...a, a };
-    console.log(valid);
   };
 
   return (
@@ -42,14 +37,12 @@ export const Form: FC = () => {
             type="tel"
             placeholder={russian.telephoneInput.placeholder}
             text={russian.telephoneInput.text}
-            valid={handleFormValid}
           />
           <Input
             name="password"
             type="password"
             placeholder={russian.passwordInput.placeholder}
             text={russian.passwordInput.text}
-            valid={handleFormValid}
           />
         </>
       )}
@@ -60,14 +53,12 @@ export const Form: FC = () => {
             type="text"
             placeholder={russian.passportInput.placeholder}
             text={russian.passportInput.text}
-            valid={handleFormValid}
           />
           <Input
             name="password"
             type="password"
             placeholder={russian.passwordInput.placeholder}
             text={russian.passwordInput.text}
-            valid={handleFormValid}
           />
         </>
       )}

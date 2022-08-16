@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { FC } from 'react';
-import './main.scss';
 import { russian } from './constants';
-import { Form } from '../Form/Form';
+import { Form } from '../form/index';
+import './styles.scss';
 
 export const Main: FC = () => (
   <section className="main-container">

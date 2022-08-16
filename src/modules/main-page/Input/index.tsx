@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { useState } from 'react';
 import cn from 'classnames';
-import './input.scss';
 import { InputProps } from './types';
+import './styles.scss';
 
-export const Input = ({ name, placeholder, type, text, valid }: InputProps) => {
+export const Input = ({ name, placeholder, type, text }: InputProps) => {
   const [isHasFocus, setIsFocus] = useState(false);
   const [value, setValue] = useState(null);
   const [error, setError] = useState(null);
@@ -19,7 +19,6 @@ export const Input = ({ name, placeholder, type, text, valid }: InputProps) => {
     setValue(value);
     setError(validationMessage);
     setValidly(validity.valid);
-    valid({ [name]: validly });
   };
 
   return (

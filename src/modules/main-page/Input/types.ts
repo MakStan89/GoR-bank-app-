@@ -3,5 +3,4 @@ export type InputProps = {
   placeholder: string;
   type: string;
   text: string;
-  valid: any;
 };

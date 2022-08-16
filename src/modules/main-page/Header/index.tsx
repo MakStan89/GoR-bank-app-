@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { useState, FC } from 'react';
 import cn from 'classnames';
-import './header.scss';
 import { russian } from './constants';
+import './styles.scss';
 
 export const Header: FC = () => {
   const [language, setLanguage] = useState('russian');

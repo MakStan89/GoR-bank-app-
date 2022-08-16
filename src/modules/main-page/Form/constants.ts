@@ -18,4 +18,4 @@ export const russian = {
   demoText: 'Демо-режим',
   forgetText: 'Забыли пароль?',
   registerButton: 'Зарегистрироваться',
-};
+} as const;

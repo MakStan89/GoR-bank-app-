@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import { MainPage } from './modules/main-page/MainPage';
+import { MainPage } from './modules/main-page/index';
 import './index.css';
 
 const container = document.getElementById('root');
