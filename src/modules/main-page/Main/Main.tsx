@@ -1,14 +1,15 @@
 import * as React from 'react';
 import { FC } from 'react';
-import './Main.scss';
-import { Form } from '../../../components/Form/Form';
+import './main.scss';
+import { russian } from './constants';
+import { Form } from '../Form/Form';
 
 export const Main: FC = () => (
   <section className="main-container">
     <div className="title">
-      <h1>Мобильное приложение Affinity Online</h1>
-      <p>Банк в вашем смартфоне</p>
-      <button>Узнать больше</button>
+      <h1>{russian.title}</h1>
+      <p>{russian.subtitle}</p>
+      <button>{russian.buttonText}</button>
     </div>
     <div className="form-container">
       <Form />
@@ -21,7 +22,7 @@ export const Main: FC = () => (
     </div>
     <button className="scroll" />
     <div className="info">
-      <p>Скачать мобильный банк Affinity Online</p>
+      <p>{russian.info}</p>
       <button className="apple" />
       <button className="google" />
     </div>

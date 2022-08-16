@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { FC } from 'react';
-import './MainPage.scss';
+import './main-page.scss';
 import { Header } from './Header/Header';
 import { Main } from './Main/Main';
 

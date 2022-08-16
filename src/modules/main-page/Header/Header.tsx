@@ -1,12 +1,18 @@
 import * as React from 'react';
-import { FC, useState } from 'react';
-import './Header.scss';
+import { useState, FC } from 'react';
+import cn from 'classnames';
+import './header.scss';
+import { russian } from './constants';
 
 export const Header: FC = () => {
   const [language, setLanguage] = useState('russian');
 
-  const changeLanguage = (e: any) => {
-    setLanguage(e.target.name);
+  const russianName = cn('language', { 'language-active': language === 'russian' });
+  const englishName = cn('language', { 'language-active': language === 'english' });
+
+  const changeLanguage = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const { name } = e.target as HTMLButtonElement;
+    setLanguage(name);
   };
 
   return (
@@ -15,30 +21,22 @@ export const Header: FC = () => {
       <nav className="navigation">
         <div>
           <span className="location" />
-          <a href="#">Банкоматы и отделения</a>
+          <a href="#">{russian.location}</a>
         </div>
         <div>
           <span className="courses" />
-          <a href="#">Курсы валют</a>
+          <a href="#">{russian.courses}</a>
         </div>
         <div>
           <span className="contacts" />
-          <a href="#">Контакты</a>
+          <a href="#">{russian.contacts}</a>
         </div>
       </nav>
       <div>
-        <button
-          name="russian"
-          className={`language ${language === 'russian' && 'language-active'}`}
-          onClick={changeLanguage}
-        >
+        <button name="russian" className={russianName} onClick={changeLanguage}>
           Ru
         </button>
-        <button
-          name="english"
-          className={`language ${language === 'english' && 'language-active'}`}
-          onClick={changeLanguage}
-        >
+        <button name="english" className={englishName} onClick={changeLanguage}>
           En
         </button>
       </div>
