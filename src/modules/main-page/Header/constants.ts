@@ -1,5 +1,5 @@
-export const russian = {
-  location: 'Банкоматы и отделения',
-  courses: 'Курсы валют',
-  contacts: 'Контакты',
+export const russianLanguage = {
+  locationText: 'Банкоматы и отделения',
+  coursesText: 'Курсы валют',
+  contactsText: 'Контакты',
 } as const;

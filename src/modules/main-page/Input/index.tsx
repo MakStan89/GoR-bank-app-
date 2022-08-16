@@ -5,10 +5,10 @@ import { InputProps } from './types';
 import './styles.scss';
 
 export const Input = ({ name, placeholder, type, text }: InputProps) => {
-  const [isHasFocus, setIsFocus] = useState(false);
-  const [value, setValue] = useState(null);
-  const [error, setError] = useState(null);
-  const [validly, setValidly] = useState(false);
+  const [isHasFocus, setIsFocus] = useState<boolean>(false);
+  const [value, setValue] = useState<string>('');
+  const [error, setError] = useState<string>('');
+  const [validly, setValidly] = useState<boolean>(false);
 
   const labelName = cn(isHasFocus ? 'label-active' : value ? 'label-active' : 'label');
   const inputName = cn(validly ? 'input' : value ? 'input-error' : 'input');

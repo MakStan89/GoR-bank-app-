@@ -1,21 +1,21 @@
-export const russian = {
+export const russianLanguage = {
   title: 'Вход',
-  telephoneButton: 'По телефону',
-  passportButton: 'По паспорту',
-  telephoneInput: {
+  telephoneButtonText: 'По телефону',
+  passportButtonText: 'По паспорту',
+  telephoneInputText: {
     placeholder: 'Телефон',
     text: 'Номер телефона',
   },
-  passportInput: {
+  passportInputText: {
     placeholder: 'Паспорт',
     text: 'Номер паспорта',
   },
-  passwordInput: {
+  passwordInputText: {
     placeholder: 'Пароль',
     text: 'Пароль',
   },
-  enterButton: 'Войти',
+  enterButtonText: 'Войти',
   demoText: 'Демо-режим',
   forgetText: 'Забыли пароль?',
-  registerButton: 'Зарегистрироваться',
+  registerButtonText: 'Зарегистрироваться',
 } as const;

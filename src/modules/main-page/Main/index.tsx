@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { FC } from 'react';
-import { russian } from './constants';
-import { Form } from '../form/index';
+import { russianLanguage } from './constants';
+import { Form } from '../form';
 import './styles.scss';
 
 export const Main: FC = () => (
   <section className="main-container">
     <div className="title">
-      <h1>{russian.title}</h1>
-      <p>{russian.subtitle}</p>
-      <button>{russian.buttonText}</button>
+      <h1>{russianLanguage.title}</h1>
+      <p>{russianLanguage.subtitle}</p>
+      <button>{russianLanguage.buttonText}</button>
     </div>
     <div className="form-container">
       <Form />
@@ -22,7 +22,7 @@ export const Main: FC = () => (
     </div>
     <button className="scroll" />
     <div className="info">
-      <p>{russian.info}</p>
+      <p>{russianLanguage.info}</p>
       <button className="apple" />
       <button className="google" />
     </div>

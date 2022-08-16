@@ -1,4 +1,4 @@
-export const russian = {
+export const russianLanguage = {
   title: 'Мобильное приложение Affinity Online',
   subtitle: 'Банк в вашем смартфоне',
   buttonText: 'Узнать больше',

@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { useState, FC } from 'react';
 import cn from 'classnames';
-import { russian } from './constants';
-import { Input } from '../input/index';
+import { russianLanguage } from './constants';
+import { Input } from '../input';
 import './styles.scss';
 
 export const Form: FC = () => {
-  const [selectedForm, setSelectedForm] = useState('telephone');
-  const [formValid, setFormValid] = useState(false);
+  const [selectedForm, setSelectedForm] = useState<string>('telephone');
+  const [formValid, setFormValid] = useState<boolean>(false);
 
   const telephoneName = cn('toggle', { 'toggle-active': selectedForm === 'telephone' });
   const passportName = cn('toggle', { 'toggle-active': selectedForm === 'passport' });
@@ -21,13 +21,13 @@ export const Form: FC = () => {
 
   return (
     <form className="auth-form" noValidate>
-      <h2 className="form-title">{russian.title}</h2>
+      <h2 className="form-title">{russianLanguage.title}</h2>
       <div className="toggle-container">
         <button name="telephone" className={telephoneName} onClick={changeForm}>
-          {russian.telephoneButton}
+          {russianLanguage.telephoneButtonText}
         </button>
         <button name="passport" className={passportName} onClick={changeForm}>
-          {russian.passportButton}
+          {russianLanguage.passportButtonText}
         </button>
       </div>
       {selectedForm === 'telephone' && (
@@ -35,14 +35,14 @@ export const Form: FC = () => {
           <Input
             name="telephone"
             type="tel"
-            placeholder={russian.telephoneInput.placeholder}
-            text={russian.telephoneInput.text}
+            placeholder={russianLanguage.telephoneInputText.placeholder}
+            text={russianLanguage.telephoneInputText.text}
           />
           <Input
             name="password"
             type="password"
-            placeholder={russian.passwordInput.placeholder}
-            text={russian.passwordInput.text}
+            placeholder={russianLanguage.passwordInputText.placeholder}
+            text={russianLanguage.passwordInputText.text}
           />
         </>
       )}
@@ -51,25 +51,25 @@ export const Form: FC = () => {
           <Input
             name="passport"
             type="text"
-            placeholder={russian.passportInput.placeholder}
-            text={russian.passportInput.text}
+            placeholder={russianLanguage.passportInputText.placeholder}
+            text={russianLanguage.passportInputText.text}
           />
           <Input
             name="password"
             type="password"
-            placeholder={russian.passwordInput.placeholder}
-            text={russian.passwordInput.text}
+            placeholder={russianLanguage.passwordInputText.placeholder}
+            text={russianLanguage.passwordInputText.text}
           />
         </>
       )}
       <button className={enterName} type="submit">
-        {russian.enterButton}
+        {russianLanguage.enterButtonText}
       </button>
       <div className="description">
-        <a href="#">{russian.demoText}</a>
-        <a href="#">{russian.forgetText}</a>
+        <a href="#">{russianLanguage.demoText}</a>
+        <a href="#">{russianLanguage.forgetText}</a>
       </div>
-      <button className="register">{russian.registerButton}</button>
+      <button className="register">{russianLanguage.registerButtonText}</button>
     </form>
   );
 };
