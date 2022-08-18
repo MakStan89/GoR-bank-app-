@@ -3,4 +3,7 @@ export type InputProps = {
   placeholder: string;
   type: string;
   text: string;
+  requestError: boolean;
+  onValidly: (v: boolean) => void;
+  onValue: (v: string) => void;
 };

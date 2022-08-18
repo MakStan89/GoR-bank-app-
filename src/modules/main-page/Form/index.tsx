@@ -7,20 +7,41 @@ import './styles.scss';
 
 export const Form: FC = () => {
   const [selectedForm, setSelectedForm] = useState<string>('telephone');
-  const [formValid, setFormValid] = useState<boolean>(false);
+  const [isLoginValid, setLoginValid] = useState<boolean>(false);
+  const [isPasswordValid, setPasswordValid] = useState<boolean>(false);
+  const [login, setLogin] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [isRequestError, setRequestError] = useState<boolean>(false);
 
   const telephoneName = cn('toggle', { 'toggle-active': selectedForm === 'telephone' });
   const passportName = cn('toggle', { 'toggle-active': selectedForm === 'passport' });
-  const enterName = cn(formValid ? 'enter-active' : 'enter');
+  const enterName = cn(isLoginValid && isPasswordValid ? 'enter-active' : 'enter');
 
   const changeForm = (e: React.MouseEvent<HTMLButtonElement>) => {
     const { name } = e.target as HTMLButtonElement;
     e.preventDefault();
     setSelectedForm(name);
   };
+  const handleLoginValidity = (loginValidity: boolean) => {
+    setLoginValid(loginValidity);
+  };
+  const handlePasswordValidity = (passwordValidity: boolean) => {
+    setPasswordValid(passwordValidity);
+  };
+  const handleLoginValue = (login: string) => {
+    setLogin(login);
+  };
+  const handlePasswordValue = (password: string) => {
+    setPassword(password);
+  };
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log({ login, password });
+    setRequestError(true);
+  };
 
   return (
-    <form className="auth-form" noValidate>
+    <form className="auth-form" noValidate onSubmit={handleSubmit}>
       <h2 className="form-title">{russianLanguage.title}</h2>
       <div className="toggle-container">
         <button name="telephone" className={telephoneName} onClick={changeForm}>
@@ -33,12 +54,18 @@ export const Form: FC = () => {
       {selectedForm === 'telephone' && (
         <>
           <Input
+            requestError={isRequestError}
+            onValidly={handleLoginValidity}
+            onValue={handleLoginValue}
             name="telephone"
             type="tel"
             placeholder={russianLanguage.telephoneInputText.placeholder}
             text={russianLanguage.telephoneInputText.text}
           />
           <Input
+            requestError={isRequestError}
+            onValidly={handlePasswordValidity}
+            onValue={handlePasswordValue}
             name="password"
             type="password"
             placeholder={russianLanguage.passwordInputText.placeholder}
@@ -49,12 +76,18 @@ export const Form: FC = () => {
       {selectedForm === 'passport' && (
         <>
           <Input
+            requestError={isRequestError}
+            onValidly={handleLoginValidity}
+            onValue={handleLoginValue}
             name="passport"
             type="text"
             placeholder={russianLanguage.passportInputText.placeholder}
             text={russianLanguage.passportInputText.text}
           />
           <Input
+            requestError={isRequestError}
+            onValidly={handlePasswordValidity}
+            onValue={handlePasswordValue}
             name="password"
             type="password"
             placeholder={russianLanguage.passwordInputText.placeholder}

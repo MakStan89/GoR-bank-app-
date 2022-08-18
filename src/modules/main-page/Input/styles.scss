@@ -2,10 +2,7 @@
   width: 100%;
   min-height: 50px;
   margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: start;
+  position: relative;
 }
 
 %default-input {
@@ -22,6 +19,7 @@
   }
   &:focus {
     outline: 2px solid #9e9e9e;
+    margin-top: 15px;
   }
 }
 
@@ -40,17 +38,35 @@
   line-height: 1.4;
   color: #616161;
   display: none;
-  margin-bottom: 5px;
+  position: absolute;
+  top: -15px;
+  margin: 5px auto;
+}
+
+%icon {
+  background: no-repeat center/contain;
+  width: 15px;
+  height: 15px;
 }
 
 .input-container {
   @extend %default-container;
   .input {
     @extend %default-input;
+    &-active {
+      @extend %default-input;
+      outline: 1px solid #9e9e9e;
+      margin: 15px auto;
+    }
     &-error {
       @extend %default-input;
       outline: 2px solid #f2453d;
+      margin-top: 15px;
     }
+  }
+  .label {
+    @extend %default-label;
+    display: none;
   }
   .error {
     @extend %default-error;
@@ -59,11 +75,44 @@
       display: block;
     }
   }
-  .label {
-    @extend %default-label;
+
+  .icons-container {
+    position: absolute;
+    right: 10px;
+    top: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  }
+  .warning {
+    @extend %icon;
+    background-image: url(../../../content/icons/warningIcon.svg);
+    display: none;
     &-active {
-      @extend %default-label;
+      @extend %icon;
+      background-image: url(../../../content/icons/warningIcon.svg);
       display: block;
     }
+  }
+  .password {
+    @extend %icon;
+    display: none;
+    &-visible {
+      @extend %icon;
+      background-image: url(../../../content/icons/passwordVisibleIcon.svg);
+      display: block;
+    }
+    &-hidden {
+      @extend %icon;
+      background-image: url(../../../content/icons/passwordHiddenIcon.svg);
+      display: block;
+    }
+  }
+  .input:focus ~ .label,
+  .input:not(:placeholder-shown) ~ .label,
+  .input-error:not(:placeholder-shown) ~ .label,
+  .input-active:not(:placeholder-shown) ~ .label {
+    @extend %default-label;
+    display: block;
   }
 }
