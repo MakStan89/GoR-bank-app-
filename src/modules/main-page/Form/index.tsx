@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState, FC } from 'react';
 import cn from 'classnames';
 import { russianLanguage } from './constants';
-import { Input } from '../input';
+import { TelephoneInput, PassportInput, PasswordInput } from '../input';
 import './styles.scss';
 
 export const Form: FC = () => {
@@ -15,7 +15,7 @@ export const Form: FC = () => {
 
   const telephoneName = cn('toggle', { 'toggle-active': selectedForm === 'telephone' });
   const passportName = cn('toggle', { 'toggle-active': selectedForm === 'passport' });
-  const enterName = cn(isLoginValid && isPasswordValid ? 'enter-active' : 'enter');
+  const enterDisableClassName = cn(isLoginValid && isPasswordValid ? 'enter-active' : 'enter');
 
   const changeForm = (e: React.MouseEvent<HTMLButtonElement>) => {
     const { name } = e.target as HTMLButtonElement;
@@ -36,7 +36,6 @@ export const Form: FC = () => {
   };
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log({ login, password });
     setRequestError(true);
   };
 
@@ -53,49 +52,33 @@ export const Form: FC = () => {
       </div>
       {selectedForm === 'telephone' && (
         <>
-          <Input
+          <TelephoneInput
             requestError={isRequestError}
             onValidly={handleLoginValidity}
             onValue={handleLoginValue}
-            name="telephone"
-            type="tel"
-            placeholder={russianLanguage.telephoneInputText.placeholder}
-            text={russianLanguage.telephoneInputText.text}
           />
-          <Input
+          <PasswordInput
             requestError={isRequestError}
             onValidly={handlePasswordValidity}
             onValue={handlePasswordValue}
-            name="password"
-            type="password"
-            placeholder={russianLanguage.passwordInputText.placeholder}
-            text={russianLanguage.passwordInputText.text}
           />
         </>
       )}
       {selectedForm === 'passport' && (
         <>
-          <Input
+          <PassportInput
             requestError={isRequestError}
             onValidly={handleLoginValidity}
             onValue={handleLoginValue}
-            name="passport"
-            type="text"
-            placeholder={russianLanguage.passportInputText.placeholder}
-            text={russianLanguage.passportInputText.text}
           />
-          <Input
+          <PasswordInput
             requestError={isRequestError}
             onValidly={handlePasswordValidity}
             onValue={handlePasswordValue}
-            name="password"
-            type="password"
-            placeholder={russianLanguage.passwordInputText.placeholder}
-            text={russianLanguage.passwordInputText.text}
           />
         </>
       )}
-      <button className={enterName} type="submit">
+      <button className={enterDisableClassName} type="submit">
         {russianLanguage.enterButtonText}
       </button>
       <div className="description">
