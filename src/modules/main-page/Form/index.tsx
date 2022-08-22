@@ -2,67 +2,83 @@ import * as React from 'react';
 import { useState, FC } from 'react';
 import cn from 'classnames';
 import { russianLanguage } from './constants';
-import { Input } from '../input';
+import { TelephoneInput, PassportInput, PasswordInput } from '../input';
 import './styles.scss';
 
 export const Form: FC = () => {
   const [selectedForm, setSelectedForm] = useState<string>('telephone');
-  const [formValid, setFormValid] = useState<boolean>(false);
+  const [isLoginValid, setLoginValid] = useState<boolean>(false);
+  const [isPasswordValid, setPasswordValid] = useState<boolean>(false);
+  const [login, setLogin] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [isRequestError, setRequestError] = useState<boolean>(false);
 
-  const telephoneName = cn('toggle', { 'toggle-active': selectedForm === 'telephone' });
-  const passportName = cn('toggle', { 'toggle-active': selectedForm === 'passport' });
-  const enterName = cn(formValid ? 'enter-active' : 'enter');
+  const telephoneClassName = cn('toggle', { 'toggle-active': selectedForm === 'telephone' });
+  const passportClassName = cn('toggle', { 'toggle-active': selectedForm === 'passport' });
+  const enterDisableClassName = cn(isLoginValid && isPasswordValid ? 'enter-active' : 'enter');
 
   const changeForm = (e: React.MouseEvent<HTMLButtonElement>) => {
     const { name } = e.target as HTMLButtonElement;
     e.preventDefault();
     setSelectedForm(name);
   };
+  const handleLoginValidity = (loginValidity: boolean) => {
+    setLoginValid(loginValidity);
+  };
+  const handlePasswordValidity = (passwordValidity: boolean) => {
+    setPasswordValid(passwordValidity);
+  };
+  const handleLoginValue = (login: string) => {
+    setLogin(login);
+  };
+  const handlePasswordValue = (password: string) => {
+    setPassword(password);
+  };
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setRequestError(true);
+  };
 
   return (
-    <form className="auth-form" noValidate>
+    <form className="auth-form" noValidate onSubmit={handleSubmit}>
       <h2 className="form-title">{russianLanguage.title}</h2>
       <div className="toggle-container">
-        <button name="telephone" className={telephoneName} onClick={changeForm}>
+        <button name="telephone" className={telephoneClassName} onClick={changeForm}>
           {russianLanguage.telephoneButtonText}
         </button>
-        <button name="passport" className={passportName} onClick={changeForm}>
+        <button name="passport" className={passportClassName} onClick={changeForm}>
           {russianLanguage.passportButtonText}
         </button>
       </div>
       {selectedForm === 'telephone' && (
         <>
-          <Input
-            name="telephone"
-            type="tel"
-            placeholder={russianLanguage.telephoneInputText.placeholder}
-            text={russianLanguage.telephoneInputText.text}
+          <TelephoneInput
+            requestError={isRequestError}
+            onValidly={handleLoginValidity}
+            onValue={handleLoginValue}
           />
-          <Input
-            name="password"
-            type="password"
-            placeholder={russianLanguage.passwordInputText.placeholder}
-            text={russianLanguage.passwordInputText.text}
+          <PasswordInput
+            requestError={isRequestError}
+            onValidly={handlePasswordValidity}
+            onValue={handlePasswordValue}
           />
         </>
       )}
       {selectedForm === 'passport' && (
         <>
-          <Input
-            name="passport"
-            type="text"
-            placeholder={russianLanguage.passportInputText.placeholder}
-            text={russianLanguage.passportInputText.text}
+          <PassportInput
+            requestError={isRequestError}
+            onValidly={handleLoginValidity}
+            onValue={handleLoginValue}
           />
-          <Input
-            name="password"
-            type="password"
-            placeholder={russianLanguage.passwordInputText.placeholder}
-            text={russianLanguage.passwordInputText.text}
+          <PasswordInput
+            requestError={isRequestError}
+            onValidly={handlePasswordValidity}
+            onValue={handlePasswordValue}
           />
         </>
       )}
-      <button className={enterName} type="submit">
+      <button className={enterDisableClassName} type="submit">
         {russianLanguage.enterButtonText}
       </button>
       <div className="description">

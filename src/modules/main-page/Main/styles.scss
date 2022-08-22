@@ -1,7 +1,7 @@
 .main-container {
   max-width: 1280px;
+  height: 100%;
   margin: 40px auto;
-  padding-bottom: 35px;
   display: grid;
   justify-content: space-between;
   grid-template-areas:
@@ -11,6 +11,30 @@
   grid-template-rows: auto;
   gap: 40px;
   align-items: center;
+
+  .image {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000000;
+      opacity: 0.7;
+    }
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
 
   .title {
     grid-area: title;
@@ -56,6 +80,9 @@
     flex-direction: row;
     gap: 12px;
     align-self: start;
+    .pagination-active {
+      background: center no-repeat url(../../../content/icons/paginationActive.svg);
+    }
     button {
       width: 12px;
       height: 12px;
