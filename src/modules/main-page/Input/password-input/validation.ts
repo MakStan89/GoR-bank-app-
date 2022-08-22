@@ -23,16 +23,16 @@ export const useValidation = (value: string, focus: boolean, requestError: boole
       setErrorMessage(russianLanguage.errorsText.capsLockError);
       setError(true);
     } else if (value.length < 6) {
-      setErrorMessage(russianLanguage.errorsText.lengthError);
-      setError(true);
+      value ? setErrorMessage(russianLanguage.errorsText.lengthError) : setErrorMessage('');
+      value ? setError(true) : setError(false);
       setValidly(false);
     } else if (!passwordRegExp.test(value)) {
-      setErrorMessage(russianLanguage.errorsText.validityError);
-      setError(true);
+      value ? setErrorMessage(russianLanguage.errorsText.validityError) : setErrorMessage('');
+      value ? setError(true) : setError(false);
       setValidly(false);
     } else if (spaceRegExp.test(value)) {
-      setErrorMessage(russianLanguage.errorsText.spaceError);
-      setError(true);
+      value ? setErrorMessage(russianLanguage.errorsText.spaceError) : setErrorMessage('');
+      value ? setError(true) : setError(false);
       setValidly(false);
     } else if (requestError) {
       setErrorMessage(russianLanguage.errorsText.requestError);

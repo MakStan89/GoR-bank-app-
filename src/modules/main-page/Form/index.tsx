@@ -13,8 +13,8 @@ export const Form: FC = () => {
   const [password, setPassword] = useState<string>('');
   const [isRequestError, setRequestError] = useState<boolean>(false);
 
-  const telephoneName = cn('toggle', { 'toggle-active': selectedForm === 'telephone' });
-  const passportName = cn('toggle', { 'toggle-active': selectedForm === 'passport' });
+  const telephoneClassName = cn('toggle', { 'toggle-active': selectedForm === 'telephone' });
+  const passportClassName = cn('toggle', { 'toggle-active': selectedForm === 'passport' });
   const enterDisableClassName = cn(isLoginValid && isPasswordValid ? 'enter-active' : 'enter');
 
   const changeForm = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -43,10 +43,10 @@ export const Form: FC = () => {
     <form className="auth-form" noValidate onSubmit={handleSubmit}>
       <h2 className="form-title">{russianLanguage.title}</h2>
       <div className="toggle-container">
-        <button name="telephone" className={telephoneName} onClick={changeForm}>
+        <button name="telephone" className={telephoneClassName} onClick={changeForm}>
           {russianLanguage.telephoneButtonText}
         </button>
-        <button name="passport" className={passportName} onClick={changeForm}>
+        <button name="passport" className={passportClassName} onClick={changeForm}>
           {russianLanguage.passportButtonText}
         </button>
       </div>

@@ -13,8 +13,8 @@ export const PasswordInput = ({ onValidly, onValue, requestError }: InputProps) 
   const { validly, error, errorMessage } = useValidation(value, isHasFocus, requestError);
 
   const inputClassName = cn(value ? (error ? 'input-error' : 'input-active') : 'input');
-  const errorClassName = cn(value ? (error ? 'error-active' : 'error') : 'error');
-  const warningIconClassName = cn(value ? (error ? 'warning-active' : 'warning') : 'warning');
+  const errorClassName = cn(error ? 'error-active' : 'error');
+  const warningIconClassName = cn(error ? 'warning-active' : 'warning');
   const passwordButtonClassName = cn(
     isHasFocus || value ? (isPasswordVisible ? 'password-visible' : 'password-hidden') : 'password'
   );
@@ -36,7 +36,7 @@ export const PasswordInput = ({ onValidly, onValue, requestError }: InputProps) 
         type={isPasswordVisible ? 'text' : 'password'}
         autoComplete="off"
         onChange={handleChange}
-        value={(null || undefined) ?? value}
+        value={value ?? ''}
         maxLength={20}
         onFocus={() => setHasFocus(true)}
         onBlur={() => setHasFocus(false)}

@@ -12,8 +12,8 @@ export const useValidation = (value: string, focus: boolean, requestError: boole
     if (!value) {
       setValidly(false);
     } else if (telephoneRegExp.test(value)) {
-      focus && setErrorMessage(russianLanguage.errorText);
-      setError(true);
+      !focus ? setErrorMessage(russianLanguage.errorText) : setErrorMessage('');
+      !focus ? setError(true) : setError(false);
       setValidly(false);
     } else if (requestError) {
       setErrorMessage('');
