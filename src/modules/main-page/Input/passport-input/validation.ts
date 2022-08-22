@@ -22,17 +22,32 @@ export const useValidation = (value: string, focus: boolean, requestError: boole
       setErrorMessage(russianLanguage.errorsText.capsLockError);
       setError(true);
     } else if (value.length < 3) {
-      value ? setErrorMessage(russianLanguage.errorsText.lengthError) : setErrorMessage('');
-      value ? setError(true) : setError(false);
       setValidly(false);
+      if (value) {
+        setErrorMessage(russianLanguage.errorsText.lengthError);
+        setError(true);
+      } else {
+        setErrorMessage('');
+        setError(false);
+      }
     } else if (!passportRegExp.test(value)) {
-      value ? setErrorMessage(russianLanguage.errorsText.validityError) : setErrorMessage('');
-      value ? setError(true) : setError(false);
       setValidly(false);
+      if (value) {
+        setErrorMessage(russianLanguage.errorsText.validityError);
+        setError(true);
+      } else {
+        setErrorMessage('');
+        setError(false);
+      }
     } else if (spaceRegExp.test(value)) {
-      value ? setErrorMessage(russianLanguage.errorsText.spaceError) : setErrorMessage('');
-      value ? setError(true) : setError(false);
       setValidly(false);
+      if (value) {
+        setErrorMessage(russianLanguage.errorsText.spaceError);
+        setError(true);
+      } else {
+        setErrorMessage('');
+        setError(false);
+      }
     } else if (requestError) {
       setErrorMessage('');
       setError(true);

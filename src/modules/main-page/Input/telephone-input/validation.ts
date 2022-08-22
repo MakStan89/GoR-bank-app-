@@ -12,9 +12,14 @@ export const useValidation = (value: string, focus: boolean, requestError: boole
     if (!value) {
       setValidly(false);
     } else if (telephoneRegExp.test(value)) {
-      !focus ? setErrorMessage(russianLanguage.errorText) : setErrorMessage('');
-      !focus ? setError(true) : setError(false);
       setValidly(false);
+      if (focus) {
+        setErrorMessage('');
+        setError(false);
+      } else {
+        setErrorMessage(russianLanguage.errorText);
+        setError(true);
+      }
     } else if (requestError) {
       setErrorMessage('');
       setError(true);
