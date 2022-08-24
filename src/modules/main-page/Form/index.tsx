@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState, FC } from 'react';
 import cn from 'classnames';
 import { russianLanguage } from './constants';
-import { TelephoneInput, PassportInput, PasswordInput } from '../input';
+import { TelephoneInput, PassportInput, PasswordInput } from '../../ui-kit/input';
 import './styles.scss';
 
 export const Form: FC = () => {
