@@ -1,0 +1,88 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  height: 80px;
+  margin: 0 auto;
+
+  .logo {
+    background: no-repeat center/contain url(../../../content/icons/headerLogo.svg);
+    width: 60px;
+    height: 60px;
+    position: relative;
+    &::after {
+      content: "Affinity Bank";
+      top: 12px;
+      left: 85px;
+      position: absolute;
+      width: 200px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 1.5;
+      color: #ffd600;
+    }
+  }
+
+  .navigation {
+    margin-left: 350px;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    div {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      align-content: center;
+      cursor: pointer;
+      a {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #ffffff;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+      }
+      %icon {
+        width: 22px;
+        height: auto;
+        background: no-repeat center/contain;
+        display: block;
+      }
+      .location {
+        @extend %icon;
+        background-image: url(../../../content/icons/locationIcon.svg);
+      }
+      .courses {
+        @extend %icon;
+        width: 20px;
+        background-image: url(../../../content/icons/coursesIcon.svg);
+      }
+      .contacts {
+        @extend %icon;
+        background-image: url(../../../content/icons/contactIcon.svg);
+      }
+      &:hover {
+        a {
+          border-bottom: 1px solid #ffd600;
+        }
+      }
+    }
+  }
+
+  .language {
+    border-radius: 2px;
+    width: 32px;
+    height: 32px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #ffffff;
+    &-active {
+      background-color: #ffd600;
+      color: #000000;
+    }
+  }
+}
