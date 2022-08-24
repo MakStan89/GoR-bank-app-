@@ -1,11 +1,10 @@
 import * as React from 'react';
 import { FC } from 'react';
-import { Header } from './header/index';
+import { TemplatePage } from '../template-page';
 import { Main } from './main';
 
 export const MainPage: FC = () => (
-  <>
-    <Header />
+  <TemplatePage showFooter={false}>
     <Main />
-  </>
+  </TemplatePage>
 );
