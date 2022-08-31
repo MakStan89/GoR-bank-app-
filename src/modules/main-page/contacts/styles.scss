@@ -1,0 +1,74 @@
+.wrapper {
+  min-height: 100vh;
+}
+
+.container {
+  width: 1296px;
+  margin: 0 auto;
+}
+
+.inner-container {
+  margin: 0 auto;
+  padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-width: 1076px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+
+  .category {
+    margin-bottom: 60px;
+
+    .subtitle {
+      display: flex;
+      align-items: center;
+
+      .subtitle-text {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+        margin-right: 14px;
+      }
+
+      .subtitle-img {
+        display: block;
+        width: 20px;
+      }
+    
+      .individuals {
+        height: 14px;
+        background: center / contain no-repeat url(../../../content/icons/contactsInd.svg);
+      }
+
+      .cards {
+        background: center / contain no-repeat url(../../../content/icons/contactsCard.svg);
+        height: 16px;
+      }
+    }
+
+    .text {
+      margin-top: 8px;
+      margin-bottom: 16px;
+    }
+
+    .time {
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    .telephone {
+      display: flex;
+      margin-top: 16px;
+    }
+  }
+
+  .notice {
+    margin: 0 auto;
+    padding: 8px;
+    background: #EEEEEE;
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
