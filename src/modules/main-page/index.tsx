@@ -1,10 +1,13 @@
 import * as React from 'react';
 import { FC } from 'react';
-import { TemplatePage } from '../template-page';
+import { Route, Routes } from 'react-router-dom';
 import { Main } from './main';
+import { Contacts } from './contacts/index';
 
 export const MainPage: FC = () => (
-  <TemplatePage showFooter={false}>
-    <Main />
-  </TemplatePage>
+  <Routes>
+    <Route path="/" element={<Main />} />
+    <Route path="/contacts" element={<Contacts />} />
+  </Routes>
 );
+

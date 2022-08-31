@@ -1,33 +1,63 @@
+.container {
+  width: 1296px;
+  margin: 0 auto;
+}
+
 .footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1280px;
-  margin: 25px auto;
-  color: #ffffff;
-  h3 {
-    font-weight: 400;
+  height: 200px;
+  width: 100%;
+  color: black;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 2px 20px rgba(2, 3, 3, 0.05);
+
+  .footer-container {
+    padding-top: 40px;
+    padding-bottom: 40px;
     font-size: 16px;
+    font-weight: 400;
     line-height: 24px;
-  }
-  .icons-container {
     display: flex;
-    flex-direction: row;
-    gap: 15px;
-    %icon {
-      width: 20px;
-      height: 24px;
-      background: no-repeat center/contain;
-      display: block;
+    justify-content: space-between;
+
+    .text {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+      margin-bottom: 8px;
     }
-    .google {
-      @extend %icon;
-      background-image: url(../../../content/icons/androidIcon.svg);
+
+    .time {
+      font-size: 12px;
+      line-height: 16px;
     }
-    .apple {
-      @extend %icon;
-      background-image: url(../../../content/icons/appleIcon.svg);
+
+    .address {
+
+      .address-location {
+        font-size: 12px;
+        line-height: 16px;
+        max-width: 110px;
+      }
+    }
+    .app-links {
+      display: flex;
+      justify-content: space-between;
+      width: 340px;
+      margin-left: 100px;
+
+      %app-links-button {
+        width: 152px;
+        height: 46px;
+      }
+
+      .apple {
+        @extend %app-links-button;
+        background: center no-repeat url(../../../content/images/landingIconAppStore.png);
+      }
+
+      .google {
+        @extend %app-links-button;
+        background: center no-repeat url(../../../content/images/landingIconGooglePlay.png);
+      }
     }
   }
 }
