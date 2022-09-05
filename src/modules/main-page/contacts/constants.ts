@@ -1,0 +1,43 @@
+export const russianLanguage = {
+  title: 'Телефоны контакт-центра',
+  subtitleInd: 'Для частных лиц',
+  textInd: 'Рекомендация по продукту, информация об учетной записи и транзакции',
+  timeInd: 'Каждый день с 8:00 до 20:00',
+  freeCalls: 'Бесплатные звонки в Великобритании',
+  internationalCalls: 'Международные звонки',
+  numberFreeInd: '3700',
+  numberInterInd: '+1 (684) 654-0102',
+  numberFreeCards: '3800',
+  numberInterCards: '+1 (684) 654-0102',
+  subtitleCards: 'Поддержка карт',
+  textCards:
+    'Активировать или запросить новую карту, списание средств с кредитной карты, сообщить об утере или краже.',
+  timeCards: 'Будни с 8:00 до 20:00',
+  timeCardsWeekend: 'Сб, Вс с 9:00 до 17:30',
+  notice:
+    'Обратите внимание, все звонки в контакт-центр записываются для обеспечения качества обслуживания',
+  legalAddress: 'Юридический адрес',
+  location: 'Треднидл-стрит Лондон EC2R 8AH',
+  backButton: 'Назад',
+} as const;
+
+export const englishLanguage = {
+  title: 'Contact center phones',
+  subtitleInd: 'For individuals',
+  textInd: 'Product advice, account and transaction information',
+  timeInd: 'Every day from 8:00 am to 20:00 pm',
+  freeCalls: 'UK free calls',
+  internationalCalls: 'International calls',
+  numberFreeInd: '3700',
+  numberInterInd: '+1 (684) 654-0102',
+  numberFreeCards: '3800',
+  numberInterCards: '+1 (684) 654-0102',
+  subtitleCards: 'Cards support',
+  textCards: 'Activate or request a new card, credit card charges, report lost or stolen.',
+  timeCards: 'Weekdays from 8:00 am to 20:00 pm',
+  timeCardsWeekend: 'Sat, Sun from 9:00 am to 17:30 pm',
+  notice: 'Please note, all calls to the contact center are recorded to ensure quality of service',
+  legalAddress: 'Legal Address',
+  location: 'Threadneedle Street London EC2R 8AH',
+  backButton: 'Back',
+} as const;

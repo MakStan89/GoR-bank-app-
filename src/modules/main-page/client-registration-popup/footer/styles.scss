@@ -1,0 +1,33 @@
+.register-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  margin: 25px auto;
+  color: #ffffff;
+  h3 {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .register-footer-icons-container {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    %icon {
+      width: 20px;
+      height: 24px;
+      background: no-repeat center/contain;
+      display: block;
+    }
+    .google {
+      @extend %icon;
+      background-image: url(../../../../content/icons/androidIcon.svg);
+    }
+    .apple {
+      @extend %icon;
+      background-image: url(../../../../content/icons/appleIcon.svg);
+    }
+  }
+}
