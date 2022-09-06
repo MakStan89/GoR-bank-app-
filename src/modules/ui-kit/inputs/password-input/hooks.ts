@@ -30,7 +30,7 @@ export const useValidation = (
     } else if (!passwordRegExp.test(value) || spaceRegExp.test(value)) {
       setError(PasswordErrors.IncorrectPassword);
       handleValid(false, name);
-    } else if (requestError === 1) {
+    } else if (requestError) {
       setError(PasswordErrors.Request);
       handleValid(true, name);
     } else {

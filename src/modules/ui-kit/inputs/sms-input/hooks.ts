@@ -18,7 +18,9 @@ export const useValidation = (
       handleValid(false, name);
     } else if (smsRegExp.test(value)) {
       handleValid(false, name);
-    } else if (requestError) {
+    }
+    // TODO throw errors depending on responses from backend
+    else if (requestError) {
       handleValid(false, name);
       setError(SmsErrors.Disable);
     } else if (requestError) {
@@ -30,7 +32,9 @@ export const useValidation = (
     } else if (requestError) {
       setError(SmsErrors.FailedAttempts);
       handleValid(false, name);
-    } else {
+    }
+    //
+    else {
       setError(SmsErrors.None);
       handleValid(true, name);
     }

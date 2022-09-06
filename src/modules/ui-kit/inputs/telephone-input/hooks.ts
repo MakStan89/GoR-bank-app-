@@ -21,13 +21,17 @@ export const useValidation = (
     } else if (telephoneRegExp.test(value)) {
       handleValid(false, name);
       setError(TelephoneErrors.IncorrectNumber);
-    } else if (requestError) {
+    }
+    // TODO throw errors depending on responses from backend
+    else if (requestError) {
       setError(TelephoneErrors.Registration);
       handleValid(true, name);
     } else if (requestError) {
       setError(TelephoneErrors.Request);
       handleValid(true, name);
-    } else {
+    }
+    //
+    else {
       setError(TelephoneErrors.None);
       handleValid(true, name);
     }

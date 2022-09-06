@@ -1,7 +1,7 @@
 import cx from 'classnames';
 import { useState, useEffect } from 'react';
 import { name, russianLanguage } from './constants';
-import { ConfirmPasswordErrors } from '../types';
+import { PasswordErrors } from '../types';
 
 export const useValidation = (
   value: string,
@@ -10,7 +10,7 @@ export const useValidation = (
   handleValid: (valid: boolean, name: string) => void
 ) => {
   const [errorMessage, setErrorMessage] = useState<string>('');
-  const [error, setError] = useState<ConfirmPasswordErrors>(ConfirmPasswordErrors.None);
+  const [error, setError] = useState<PasswordErrors>(PasswordErrors.None);
   const [caps, setCaps] = useState<boolean>(false);
 
   useEffect(() => {
@@ -27,15 +27,15 @@ export const useValidation = (
     setErrorMessage(russianLanguage.errorsText[error]);
 
     if (caps && isHasFocus) {
-      setError(ConfirmPasswordErrors.CapsLock);
+      setError(PasswordErrors.CapsLock);
     } else if (!passwordRegExp.test(value) || spaceRegExp.test(value)) {
-      setError(ConfirmPasswordErrors.IncorrectPassword);
+      setError(PasswordErrors.IncorrectPassword);
       handleValid(false, name);
-    } else if (requestError === 1) {
-      setError(ConfirmPasswordErrors.Request);
+    } else if (requestError) {
+      setError(PasswordErrors.Request);
       handleValid(true, name);
     } else {
-      setError(ConfirmPasswordErrors.None);
+      setError(PasswordErrors.None);
       handleValid(true, name);
     }
   }, [value, caps, requestError, isHasFocus, error]);
@@ -48,8 +48,8 @@ export const useClassNames = (
   value: string,
   isPasswordVisible: boolean
 ) => {
-  const isCapsLockError = isHasFocus && error === ConfirmPasswordErrors.CapsLock;
-  const isValidityError = !isHasFocus && error !== ConfirmPasswordErrors.None && value;
+  const isCapsLockError = isHasFocus && error === PasswordErrors.CapsLock;
+  const isValidityError = !isHasFocus && error !== PasswordErrors.None && value;
 
   const inputClassName = cx('input', {
     'input-error': isCapsLockError || isValidityError,

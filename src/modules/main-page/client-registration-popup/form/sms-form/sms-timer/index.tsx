@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import { russianLanguage, refreshTime, blockTime } from './constants';
+import { russianLanguage, REFRESH_TIME, BLOCK_TIME } from './constants';
 import { Props } from './types';
 
 export const SmsTimer = React.memo(({ attempt, onAttempt }: Props) => {
-  const [secondsCounter, setSecondsCounter] = useState<number>(refreshTime);
+  const [secondsCounter, setSecondsCounter] = useState<number>(REFRESH_TIME);
   const [minutesCounter, setMinutesCounter] = useState<number>(0);
 
   useEffect(() => {
-    setSecondsCounter(attempt < 3 ? refreshTime : blockTime);
+    setSecondsCounter(attempt < 3 ? REFRESH_TIME : BLOCK_TIME);
   }, [attempt]);
 
   useEffect(() => {

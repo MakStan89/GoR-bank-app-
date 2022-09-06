@@ -1,5 +1,5 @@
-export const refreshTime = 30;
-export const blockTime = 59;
+export const REFRESH_TIME = 30;
+export const BLOCK_TIME = 59;
 
 export const russianLanguage = {
   timerText: 'Отправить код повторно через ',

@@ -37,10 +37,3 @@ export enum PassportErrors {
   IncorrectPassport = 3,
   Request = 4,
 }
-
-export enum ConfirmPasswordErrors {
-  None = 0,
-  CapsLock = 1,
-  IncorrectPassword = 2,
-  Request = 3,
-}
