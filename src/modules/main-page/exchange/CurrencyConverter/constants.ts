@@ -24,4 +24,6 @@ export const secondCurrencyDefault: ItemCurrency = {
 
 export const separatorDot: string = ".";
 
+export const regExpForNumber = /[^\d.]/gi;
+
 export const defaultAmount: string = "1";

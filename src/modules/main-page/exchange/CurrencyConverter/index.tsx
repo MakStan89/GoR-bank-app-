@@ -5,6 +5,7 @@ import { ItemCurrency } from "./types";
 import {
   defaultAmount,
   firstCurrencyDefault,
+  regExpForNumber,
   secondCurrencyDefault,
   separatorDot,
 } from "./constants";
@@ -27,7 +28,7 @@ export const CurrencyConverter = () => {
   };
 
   const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const result = e.target.value.replace(/[^\\d.]/gi, "");
+    const result = e.target.value.replace(regExpForNumber, "");
     setAmountValue(result);
   };
 
