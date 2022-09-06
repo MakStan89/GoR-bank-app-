@@ -1,9 +1,11 @@
-.title-block {
+.titleBlock {
   padding-top: 26px;
   padding-bottom: 40px;
   display: flex;
   justify-content: center;
   position: relative;
+  max-width: 1296px;
+  margin: 0 auto;
 
   .title {
     margin: 0 auto;

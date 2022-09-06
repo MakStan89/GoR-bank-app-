@@ -1,9 +1,9 @@
-.header-white {
+.headerWhite {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  max-width: 1280px;
+  max-width: 1296px;
   height: 80px;
   margin: 0 auto;
 
@@ -72,15 +72,14 @@
     font-size: 16px;
     line-height: 1.5;
     color: #ffffff;
-
-    &-active {
-      background-color: #ffd600;
-      color: #000000;
-    }
+  }
+  .languageActive {
+    background-color: #ffd600;
+    color: #000000;
   }
 }
 
-.header-black {
+.headerBlack {
   height: 80px;
   margin: 0 auto;
   border-bottom: 1px solid #EEEEEE;
@@ -150,11 +149,11 @@
     font-size: 16px;
     line-height: 1.5;
     color: #212529;
+  }
 
-    &-active {
-      background-color: #ffd600;
-      color: #000000;
-    }
+  .languageActive {
+    background-color: #ffd600;
+    color: #000000;
   }
 }
 
@@ -186,15 +185,13 @@
   }
 }
 
-.header-container {
+.headerContainer {
+  max-width: 1296px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
-}
-
-.container {
-  width: 1296px;
+  width: 100%;
   margin: 0 auto;
+  height: 100%;
 }

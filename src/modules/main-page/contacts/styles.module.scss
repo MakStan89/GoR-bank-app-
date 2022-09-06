@@ -1,13 +1,4 @@
-.wrapper {
-  min-height: 100vh;
-}
-
-.container {
-  width: 1296px;
-  margin: 0 auto;
-}
-
-.inner-container {
+.innerContainer {
   margin: 0 auto;
   padding-bottom: 80px;
   display: flex;
@@ -25,14 +16,14 @@
       display: flex;
       align-items: center;
 
-      .subtitle-text {
+      .subtitleText {
         font-size: 16px;
         font-weight: 700;
         line-height: 24px;
         margin-right: 14px;
       }
 
-      .subtitle-img {
+      .subtitleImg {
         display: block;
         width: 20px;
       }

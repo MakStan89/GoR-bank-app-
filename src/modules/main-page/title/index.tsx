@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { Props } from './types';
 import { BackButton } from '../../ui-kit/buttons/back-button';
-import './styles.scss';
+import s from './styles.module.scss';
 
 export const Title = ({ handleClick, text, title }: Props) => {
   return (
-    <div className="title-block container">
+    <div className={s.titleBlock}>
       <BackButton handleClick={handleClick} text={text} />
-      <div className="title">{title}</div>
+      <div className={s.title}>{title}</div>
     </div>
 
   );

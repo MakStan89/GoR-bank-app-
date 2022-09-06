@@ -1,0 +1,49 @@
+.service {
+  margin-right: 40px;
+  width: 136px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .iconBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 96px;
+    height: 96px;
+    padding: auto;
+    border: 4px solid #FFF176;
+    border-radius: 16px;
+    margin: 0 auto 16px;
+
+    .icon {
+      width: 30px;
+      height: 30px;
+    }
+
+    .icon1 {
+      background: center / contain no-repeat url(../../../../../content/icons/main-auth-page/phoneRecharge.svg);
+    }
+    .icon2 {
+      background: center / contain no-repeat url(../../../../../content/icons/main-auth-page/transferToCard.svg);
+    }
+    .icon3 {
+      background: center / contain no-repeat url(../../../../../content/icons/main-auth-page/utilities.svg);
+    }
+    .icon4 {
+      background: center / contain no-repeat url(../../../../../content/icons/main-auth-page/currencyExchange.svg);
+    }
+    .iconAdd {
+      background: center / contain no-repeat url(../../../../../content/icons/main-auth-page/add.svg);
+    }
+  }
+
+  .textBlock {
+
+    .text {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}

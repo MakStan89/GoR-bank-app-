@@ -1,17 +1,17 @@
 import * as React from 'react';
 import cn from 'classnames';
-import { FC, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Props } from './types';
 import { russianLanguage, englishLanguage, LANGUAGE_BUTTON_RU_TEXT, LANGUAGE_BUTTON_EN_TEXT } from './constants';
-import './styles.scss';
+import s from './styles.module.scss';
 
 export const Header = ({isDark = false}: Props) => {
   const [language, setLanguage] = useState<string>('english');
 
-  const russianName = cn('language', { 'language-active': language === 'russian' });
-  const englishName = cn('language', { 'language-active': language === 'english' });
-  const headerClassName = cn(isDark ? 'header-white' : 'header-black');
+  const russianName = cn(s.language, { [s.languageActive] : language === 'russian' });
+  const englishName = cn(s.language, { [s.languageActive] : language === 'english' });
+  const headerClassName = cn(isDark ? s.headerWhite : s.headerBlack);
 
   const changeLanguage = (e: React.MouseEvent<HTMLButtonElement>) => {
     const { name } = e.target as HTMLButtonElement;
@@ -20,21 +20,21 @@ export const Header = ({isDark = false}: Props) => {
 
   return (
     <header className={headerClassName}>
-      <div className="header-container container">
-        <div className="logo" />
-        <nav className="navigation">
+      <div className={s.headerContainer}>
+        <div className={s.logo} />
+        <nav className={s.navigation}>
           <div>
-            <span className="location" />
+            <span className={s.location} />
             <a href="#">{englishLanguage.locationText}</a>
           </div>
           <div>
-            <span className="courses" />
+            <span className={s.courses} />
             <Link to="/exchange">
               {englishLanguage.coursesText}
             </Link>
           </div>
           <div>
-            <span className="contacts" />
+            <span className={s.contacts} />
             <Link to="/contacts">
               {englishLanguage.contactsText}
             </Link>

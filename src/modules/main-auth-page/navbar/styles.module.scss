@@ -1,0 +1,121 @@
+.container {
+  grid-area: nav;
+  width: 240px;
+  height: 690px;
+  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-decoration: none;
+
+  &:hover {
+    .itemText {
+      border-bottom: 1px solid #ffd600;
+    }
+  }
+
+  .itemIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 56px;
+    height: 56px;
+    padding: auto;
+    margin-right: 32px;
+    background-color: #FFFFFF;
+    border-radius: 16px;
+
+    .icon {
+      display: block;
+      width: 20px;
+      height: 20px;
+    }
+
+    .mainPage {
+      background: center / contain no-repeat url(../../../content/icons/main-auth-page/mainPage.svg);
+    }
+    .payments {
+      background: center / contain no-repeat url(../../../content/icons/main-auth-page/payments.svg);
+      width: 28px;
+      height: 28px;
+    }
+    .transfers {
+      background: center / contain no-repeat url(../../../content/icons/main-auth-page/transfers.svg);
+      width: 30px;
+      height: 30px;
+    }
+    .cards {
+      background: center / contain no-repeat url(../../../content/icons/main-auth-page/cards.svg);
+    }
+    .loans {
+      background: center / contain no-repeat url(../../../content/icons/main-auth-page/loans.svg);
+    }
+    .deposits {
+      background: center / contain no-repeat url(../../../content/icons/main-auth-page/deposits.svg);
+    }
+    .investing {
+      background: center / contain no-repeat url(../../../content/icons/main-auth-page/investing.svg);
+    }
+    .insurance {
+      background: center / contain no-repeat url(../../../content/icons/main-auth-page/insurance.svg);
+    }
+    .dealsAndOffers {
+      background: center / contain no-repeat url(../../../content/icons/main-auth-page/dealsAndOffers.svg);
+    }
+  }
+
+  .itemText {
+    font-size: 16px;
+    line-height: 16px;
+    color: #616161;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
+
+.isActive {
+  .itemText {
+    color: #212529
+  }
+  .itemIcon {
+    background-color: #ffd600;
+
+    .mainPage {
+      background: center / contain no-repeat url(../../../content/icons/main-auth-page/mainPageSelect.svg);
+    }
+    .payments {
+      background: center / contain no-repeat url(../../../content/icons/main-auth-page/paymentsSelect.svg);
+      width: 28px;
+      height: 28px;
+    }
+    .transfers {
+      background: center / contain no-repeat url(../../../content/icons/main-auth-page/transfersSelect.svg);
+      width: 30px;
+      height: 30px;
+    }
+    .cards {
+      background: center / contain no-repeat url(../../../content/icons/main-auth-page/cardsSelect.svg);
+    }
+    .loans {
+      background: center / contain no-repeat url(../../../content/icons/main-auth-page/loansSelect.svg);
+    }
+    .deposits {
+      background: center / contain no-repeat url(../../../content/icons/main-auth-page/depositsSelect.svg);
+    }
+    .investing {
+      background: center / contain no-repeat url(../../../content/icons/main-auth-page/investingSelect.svg);
+    }
+    .insurance {
+      background: center / contain no-repeat url(../../../content/icons/main-auth-page/insuranceSelect.svg);
+    }
+    .dealsAndOffers {
+      background: center / contain no-repeat url(../../../content/icons/main-auth-page/dealsAndOffersSelect.svg);
+    }
+  }
+}

@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { useState, FC } from 'react';
+import { useState } from 'react';
 import cn from 'classnames';
 import { russianLanguage } from './constants';
 import { TelephoneInput, PassportInput, PasswordInput } from '../../ui-kit/input';
-import './styles.scss';
+import s from './styles.module.scss';
 
-export const Form: FC = () => {
+export const Form = () => {
   const [selectedForm, setSelectedForm] = useState<string>('telephone');
   const [isLoginValid, setLoginValid] = useState<boolean>(false);
   const [isPasswordValid, setPasswordValid] = useState<boolean>(false);
@@ -13,9 +13,9 @@ export const Form: FC = () => {
   const [password, setPassword] = useState<string>('');
   const [isRequestError, setRequestError] = useState<boolean>(false);
 
-  const telephoneClassName = cn('toggle', { 'toggle-active': selectedForm === 'telephone' });
-  const passportClassName = cn('toggle', { 'toggle-active': selectedForm === 'passport' });
-  const enterDisableClassName = cn(isLoginValid && isPasswordValid ? 'enter-active' : 'enter');
+  const telephoneClassName = cn(s.toggle, { [s.toggleActive]: selectedForm === 'telephone' });
+  const passportClassName = cn(s.toggle, { [s.toggleActive]: selectedForm === 'passport' });
+  const enterDisableClassName = cn(isLoginValid && isPasswordValid ? s.enterActive : s.enter);
 
   const changeForm = (e: React.MouseEvent<HTMLButtonElement>) => {
     const { name } = e.target as HTMLButtonElement;
@@ -40,9 +40,9 @@ export const Form: FC = () => {
   };
 
   return (
-    <form className="auth-form" noValidate onSubmit={handleSubmit}>
-      <h2 className="form-title">{russianLanguage.title}</h2>
-      <div className="toggle-container">
+    <form className={s.authForm} noValidate onSubmit={handleSubmit}>
+      <h2 className={s.formTitle}>{russianLanguage.title}</h2>
+      <div className={s.toggleContainer}>
         <button name="telephone" className={telephoneClassName} onClick={changeForm}>
           {russianLanguage.telephoneButtonText}
         </button>
@@ -81,11 +81,11 @@ export const Form: FC = () => {
       <button className={enterDisableClassName} type="submit">
         {russianLanguage.enterButtonText}
       </button>
-      <div className="description">
+      <div className={s.description}>
         <a href="#">{russianLanguage.demoText}</a>
         <a href="#">{russianLanguage.forgetText}</a>
       </div>
-      <button className="register">{russianLanguage.registerButtonText}</button>
+      <button className={s.register}>{russianLanguage.registerButtonText}</button>
     </form>
   );
 };

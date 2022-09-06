@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { FC, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { russianLanguage } from './constants';
 import { Form } from '../form';
 import { Header } from '../../template-page/header';
-import './styles.scss';
+import s from './styles.module.scss';
 
-export const Main: FC = () => {
+export const Main = () => {
   const [slide, changeSlide] = useState<number>(0);
   let timeOut: number = null;
 
@@ -24,29 +24,29 @@ export const Main: FC = () => {
   return (
     <>
       <Header isDark />
-      <section className="main-container">
-        <div className="title">
+      <section className={s.mainContainer}>
+        <div className={s.title}>
           <h1>{russianLanguage.slider[slide].title}</h1>
           <p>{russianLanguage.slider[slide].subtitle}</p>
           <button>{russianLanguage.buttonText}</button>
         </div>
-        <div className="image">
+        <div className={s.image}>
           <img src={russianLanguage.slider[slide].image} />
         </div>
-        <div className="pagination">
-          <button id="0" className={slide === 0 && 'pagination-active'} onClick={handleSlideChange} />
-          <button id="1" className={slide === 1 && 'pagination-active'} onClick={handleSlideChange} />
-          <button id="2" className={slide === 2 && 'pagination-active'} onClick={handleSlideChange} />
-          <button id="3" className={slide === 3 && 'pagination-active'} onClick={handleSlideChange} />
+        <div className={s.pagination}>
+          <button id="0" className={slide === 0 && s.paginationActive} onClick={handleSlideChange} />
+          <button id="1" className={slide === 1 && s.paginationActive} onClick={handleSlideChange} />
+          <button id="2" className={slide === 2 && s.paginationActive} onClick={handleSlideChange} />
+          <button id="3" className={slide === 3 && s.paginationActive} onClick={handleSlideChange} />
         </div>
-        <div className="form-container">
+        <div className={s.formContainer}>
           <Form />
         </div>
-        <button className="scroll" />
-        <div className="info">
+        <button className={s.scroll} />
+        <div className={s.info}>
           <p>{russianLanguage.info}</p>
-          <button className="apple" />
-          <button className="google" />
+          <button className={s.apple} />
+          <button className={s.google} />
         </div>
       </section>
     </>

@@ -1,4 +1,4 @@
-.main-container {
+.mainContainer {
   max-width: 1280px;
   height: 100%;
   margin: 40px auto;
@@ -69,7 +69,7 @@
     }
   }
 
-  .form-container {
+  .formContainer {
     grid-area: form;
     border-radius: 8px;
     background-color: #fff;
@@ -81,7 +81,7 @@
     flex-direction: row;
     gap: 12px;
     align-self: start;
-    .pagination-active {
+    .paginationActive {
       background: center no-repeat url(../../../content/icons/paginationActive.svg);
     }
     button {
