@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ItemCurrency } from "../types";
+import { ItemCurrency } from "./types";
 import "./styles.scss";
 
 export const CurrencyItem = ({

@@ -1,20 +1,25 @@
-import * as React from 'react';
-import { useEffect, useState } from 'react';
-import { CurrencySelect } from './CurrencySelect';
-import { CurrentCurrencyItem } from './CurrencySelect/types';
-import { firstCurrencyDefault, secondCurrencyDefault } from './constants';
-import ExchangeIcon from '../../../../content/icons/exchangeIcon.svg';
-import { englishLanguage } from '../constants';
-import './styles.scss';
+import * as React from "react";
+import { useEffect, useState } from "react";
+import { CurrencySelect } from "./CurrencySelect";
+import { ItemCurrency } from "./types";
+import {
+  defaultAmount,
+  firstCurrencyDefault,
+  secondCurrencyDefault,
+  separatorDot,
+} from "./constants";
+import ExchangeIcon from "../../../../content/icons/exchangeIcon.svg";
+import { englishLanguage } from "../constants";
+import "./styles.scss";
 
 export const CurrencyConverter = () => {
   const [firstCurrentCurrency, setFirstCurrentCurrency] =
-    useState<CurrentCurrencyItem>(firstCurrencyDefault);
+    useState<ItemCurrency>(firstCurrencyDefault);
 
-  const [amountValue, setAmountValue] = useState<string>('1');
+  const [amountValue, setAmountValue] = useState<string>(defaultAmount);
 
   const [secondCurrentCurrency, setSecondCurrentCurrency] =
-    useState<CurrentCurrencyItem>(secondCurrencyDefault);
+    useState<ItemCurrency>(secondCurrencyDefault);
 
   const handleViceVersa = () => {
     setFirstCurrentCurrency(secondCurrentCurrency);
@@ -22,13 +27,15 @@ export const CurrencyConverter = () => {
   };
 
   const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const result = e.target.value.replace(/[^\d.]/gi, '');
+    const result = e.target.value.replace(/[^\\d.]/gi, "");
     setAmountValue(result);
   };
 
-  const [priceValue, setPriceValue] = useState<string>('');
+  const [priceValue, setPriceValue] = useState<string>("");
 
-  const sliceSting = priceValue.split('.');
+  const sliceString = priceValue.split(separatorDot);
+  const stringBeforeDot = sliceString[0];
+  const stringAfterDot = sliceString[1];
 
   useEffect(() => {
     const sum = String(Number(amountValue) * 1.0529131);
@@ -39,7 +46,10 @@ export const CurrencyConverter = () => {
     <div className="container">
       <h5>{englishLanguage.converterTitle}</h5>
       <div className="amount-container">
-        <CurrencySelect currentCurrency={firstCurrentCurrency} onSelect={setFirstCurrentCurrency} />
+        <CurrencySelect
+          currentCurrency={firstCurrentCurrency}
+          onSelect={setFirstCurrentCurrency}
+        />
         <div className="amount">
           <label className="sign-currency">{englishLanguage.amount}</label>
           <div className="input-currency-container">
@@ -67,9 +77,14 @@ export const CurrencyConverter = () => {
           <div className="input-currency-container">
             <p className="sign-currency">{secondCurrentCurrency.sign}</p>
             <p className="dark-price">
-              {sliceSting[0] + (sliceSting[1] ? '.' + sliceSting[1].slice(0, 2) : '')}
+              {stringBeforeDot +
+                (stringAfterDot
+                  ? separatorDot + stringAfterDot.slice(0, 2)
+                  : "")}
             </p>
-            <p className="bright-price">{sliceSting[1] ? sliceSting[1].slice(2, 5) : ''}</p>
+            <p className="bright-price">
+              {stringAfterDot ? stringAfterDot.slice(2, 5) : ""}
+            </p>
             <hr className="bottom-line"></hr>
           </div>
         </div>
