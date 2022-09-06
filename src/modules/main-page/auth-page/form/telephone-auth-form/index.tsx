@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { TelephoneInput, PasswordInput, ContinueButton } from '../..';
-import { useFormValidation } from './validation';
-import { russianLanguage } from '../constants';
-import '../styles.scss';
+import { TelephoneInput, PasswordInput, ContinueButton } from '../../../../ui-kit';
+import { useFormValidation } from '../../../../hooks/useFormValidation';
+import { russianLanguage } from './constants';
+import './styles.scss';
 
 export const AuthTelephoneForm = () => {
   const { values, handleChange, handleValid, valid } = useFormValidation();

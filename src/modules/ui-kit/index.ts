@@ -6,8 +6,6 @@ import { ConfirmPasswordInput } from './inputs/confirm-password-input';
 import { ContinueButton } from './buttons/continue-button';
 import { BackButton } from './buttons/back-button';
 import { CloseButton } from './buttons/close-button';
-import { AuthTelephoneForm } from './forms/telephone-auth-form';
-import { AuthPassportForm } from './forms/passport-auth-form';
 import { SecurityQuestionSelect } from './select/security-question-select';
 import { QuestionTextArea } from './text-area/question-text-area';
 export {
@@ -19,8 +17,6 @@ export {
   ContinueButton,
   BackButton,
   CloseButton,
-  AuthTelephoneForm,
-  AuthPassportForm,
   SecurityQuestionSelect,
   QuestionTextArea,
 };

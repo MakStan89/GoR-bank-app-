@@ -1,7 +1,9 @@
 import * as React from 'react';
 import cn from 'classnames';
 import { useState } from 'react';
-import { AuthTelephoneForm, AuthPassportForm, BackButton } from '../../../../ui-kit';
+import { AuthTelephoneForm } from '../telephone-auth-form';
+import { AuthPassportForm } from '../passport-auth-form';
+import { BackButton } from '../../../../ui-kit';
 import { russianLanguage } from './constants';
 import { Props } from './types';
 import './styles.scss';

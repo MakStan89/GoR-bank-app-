@@ -1,19 +1,21 @@
 export const defaultFormData = {
   answer: '',
-  confirm_password: '',
+  confirmPassword: '',
   password: '',
   question: '',
   questions: '',
-  sms_code: '',
+  smsCode: '',
   telephone: '',
+  passport: '',
 };
 
 export const defaultFormValid = {
   answer: false,
-  confirm_password: false,
+  confirmPassword: false,
   password: false,
   question: false,
   questions: false,
-  sms_code: false,
+  smsCode: false,
   telephone: false,
+  passport: false,
 };

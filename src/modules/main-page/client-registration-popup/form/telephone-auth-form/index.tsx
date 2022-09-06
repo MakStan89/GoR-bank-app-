@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { PassportInput, PasswordInput, ContinueButton } from '../..';
-import { useFormValidation } from './validation';
-import { russianLanguage } from '../constants';
-import '../styles.scss';
+import { TelephoneInput, PasswordInput, ContinueButton } from '../../../../ui-kit';
+import { useFormValidation } from '../../../../hooks/useFormValidation';
+import { russianLanguage } from './constants';
+import './styles.scss';
 
-export const AuthPassportForm = () => {
+export const AuthTelephoneForm = () => {
   const { values, handleChange, handleValid, valid } = useFormValidation();
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -13,8 +13,8 @@ export const AuthPassportForm = () => {
 
   return (
     <form className="main-form" noValidate onSubmit={handleSubmit}>
-      <PassportInput
-        value={values.passport}
+      <TelephoneInput
+        value={values.telephone}
         handleChange={handleChange}
         handleValid={handleValid}
         request={null}
@@ -26,7 +26,7 @@ export const AuthPassportForm = () => {
         request={null}
       />
       <ContinueButton
-        isActive={valid.passport && valid.password}
+        isActive={valid.telephone && valid.password}
         text={russianLanguage.enterButtonText}
       />
     </form>

@@ -1,12 +1,13 @@
 import * as React from 'react';
 import cn from 'classnames';
 import { useState } from 'react';
-import { AuthPassportForm, AuthTelephoneForm } from '../../../ui-kit';
+import { AuthTelephoneForm } from './telephone-auth-form';
+import { AuthPassportForm } from './passport-auth-form';
 import { russianLanguage } from './constants';
 import { Props } from './types';
 import './styles.scss';
 
-export const MainFormWrapper = ({ onRegisterPopupOpen }: Props) => {
+export const MainFormWrapper = React.memo(({ onRegisterPopupOpen }: Props) => {
   const [selectedForm, setSelectedForm] = useState<string>('telephone');
 
   const telephoneClassName = cn('toggle', { 'toggle-active': selectedForm === 'telephone' });
@@ -39,4 +40,4 @@ export const MainFormWrapper = ({ onRegisterPopupOpen }: Props) => {
       </button>
     </div>
   );
-};
+});

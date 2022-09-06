@@ -1,3 +1,5 @@
+export const name = 'telephone';
+
 export const russianLanguage = {
   errorText: [
     null,

@@ -10,10 +10,19 @@ import { Props } from './types';
 import './styles.scss';
 
 export const Main = ({ onNextStep, onBack, onClose, currentStep, onJoin, formData }: Props) => {
-  const stepClassName = (index: number) =>
+  const getStepClassName = (index: number) =>
     cx('step', {
       'step-active': currentStep === index + 1 || currentStep > index + 1,
     });
+
+  const steps = russianLanguage.steps.map(
+    (step, index) =>
+      currentStep > 0 && (
+        <div className={getStepClassName(index)} key={index}>
+          <h3>{step}</h3>
+        </div>
+      )
+  );
 
   return (
     <section className="register-container">
@@ -23,16 +32,7 @@ export const Main = ({ onNextStep, onBack, onClose, currentStep, onJoin, formDat
       </div>
       <div className="title-container">
         <h2>{russianLanguage.titleText}</h2>
-        <div className="step-container">
-          {russianLanguage.steps.map(
-            (step, index) =>
-              currentStep > 0 && (
-                <div className={stepClassName(index)} key={index}>
-                  <h3>{step}</h3>
-                </div>
-              )
-          )}
-        </div>
+        <div className="step-container">{steps}</div>
         {currentStep === 0 && <TelephoneForm onNextStep={onNextStep} onJoin={onJoin} />}
         {currentStep === 1 && <SmsForm onNextStep={onNextStep} telephone={formData.telephone} />}
         {currentStep === 2 && <PasswordForm onNextStep={onNextStep} />}

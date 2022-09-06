@@ -5,5 +5,12 @@ export type Props = {
   name: string;
   text: string;
   handleChange: (e: ChangeEvent<HTMLTextAreaElement>) => void;
-  handleValid: (v: boolean, n: string) => void;
+  handleValid: (valid: boolean, name: string) => void;
 };
+
+export enum SecurityQuestionErrors {
+  None = 0,
+  LowLength = 1,
+  IncorrectQuestion = 2,
+  HighLength = 3,
+}

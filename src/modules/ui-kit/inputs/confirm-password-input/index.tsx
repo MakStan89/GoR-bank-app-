@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { useState, ChangeEvent } from 'react';
-import { useValidation } from './validation';
-import { useClassNames } from './classnames';
-import { russianLanguage } from './constants';
+import { useState } from 'react';
+import { useClassNames, useValidation } from './hooks';
+import { maxLength, name, russianLanguage } from './constants';
 import { Props } from '../types';
 import '../styles.scss';
 
@@ -18,22 +17,18 @@ export const ConfirmPasswordInput = ({ value, handleChange, handleValid, request
     passwordButtonClassName,
   } = useClassNames(isHasFocus, error, value, isPasswordVisible);
 
-  const inputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    handleChange(e);
-  };
-
   return (
     <div className="input-container">
       <span className={inputLabelClassName}>{russianLanguage.labelText}</span>
       <input
         className={inputClassName}
-        name="confirm_password"
+        name={name}
         placeholder={russianLanguage.placeholderText}
         type={isPasswordVisible ? 'text' : 'password'}
         autoComplete="off"
-        onChange={inputChange}
+        onChange={handleChange}
         value={value ?? ''}
-        maxLength={20}
+        maxLength={maxLength}
         onFocus={() => setHasFocus(true)}
         onBlur={() => setHasFocus(false)}
       />

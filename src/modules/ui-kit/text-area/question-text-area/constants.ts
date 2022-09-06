@@ -6,3 +6,6 @@ export const russianLanguage = {
     'Контрольный ответ не должен быть длиннее 50 символов',
   ],
 };
+
+export const minLength = 3;
+export const maxLength = 50;

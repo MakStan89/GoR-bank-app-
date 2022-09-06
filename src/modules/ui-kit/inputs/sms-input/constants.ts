@@ -1,3 +1,5 @@
+export const name = 'smsCode';
+
 export const russianLanguage = {
   errorText: [
     null,

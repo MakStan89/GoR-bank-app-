@@ -1,9 +1,10 @@
 import { ChangeEvent, useState } from 'react';
-import { FormDataProps, FormValidityProps } from '../types';
+import { defaultFormData, defaultFormValid } from './constants';
+import { FormDataProps, FormValidityProps } from './types';
 
 export const useFormValidation = () => {
-  const [values, setValues] = useState<FormDataProps>({ telephone: '', password: '' });
-  const [valid, setValid] = useState<FormValidityProps>({ telephone: false, password: false });
+  const [values, setValues] = useState<FormDataProps>(defaultFormData);
+  const [valid, setValid] = useState<FormValidityProps>(defaultFormValid);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target as HTMLInputElement;

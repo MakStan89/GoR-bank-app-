@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { useState, ChangeEvent } from 'react';
-import { useValidation } from './validation';
-import { useClassNames } from './classnames';
-import { russianLanguage } from './constants';
+import { useState } from 'react';
+import { useClassNames, useValidation } from './hooks';
+import { russianLanguage, maxLength, name } from './constants';
 import { Props } from '../types';
 import '../styles.scss';
 
@@ -12,23 +11,18 @@ export const PassportInput = ({ value, handleChange, handleValid, request }: Pro
   const { inputLabelClassName, inputClassName, warningIconClassName, inputMessageClassName } =
     useClassNames(isHasFocus, error, value);
 
-  const inputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    handleChange(e);
-  };
-
   return (
     <div className="input-container">
       <span className={inputLabelClassName}>{russianLanguage.labelText}</span>
       <input
         className={inputClassName}
-        name="passport"
+        name={name}
         placeholder={russianLanguage.placeholderText}
         type="text"
         autoComplete="off"
         value={value ?? ''}
-        onChange={inputChange}
-        maxLength={20}
-        minLength={3}
+        onChange={handleChange}
+        maxLength={maxLength}
         onFocus={() => setHasFocus(true)}
         onBlur={() => setHasFocus(false)}
       />

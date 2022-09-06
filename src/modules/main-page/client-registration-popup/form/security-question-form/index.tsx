@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useFormValidation } from './validation';
+import { useFormValidation } from './hooks';
 import { ContinueButton, QuestionTextArea, SecurityQuestionSelect } from '../../../../ui-kit';
 import { russianLanguage } from './constants';
 import { Props } from '../types';

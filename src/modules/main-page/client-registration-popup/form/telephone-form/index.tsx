@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { useFormValidation } from '../validation';
+import { useFormValidation } from '../../../../hooks/useFormValidation';
 import { TelephoneInput, ContinueButton } from '../../../../ui-kit';
 import { russianLanguage } from './constants';
 import { Props } from '../types';

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import { useFormValidation } from '../validation';
+import { useFormValidation } from '../../../../hooks/useFormValidation';
 import { PasswordInput, ConfirmPasswordInput, ContinueButton } from '../../../../ui-kit';
 import { russianLanguage } from './constants';
 import { Props } from '../types';
@@ -12,7 +12,7 @@ export const PasswordForm = ({ onNextStep }: Props) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    values.password === values.confirm_password ? onNextStep(values) : setRequest(1);
+    values.password === values.confirmPassword ? onNextStep(values) : setRequest(1);
   };
 
   useEffect(() => setRequest(null), [values]);
@@ -27,13 +27,13 @@ export const PasswordForm = ({ onNextStep }: Props) => {
         isMessage={true}
       />
       <ConfirmPasswordInput
-        value={values.confirm_password}
+        value={values.confirmPassword}
         handleChange={handleChange}
         handleValid={handleValid}
         request={request}
       />
       <ContinueButton
-        isActive={valid.password && valid.confirm_password}
+        isActive={valid.password && valid.confirmPassword}
         text={russianLanguage.continueButtonText}
       />
     </form>

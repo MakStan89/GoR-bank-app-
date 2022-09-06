@@ -1,6 +1,6 @@
 import { ChangeEvent, useEffect, useState } from 'react';
+import { FormDataProps, FormValidityProps } from '../../../../hooks/useFormValidation/types';
 import { defaultValues, defaultValidity } from './constants';
-import { FormDataProps, FormValidityProps } from '../../types';
 
 export const useFormValidation = () => {
   const [values, setValues] = useState<FormDataProps>(defaultValues);

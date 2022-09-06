@@ -1,7 +1,7 @@
-import { FormDataProps } from '../types';
+import { FormDataProps } from '../../../hooks/useFormValidation/types';
 
 export type Props = {
-  onNextStep: (v: FormDataProps) => void;
+  onNextStep: (values: FormDataProps) => void;
   onJoin?: () => void;
   telephone?: string;
 };

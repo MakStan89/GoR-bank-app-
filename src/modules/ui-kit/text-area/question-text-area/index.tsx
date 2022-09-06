@@ -1,13 +1,12 @@
 import * as React from 'react';
-import { useClassNames } from './classnames';
-import { ChangeEvent, useState } from 'react';
-import { useValidation } from './validation';
+import { useState } from 'react';
+import { useClassNames, useValidation } from './hooks';
 import { Props } from './types';
 import './styles.scss';
 
 export const QuestionTextArea = ({ name, text, value, handleChange, handleValid }: Props) => {
   const [isHasFocus, setHasFocus] = useState<boolean>(false);
-  const { error, errorMessage } = useValidation(value, handleValid, name);
+  const { error, errorMessage } = useValidation(value, name, handleValid);
   const {
     labelClassName,
     textAreaClassName,
@@ -15,10 +14,6 @@ export const QuestionTextArea = ({ name, text, value, handleChange, handleValid 
     errorMessageClassName,
     counterClassName,
   } = useClassNames(isHasFocus, error, value);
-
-  const textAreaChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    handleChange(e);
-  };
 
   return (
     <div className="text-area-container">
@@ -29,7 +24,7 @@ export const QuestionTextArea = ({ name, text, value, handleChange, handleValid 
         rows={value.length > 33 ? 2 : 1}
         className={textAreaClassName}
         value={value}
-        onChange={textAreaChange}
+        onChange={handleChange}
         onFocus={() => setHasFocus(true)}
         onBlur={() => setHasFocus(false)}
       />

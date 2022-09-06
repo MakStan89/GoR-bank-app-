@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { useState } from 'react';
-import { useFormValidation } from '../validation';
+import { useState, useCallback } from 'react';
+import { useFormValidation } from '../../../../hooks/useFormValidation';
 import { SmsInput, ContinueButton } from '../../../../ui-kit';
 import { SmsTimer } from './sms-timer';
 import { russianLanguage } from './constants';
@@ -17,9 +17,10 @@ export const SmsForm = ({ onNextStep, telephone }: Props) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
   };
-  const handleNewAttempt = () => {
+
+  const handleNewAttempt = useCallback(() => {
     setAttempt(attempt + 1);
-  };
+  }, [attempt]);
 
   return (
     <form className="sms-form" onSubmit={handleSubmit}>
@@ -28,14 +29,14 @@ export const SmsForm = ({ onNextStep, telephone }: Props) => {
         {telephone}
       </h3>
       <SmsInput
-        value={values.sms_code}
+        value={values.smsCode}
         handleChange={handleChange}
         handleValid={handleValid}
         request={null}
       />
       <SmsTimer attempt={attempt} onAttempt={handleNewAttempt} />
       <ContinueButton
-        isActive={valid.sms_code}
+        isActive={valid.smsCode}
         handleClick={handleNextStep}
         text={russianLanguage.continueButtonText}
       />

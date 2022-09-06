@@ -1,4 +1,5 @@
-import { FormDataProps } from '../types';
+import { FormDataProps } from '../../../hooks/useFormValidation/types';
+
 export type Props = {
   onClose: () => void;
   onBack: () => void;

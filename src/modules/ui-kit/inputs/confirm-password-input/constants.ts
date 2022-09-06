@@ -1,3 +1,6 @@
+export const name = 'confirmPassword';
+export const maxLength = 20;
+
 export const russianLanguage = {
   placeholderText: 'Пароль',
   labelText: 'Пароль',

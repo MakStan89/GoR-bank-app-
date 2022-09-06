@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import { russianLanguage } from './constants';
+import { russianLanguage, refreshTime, blockTime } from './constants';
 import { Props } from './types';
 
-export const SmsTimer = ({ attempt, onAttempt }: Props) => {
-  const [secondsCounter, setSecondsCounter] = useState<number>(29);
+export const SmsTimer = React.memo(({ attempt, onAttempt }: Props) => {
+  const [secondsCounter, setSecondsCounter] = useState<number>(refreshTime);
   const [minutesCounter, setMinutesCounter] = useState<number>(0);
 
   useEffect(() => {
-    setSecondsCounter(attempt < 3 ? 29 : 59);
+    setSecondsCounter(attempt < 3 ? refreshTime : blockTime);
   }, [attempt]);
 
   useEffect(() => {
@@ -31,4 +31,4 @@ export const SmsTimer = ({ attempt, onAttempt }: Props) => {
       {russianLanguage.buttonText}
     </button>
   );
-};
+});

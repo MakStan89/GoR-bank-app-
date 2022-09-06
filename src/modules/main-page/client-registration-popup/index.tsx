@@ -1,24 +1,25 @@
 import * as React from 'react';
 import cn from 'classnames';
 import { useState } from 'react';
+import { Header } from '../../template-page/header';
 import { Main } from './main';
 import { Footer } from './footer';
-import { AuthFormWrapper } from './form/auth-form';
+import { AuthFormWrapper } from './form/auth-form-wrapper';
 import { SuccessPopup } from './popup';
-import { defaultFormData } from './form/constants';
-import { Props, FormDataProps } from './types';
+import { defaultFormData } from '../../hooks/useFormValidation/constants';
+import { FormDataProps } from '../../hooks/useFormValidation/types';
+import { Props, Steps } from './types';
 import './styles.scss';
-import { Header } from '../../template-page/header';
 
-export const ClientRegister = ({ isOpen, onClose }: Props) => {
-  const [currentStep, setCurrentStep] = useState<number>(0);
+export const ClientRegister = React.memo(({ isOpen, onClose }: Props) => {
+  const [currentStep, setCurrentStep] = useState<number>(Steps.EnterTelephone);
   const [formData, setFormData] = useState<FormDataProps>(defaultFormData);
 
   const ClientRegisterPopupClassName = cn(isOpen ? 'register-page-open' : 'register-page');
 
   const handleClosePopup = () => {
     onClose();
-    setCurrentStep(0);
+    setCurrentStep(Steps.EnterTelephone);
   };
   const handleBackClick = () => {
     currentStep == 0 ? handleClosePopup() : setCurrentStep(currentStep - 1);
@@ -28,7 +29,7 @@ export const ClientRegister = ({ isOpen, onClose }: Props) => {
     setFormData({ ...formData, ...values });
   };
   const handleJoin = () => {
-    setCurrentStep(5);
+    setCurrentStep(Steps.Auth);
   };
   const handleSuccess = () => {
     setCurrentStep(currentStep + 1);
@@ -37,7 +38,7 @@ export const ClientRegister = ({ isOpen, onClose }: Props) => {
   return (
     <section className={ClientRegisterPopupClassName}>
       <Header isDark />
-      {currentStep < 4 && (
+      {currentStep < Steps.Success && (
         <Main
           onClose={handleClosePopup}
           onJoin={handleJoin}
@@ -47,9 +48,9 @@ export const ClientRegister = ({ isOpen, onClose }: Props) => {
           formData={formData}
         />
       )}
-      {currentStep === 4 && <SuccessPopup onContinue={handleSuccess} />}
-      {currentStep === 5 && <AuthFormWrapper onClose={handleClosePopup} />}
+      {currentStep === Steps.Success && <SuccessPopup onContinue={handleSuccess} />}
+      {currentStep === Steps.Auth && <AuthFormWrapper onClose={handleClosePopup} />}
       <Footer />
     </section>
   );
-};
+});

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { MainFormWrapper } from '../form';
 import { Slider } from '../slider';
 import { ClientRegister } from '../../client-registration-popup';
@@ -9,12 +9,13 @@ import './styles.scss';
 export const Main = () => {
   const [isPopupOpen, setPopupOpen] = useState<boolean>(false);
 
-  const handlePopupOpenCLick = () => {
+  const handlePopupOpenCLick = useCallback(() => {
     setPopupOpen(true);
-  };
-  const handlePopupCloseCLick = () => {
+  }, [isPopupOpen]);
+
+  const handlePopupCloseCLick = useCallback(() => {
     setPopupOpen(false);
-  };
+  }, [isPopupOpen]);
 
   return (
     <section className="main-container">

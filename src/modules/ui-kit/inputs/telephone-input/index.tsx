@@ -1,9 +1,8 @@
 import * as React from 'react';
 import ReactInputMask from 'react-input-mask';
-import { ChangeEvent, useState } from 'react';
-import { useValidation } from './validation';
-import { useClassNames } from './classnames';
-import { russianLanguage } from './constants';
+import { useState } from 'react';
+import { useValidation, useClassNames } from './hooks';
+import { russianLanguage, name } from './constants';
 import { Props } from '../types';
 import '../styles.scss';
 
@@ -13,23 +12,19 @@ export const TelephoneInput = ({ value, handleChange, handleValid, request }: Pr
   const { inputLabelClassName, inputClassName, warningIconClassName, inputMessageClassName } =
     useClassNames(isHasFocus, error, value);
 
-  const inputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    handleChange(e);
-  };
-
   return (
     <div className="input-container">
       <span className={inputLabelClassName}>{russianLanguage.labelText}</span>
       <ReactInputMask
         className={inputClassName}
-        name="telephone"
+        name={name}
         placeholder={russianLanguage.placeholderText}
         type="tel"
         autoComplete="off"
         mask="+\7 999 9999 9999"
         maskChar="x"
         value={value ?? ''}
-        onChange={inputChange}
+        onChange={handleChange}
         onFocus={() => setHasFocus(true)}
         onBlur={() => setHasFocus(false)}
       />

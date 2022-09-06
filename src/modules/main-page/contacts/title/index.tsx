@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import { Props } from './types';
 import { BackButton } from '../../../ui-kit/buttons/back-button';
 import './styles.scss';
@@ -6,7 +7,9 @@ import './styles.scss';
 export const Title = ({ handleClick, text, title }: Props) => {
   return (
     <div className="title-block container">
-      <BackButton handleClick={handleClick} text={text} />
+      <Link to="/">
+        <BackButton handleClick={handleClick} text={text} />
+      </Link>
       <div className="title">{title}</div>
     </div>
   );
