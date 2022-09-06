@@ -8,6 +8,18 @@ import { Title } from "../title";
 import "./styles.scss";
 
 export const Exchange = () => {
+  const currenciesInfo = currencies.map((obj) => (
+    <div key={obj.id} className="currency-item-container">
+      <CurrencyItem
+        name={obj.name}
+        fullName={obj.fullName}
+        image={obj.image}
+        buying={obj.buying}
+        selling={obj.selling}
+      />
+    </div>
+  ));
+
   return (
     <>
       <Header />
@@ -24,17 +36,7 @@ export const Exchange = () => {
               <p className="buying">{englishLanguage.tableBuying}</p>
               <p className="selling">{englishLanguage.tableSelling}</p>
             </div>
-            {currencies.map((obj) => (
-              <div key={obj.id} className="currency-item-container">
-                <CurrencyItem
-                  name={obj.name}
-                  fullName={obj.fullName}
-                  image={obj.image}
-                  buying={obj.buying}
-                  selling={obj.selling}
-                />
-              </div>
-            ))}
+            {currenciesInfo}
           </div>
         </div>
       </div>

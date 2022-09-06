@@ -4,9 +4,11 @@ import { CurrencySelect } from "./CurrencySelect";
 import { ItemCurrency } from "./types";
 import {
   defaultAmount,
-  firstCurrencyDefault,
+  FIRST_CURRENCY_DEFAULT,
+  lengthDarkStringAfterDot,
+  maxLengthAfterDot,
   regExpForNumber,
-  secondCurrencyDefault,
+  SECOND_CURRENCY_DEFAULT,
   separatorDot,
 } from "./constants";
 import ExchangeIcon from "../../../../content/icons/exchangeIcon.svg";
@@ -15,12 +17,12 @@ import "./styles.scss";
 
 export const CurrencyConverter = () => {
   const [firstCurrentCurrency, setFirstCurrentCurrency] =
-    useState<ItemCurrency>(firstCurrencyDefault);
+    useState<ItemCurrency>(FIRST_CURRENCY_DEFAULT);
 
   const [amountValue, setAmountValue] = useState<string>(defaultAmount);
 
   const [secondCurrentCurrency, setSecondCurrentCurrency] =
-    useState<ItemCurrency>(secondCurrencyDefault);
+    useState<ItemCurrency>(SECOND_CURRENCY_DEFAULT);
 
   const handleViceVersa = () => {
     setFirstCurrentCurrency(secondCurrentCurrency);
@@ -37,6 +39,16 @@ export const CurrencyConverter = () => {
   const sliceString = priceValue.split(separatorDot);
   const stringBeforeDot = sliceString[0];
   const stringAfterDot = sliceString[1];
+
+  const darkString =
+    stringBeforeDot +
+    (stringAfterDot
+      ? separatorDot + stringAfterDot.slice(0, lengthDarkStringAfterDot)
+      : "");
+
+  const brightString = stringAfterDot
+    ? stringAfterDot.slice(lengthDarkStringAfterDot, maxLengthAfterDot)
+    : "";
 
   useEffect(() => {
     const sum = String(Number(amountValue) * 1.0529131);
@@ -77,15 +89,8 @@ export const CurrencyConverter = () => {
           <label>{englishLanguage.price}</label>
           <div className="input-currency-container">
             <p className="sign-currency">{secondCurrentCurrency.sign}</p>
-            <p className="dark-price">
-              {stringBeforeDot +
-                (stringAfterDot
-                  ? separatorDot + stringAfterDot.slice(0, 2)
-                  : "")}
-            </p>
-            <p className="bright-price">
-              {stringAfterDot ? stringAfterDot.slice(2, 5) : ""}
-            </p>
+            <p className="dark-price">{darkString}</p>
+            <p className="bright-price">{brightString}</p>
             <hr className="bottom-line"></hr>
           </div>
         </div>

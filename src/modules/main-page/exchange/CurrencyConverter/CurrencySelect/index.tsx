@@ -1,20 +1,33 @@
-import * as React from 'react';
-import { useState } from 'react';
-import cn from 'classnames';
-import { SelectItem } from '../SelectItem';
-import { currencies } from '../../constants';
-import { CurrencySelectItem } from './types';
-import './styles.scss';
+import * as React from "react";
+import { useState } from "react";
+import cn from "classnames";
+import { SelectItem } from "../SelectItem";
+import { currencies } from "../../constants";
+import { CurrencySelectItem } from "./types";
+import "./styles.scss";
 
-export const CurrencySelect = ({ currentCurrency, onSelect }: CurrencySelectItem) => {
+export const CurrencySelect = ({
+  currentCurrency,
+  onSelect,
+}: CurrencySelectItem) => {
   const [isOptionsOpen, setOptionsOpen] = useState<boolean>(false);
+
+  const optionsCurrencies = currencies.map((obj) => (
+    <div
+      key={obj.id}
+      className="options-currency-container"
+      onClick={() => handleChooseCurrency(obj.id)}
+    >
+      <SelectItem name={obj.name} fullName={obj.fullName} image={obj.image} />
+    </div>
+  ));
 
   const handleOptionsOpen = () => {
     setOptionsOpen(!isOptionsOpen);
   };
 
   const fetchCurrencyInfo = (id: number) => {
-    onSelect(currencies.filter(obj => obj.id === id)[0]);
+    onSelect(currencies.filter((obj) => obj.id === id)[0]);
   };
 
   const handleChooseCurrency = (id: number) => {
@@ -22,7 +35,9 @@ export const CurrencySelect = ({ currentCurrency, onSelect }: CurrencySelectItem
     setOptionsOpen(!isOptionsOpen);
   };
 
-  const selectClassName = cn(isOptionsOpen ? 'currency-conteiner-open' : 'currency-conteiner');
+  const selectClassName = cn(
+    isOptionsOpen ? "options-container-open" : "options-container"
+  );
 
   return (
     <>
@@ -36,17 +51,7 @@ export const CurrencySelect = ({ currentCurrency, onSelect }: CurrencySelectItem
         </div>
         <div className="select-arrow"></div>
       </div>
-      <div className={selectClassName}>
-        {currencies.map(obj => (
-          <div
-            key={obj.id}
-            className="options-currency-container"
-            onClick={() => handleChooseCurrency(obj.id)}
-          >
-            <SelectItem name={obj.name} fullName={obj.fullName} image={obj.image} />
-          </div>
-        ))}
-      </div>
+      <div className={selectClassName}>{optionsCurrencies}</div>
     </>
   );
 };

@@ -8,5 +8,13 @@ export type CurrencySelectItem = {
     selling: number | string;
     sign?: string;
   };
-  onSelect: (dataCurrency: Object) => void;
+  onSelect: (dataCurrency: {
+    id?: number;
+    name: string;
+    fullName: string;
+    image: string;
+    buying: number;
+    selling: number | string;
+    sign?: string;
+  }) => void;
 };
