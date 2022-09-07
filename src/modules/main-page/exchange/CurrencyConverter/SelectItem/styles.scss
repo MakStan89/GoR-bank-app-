@@ -1,0 +1,37 @@
+.select-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  width: 147px;
+  height: 24px;
+
+  .select-flag {
+    width: 34px;
+    height: 24px;
+  }
+
+  .strong {
+    display: inline;
+    width: 170px;
+    height: 24px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #212529;
+  }
+
+  .full-name {
+    width: 170px;
+    height: 24px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #9E9E9E;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
