@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useState } from "react";
 import cn from "classnames";
-import { SelectItem } from "../SelectItem";
+import { SelectItem } from "../select-item";
 import { currencies } from "../../constants";
 import { CurrencySelectItem } from "./types";
 import "./styles.scss";

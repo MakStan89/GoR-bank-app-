@@ -1,4 +1,4 @@
-import { ItemCurrency } from "./CurrencyItem/types";
+import { ItemCurrency } from "./currency-item/types";
 import EU from "../../../content/icons/currencies/EU.svg";
 import USD from "../../../content/icons/currencies/US.svg";
 import GBP from "../../../content/icons/currencies/GBP.svg";
