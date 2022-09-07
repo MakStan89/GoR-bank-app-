@@ -1,7 +1,31 @@
 export const russianLanguage = {
   title: 'История',
+  date1: 'Май 15',
+  date2: 'Май 14',
+  time1: '12:06',
+  time2: '9:06',
+  info1: 'Банковский кредит',
+  info2: 'Продукты',
+  info3: 'Денежный перевод от Хелен Купер',
+  type1: 'Перевод',
+  type2: 'Оплата',
+  amount1: '4,000.89 GBP',
+  amount2: '-1,050.43 GBP',
+  amount3: '-328.00 GBP',
   } as const;
 
 export const englishLanguage = {
   title: 'History',
+  date1: 'May 15',
+  date2: 'May 14',
+  time1: '12:06',
+  time2: '9:06',
+  info1: 'Bank loan',
+  info2: 'Whole Foods Market',
+  info3: 'Money transfer from Helen Cooper',
+  type1: 'Transfer',
+  type2: 'Payment',
+  amount1: '4,000.89 GBP',
+  amount2: '-1,050.43 GBP',
+  amount3: '-328.00 GBP',
 } as const;

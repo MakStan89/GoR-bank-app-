@@ -69,14 +69,14 @@
       background: center / contain no-repeat url(../../../content/icons/main-auth-page/dealsAndOffers.svg);
     }
   }
+}
 
-  .itemText {
-    font-size: 16px;
-    line-height: 16px;
-    color: #616161;
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
+.itemText {
+  font-size: 16px;
+  line-height: 16px;
+  color: #616161;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .isActive {
@@ -117,5 +117,16 @@
     .dealsAndOffers {
       background: center / contain no-repeat url(../../../content/icons/main-auth-page/dealsAndOffersSelect.svg);
     }
+  }
+}
+
+.hiddenItem {
+
+  .mark {
+    height: 56px;
+    width: 4px;
+    background-color: #ffd600;
+    margin-left: 52px;
+    margin-right: 32px;
   }
 }

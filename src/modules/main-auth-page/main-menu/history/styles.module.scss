@@ -3,5 +3,85 @@
 }
 
 .content {
-  padding: 40px 0 40px 40px;
+  padding: 32px 40px 40px 40px;
+  height: 244px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.paymentLine {
+  display: flex;
+  align-items: center;
+
+  .dateTime {
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-right: 32px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+
+    .date {
+      margin-bottom: 4px;
+      display: block;
+
+    }
+
+    .time {
+      color: #9E9E9E;
+      display: block;
+    }
+  }
+
+  .info {
+    margin-right: 25px;
+    width: 260px;
+    display: flex;
+    align-items: center;
+
+    .icon {
+      width: 32px;
+      height: 32px;
+      margin-right: 12px;
+    }
+
+    .iconTransferBack {
+      background: center / contain no-repeat url(../../../../content/icons/main-auth-page/transferBack.svg);
+    }
+
+    .iconPayment {
+      background: center / contain no-repeat url(../../../../content/icons/main-auth-page/payment.svg);
+    }
+
+    .text {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  .type {
+    width: 48px;
+    text-align: right;
+    margin-right: 23px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #9E9E9E;
+  }
+
+  .sum {
+    text-align: left;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFD600;
+  }
+
+  .negativeSum {
+    color: #212529;
+  }
 }

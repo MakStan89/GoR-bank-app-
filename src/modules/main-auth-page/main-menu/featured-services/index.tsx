@@ -1,7 +1,7 @@
 import * as React from 'react';
+import { NavLink } from 'react-router-dom';
 import { ContainerComponent } from '../container-component';
-import { englishLanguage, icon, russianLanguage } from './constants';
-import { Service } from './service';
+import { englishLanguage, russianLanguage } from './constants';
 import s from './styles.module.scss';
 
 export const FeaturedServices = () => {
@@ -10,11 +10,46 @@ export const FeaturedServices = () => {
     <div className={s.outerContainer}>
       <ContainerComponent title={englishLanguage.title}>
         <div className={s.content}>
-          <Service text={englishLanguage.text1} icon={icon.icon1} />
-          <Service text={englishLanguage.text2} icon={icon.icon2} />
-          <Service text={englishLanguage.text3} icon={icon.icon3} />
-          <Service text={englishLanguage.text4} icon={icon.icon4} />
-          <Service text={englishLanguage.textAdd} icon={icon.iconAdd} />
+          <NavLink to="#" className={s.service}>
+            <div className={s.iconBlock}>
+              <span className={`${s.icon} ${s.icon1}`} />
+            </div>
+            <div className={s.textBlock}>
+              <span className={s.text}>{englishLanguage.text1}</span>
+            </div>
+          </NavLink>
+          <NavLink to="#" className={s.service}>
+            <div className={s.iconBlock}>
+              <span className={`${s.icon} ${s.icon2}`} />
+            </div>
+            <div className={s.textBlock}>
+              <span className={s.text}>{englishLanguage.text2}</span>
+            </div>
+          </NavLink>
+          <NavLink to="#" className={s.service}>
+            <div className={s.iconBlock}>
+              <span className={`${s.icon} ${s.icon3}`} />
+            </div>
+            <div className={s.textBlock}>
+              <span className={s.text}>{englishLanguage.text3}</span>
+            </div>
+          </NavLink>
+          <NavLink to="#" className={s.service}>
+            <div className={s.iconBlock}>
+              <span className={`${s.icon} ${s.icon4}`} />
+            </div>
+            <div className={s.textBlock}>
+              <span className={s.text}>{englishLanguage.text4}</span>
+            </div>
+          </NavLink>
+          <NavLink to="#" className={s.service}>
+            <div className={`${s.iconBlock} ${s.iconBlockAdd}`}>
+              <span className={`${s.icon} ${s.iconAdd}`} />
+            </div>
+            <div className={s.textBlock}>
+              <span className={s.text}>{englishLanguage.textAdd}</span>
+            </div>
+          </NavLink>
         </div>
       </ContainerComponent>
     </div>
