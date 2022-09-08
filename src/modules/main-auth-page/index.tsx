@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { Contacts } from '../main-page/contacts';
+import { Exchange } from '../main-page/exchange';
 import { Footer } from '../template-page/footer';
 import { Header } from '../template-page/header';
 import { MainMenu } from './main-menu';

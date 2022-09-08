@@ -1,3 +1,46 @@
 .outerContainer {
   grid-area: er;
 }
+
+.content {
+  width: 100%;
+  padding: 32px 0;
+  display: flex;
+  flex-direction: column;
+
+  .tableNames {
+    width: 100%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    color: #9E9E9E;
+
+    .currency {
+      padding-left: 82px;
+      width: 202px;
+    }
+
+    .buying {
+      width: 60px;
+    }
+
+    .selling {
+    }
+  }
+}
+
+.exchangeItemContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  height: 80px;
+  border-bottom: 2px solid #EEEEEE;
+}
+
+.exchangeItemContainer:last-child {
+  border: none;
+}

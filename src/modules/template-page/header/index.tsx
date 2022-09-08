@@ -3,10 +3,15 @@ import cn from 'classnames';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Props } from './types';
-import { russianLanguage, englishLanguage, LANGUAGE_BUTTON_RU_TEXT, LANGUAGE_BUTTON_EN_TEXT } from './constants';
+import {
+  russianLanguage,
+  englishLanguage,
+  LANGUAGE_BUTTON_RU_TEXT,
+  LANGUAGE_BUTTON_EN_TEXT,
+} from './constants';
 import s from './styles.module.scss';
 
-export const Header = ({isDark = false}: Props) => {
+export const Header = ({ isDark = false }: Props) => {
   const [language, setLanguage] = useState<string>('english');
 
   const russianName = cn(s.language, { [s.languageActive] : language === 'russian' });
@@ -28,16 +33,12 @@ export const Header = ({isDark = false}: Props) => {
             <a href="#">{englishLanguage.locationText}</a>
           </div>
           <div>
-            <span className={s.courses} />
-            <Link to="/exchange">
-              {englishLanguage.coursesText}
-            </Link>
+            <span className="courses" />
+            <Link to="/exchange">{englishLanguage.coursesText}</Link>
           </div>
           <div>
-            <span className={s.contacts} />
-            <Link to="/contacts">
-              {englishLanguage.contactsText}
-            </Link>
+            <span className="contacts" />
+            <Link to="/contacts">{englishLanguage.contactsText}</Link>
           </div>
         </nav>
         <div>

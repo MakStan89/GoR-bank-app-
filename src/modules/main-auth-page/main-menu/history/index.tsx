@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { ContainerComponent } from '../container-component';
-import s from './styles.module.scss';
 import { englishLanguage, russianLanguage } from './constants';
-import cn from 'classnames';
+import s from './styles.module.scss';
 
 export const History = () => {
 

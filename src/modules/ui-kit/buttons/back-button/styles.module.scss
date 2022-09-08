@@ -1,10 +1,8 @@
 .backButton {
   font-weight: 400;
   font-size: 16px;
-  position: absolute;
-  left: 0;
+  position: relative;
   padding-left: 20px;
-  margin-top: 10px;
   color: #212529;
   &::before {
     content: "";

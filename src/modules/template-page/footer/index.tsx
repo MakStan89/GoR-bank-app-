@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { englishLanguage, russianLanguage } from "../../main-page/contacts/constants";
-import { TelephoneFooter } from '../../main-page/telephone';
+import { englishLanguage, russianLanguage } from '../../main-page/contacts/constants';
+import { TelephoneFooter } from '../../main-page/contacts/telephone';
 import s from './styles.module.scss';
 
 export const Footer = () => {
