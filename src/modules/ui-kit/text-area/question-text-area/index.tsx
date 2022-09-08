@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import { useClassNames, useValidation } from './hooks';
 import { Props } from './types';
-import './styles.scss';
+import './';
 
 export const QuestionTextArea = ({ name, text, value, handleChange, handleValid }: Props) => {
   const [isHasFocus, setHasFocus] = useState<boolean>(false);

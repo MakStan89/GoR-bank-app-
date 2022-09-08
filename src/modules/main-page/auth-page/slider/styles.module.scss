@@ -1,4 +1,4 @@
-.slider-image-container {
+.images {
   position: fixed;
   top: 0;
   right: 0;
@@ -15,7 +15,7 @@
     background: #000000;
     opacity: 0.7;
   }
-  .slide-image {
+  .image {
     position: absolute;
     top: 0;
     left: 0;
@@ -24,7 +24,7 @@
     object-fit: cover;
     opacity: 0;
     transition: opacity ease-in-out 0.6s;
-    &-active {
+    &Active {
       position: absolute;
       top: 0;
       left: 0;
@@ -36,7 +36,7 @@
   }
 }
 
-.slider-title-container {
+.title {
   grid-area: title;
   align-self: start;
   max-width: 700px;
@@ -67,7 +67,7 @@
     border-radius: 2px;
   }
 }
-.slider-pagination-container {
+.paginating {
   grid-area: pagination;
   display: flex;
   flex-direction: row;
@@ -77,7 +77,7 @@
     width: 12px;
     height: 12px;
     background: center no-repeat url(../../../../content/icons/pagination.svg);
-    &-active {
+    &Active {
       width: 12px;
       height: 12px;
       background: center no-repeat url(../../../../content/icons/paginationActive.svg);
@@ -85,11 +85,11 @@
   }
 }
 
-.slide-content {
+.content {
   opacity: 0;
   transition: opacity linear 1s, visibility linear 1s;
   visibility: hidden;
-  &-active {
+  &Active {
     opacity: 1;
     visibility: visible;
   }

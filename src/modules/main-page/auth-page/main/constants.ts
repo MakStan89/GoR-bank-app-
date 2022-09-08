@@ -1,3 +1,3 @@
 export const russianLanguage = {
-  info: 'Скачать мобильный банк Affinity Online',
+  info: 'Скачать мобильный банк GoR Online',
 } as const;

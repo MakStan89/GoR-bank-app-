@@ -4,7 +4,7 @@ import { useFormValidation } from '../../../../hooks/useFormValidation';
 import { PasswordInput, ConfirmPasswordInput, ContinueButton } from '../../../../ui-kit';
 import { russianLanguage } from './constants';
 import { Props } from '../types';
-import './styles.scss';
+import * as classes from './styles.module.scss';
 
 export const PasswordForm = ({ onNextStep }: Props) => {
   const [request, setRequest] = useState(null);
@@ -18,7 +18,7 @@ export const PasswordForm = ({ onNextStep }: Props) => {
   useEffect(() => setRequest(null), [values]);
 
   return (
-    <form className="password-form" onSubmit={handleSubmit}>
+    <form className={classes.form} onSubmit={handleSubmit}>
       <PasswordInput
         value={values.password}
         handleChange={handleChange}

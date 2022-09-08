@@ -3,7 +3,7 @@ import cn from 'classnames';
 import { useState } from 'react';
 import { russianLanguage } from './constants';
 import { Props } from './types';
-import './styles.scss';
+import './';
 
 export const SecurityQuestionSelect = ({ value, onSelect }: Props) => {
   const [isOptionsOpen, setOptionsOpen] = useState<boolean>(false);

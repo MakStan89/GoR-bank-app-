@@ -2,6 +2,7 @@ import cx from 'classnames';
 import { useState, useEffect } from 'react';
 import { russianLanguage, name } from './constants';
 import { TelephoneErrors } from '../types';
+import * as classes from '../styles.module.scss';
 
 export const useValidation = (
   value: string,
@@ -41,17 +42,17 @@ export const useValidation = (
 };
 
 export const useClassNames = (isHasFocus: boolean, error: TelephoneErrors, value: string) => {
-  const inputClassName = cx('input', {
-    'input-error': !isHasFocus && error && value,
+  const inputClassName = cx([classes.input], {
+    [classes.inputError]: !isHasFocus && error && value,
   });
-  const inputLabelClassName = cx('label', {
-    'label-visible': isHasFocus || value,
+  const inputLabelClassName = cx([classes.label], {
+    [classes.labelVisible]: isHasFocus || value,
   });
-  const inputMessageClassName = cx('input-message', {
-    'input-message-error': !isHasFocus && error && value,
+  const inputMessageClassName = cx([classes.message], {
+    [classes.messageError]: !isHasFocus && error && value,
   });
-  const warningIconClassName = cx('warning', {
-    'warning-active': !isHasFocus && error && value,
+  const warningIconClassName = cx([classes.warning], {
+    [classes.warningActive]: !isHasFocus && error && value,
   });
 
   return {

@@ -1,18 +1,15 @@
-import * as React from "react";
-import { useState } from "react";
-import cn from "classnames";
-import { SelectItem } from "../select-item";
-import { currencies } from "../../constants";
-import { CurrencySelectItem } from "./types";
-import "./styles.scss";
+import * as React from 'react';
+import { useState } from 'react';
+import cn from 'classnames';
+import { SelectItem } from '../select-item';
+import { currencies } from '../../constants';
+import { CurrencySelectItem } from './types';
+import './styles.scss';
 
-export const CurrencySelect = ({
-  currentCurrency,
-  onSelect,
-}: CurrencySelectItem) => {
+export const CurrencySelect = ({ currentCurrency, onSelect }: CurrencySelectItem) => {
   const [isOptionsOpen, setOptionsOpen] = useState<boolean>(false);
 
-  const optionsCurrencies = currencies.map((obj) => (
+  const optionsCurrencies = currencies.map(obj => (
     <div
       key={obj.id}
       className="options-currency-container"
@@ -27,7 +24,7 @@ export const CurrencySelect = ({
   };
 
   const fetchCurrencyInfo = (id: number) => {
-    onSelect(currencies.filter((obj) => obj.id === id)[0]);
+    onSelect(currencies.filter(obj => obj.id === id)[0]);
   };
 
   const handleChooseCurrency = (id: number) => {
@@ -35,9 +32,7 @@ export const CurrencySelect = ({
     setOptionsOpen(!isOptionsOpen);
   };
 
-  const selectClassName = cn(
-    isOptionsOpen ? "options-container-open" : "options-container"
-  );
+  const selectClassName = cn(isOptionsOpen ? 'options-container-open' : 'options-container');
 
   return (
     <>

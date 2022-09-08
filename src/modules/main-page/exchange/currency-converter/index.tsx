@@ -1,7 +1,7 @@
-import * as React from "react";
-import { useEffect, useState } from "react";
-import { CurrencySelect } from "./currency-select";
-import { ItemCurrency } from "./types";
+import * as React from 'react';
+import { useEffect, useState } from 'react';
+import { CurrencySelect } from './currency-select';
+import { ItemCurrency } from './types';
 import {
   DEFAULT_AMOUNT,
   FIRST_CURRENCY_DEFAULT,
@@ -11,10 +11,10 @@ import {
   RELATIVE_RATE,
   SECOND_CURRENCY_DEFAULT,
   SEPARATOR_DOT,
-} from "./constants";
-import ExchangeIcon from "../../../../content/icons/exchangeIcon.svg";
-import { englishLanguage } from "../constants";
-import "./styles.scss";
+} from './constants';
+import ExchangeIcon from '../../../../content/icons/exchangeIcon.svg';
+import { englishLanguage } from '../constants';
+import './styles.scss';
 
 export const CurrencyConverter = () => {
   const [firstCurrentCurrency, setFirstCurrentCurrency] =
@@ -31,11 +31,11 @@ export const CurrencyConverter = () => {
   };
 
   const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const result = e.target.value.replace(REG_EXP_FOR_NUMBER, "");
+    const result = e.target.value.replace(REG_EXP_FOR_NUMBER, '');
     setAmountValue(result);
   };
 
-  const [priceValue, setPriceValue] = useState<string>("");
+  const [priceValue, setPriceValue] = useState<string>('');
 
   const sliceString = priceValue.split(SEPARATOR_DOT);
   const stringBeforeDot = sliceString[0];
@@ -43,13 +43,11 @@ export const CurrencyConverter = () => {
 
   const darkString =
     stringBeforeDot +
-    (stringAfterDot
-      ? SEPARATOR_DOT + stringAfterDot.slice(0, LENGTH_DARK_STRING_AFTER_DOT)
-      : "");
+    (stringAfterDot ? SEPARATOR_DOT + stringAfterDot.slice(0, LENGTH_DARK_STRING_AFTER_DOT) : '');
 
   const brightString = stringAfterDot
     ? stringAfterDot.slice(LENGTH_DARK_STRING_AFTER_DOT, MAX_LENGTH_AFTER_DOT)
-    : "";
+    : '';
 
   useEffect(() => {
     const sum = String(Number(amountValue) * RELATIVE_RATE);
@@ -60,10 +58,7 @@ export const CurrencyConverter = () => {
     <div className="container">
       <h5>{englishLanguage.converterTitle}</h5>
       <div className="amount-container">
-        <CurrencySelect
-          currentCurrency={firstCurrentCurrency}
-          onSelect={setFirstCurrentCurrency}
-        />
+        <CurrencySelect currentCurrency={firstCurrentCurrency} onSelect={setFirstCurrentCurrency} />
         <div className="amount">
           <label className="sign-currency">{englishLanguage.amount}</label>
           <div className="input-currency-container">

@@ -5,13 +5,17 @@ import { AuthTelephoneForm } from './telephone-auth-form';
 import { AuthPassportForm } from './passport-auth-form';
 import { russianLanguage } from './constants';
 import { Props } from './types';
-import './styles.scss';
+import * as classes from './styles.module.scss';
 
 export const MainFormWrapper = React.memo(({ onRegisterPopupOpen }: Props) => {
   const [selectedForm, setSelectedForm] = useState<string>('telephone');
 
-  const telephoneClassName = cn('toggle', { 'toggle-active': selectedForm === 'telephone' });
-  const passportClassName = cn('toggle', { 'toggle-active': selectedForm === 'passport' });
+  const telephoneClassName = cn(classes.toggle, {
+    [classes.toggleActive]: selectedForm === 'telephone',
+  });
+  const passportClassName = cn(classes.toggle, {
+    [classes.toggleActive]: selectedForm === 'passport',
+  });
 
   const changeForm = (e: React.MouseEvent<HTMLButtonElement>) => {
     const { name } = e.target as HTMLButtonElement;
@@ -19,9 +23,9 @@ export const MainFormWrapper = React.memo(({ onRegisterPopupOpen }: Props) => {
   };
 
   return (
-    <div className="main-form-container">
-      <h2 className="title">{russianLanguage.title}</h2>
-      <div className="toggle-container">
+    <div className={classes.form}>
+      <h2 className={classes.title}>{russianLanguage.title}</h2>
+      <div className={classes.toggles}>
         <button name="telephone" className={telephoneClassName} onClick={changeForm}>
           {russianLanguage.telephoneButtonText}
         </button>
@@ -31,11 +35,11 @@ export const MainFormWrapper = React.memo(({ onRegisterPopupOpen }: Props) => {
       </div>
       {selectedForm === 'telephone' && <AuthTelephoneForm />}
       {selectedForm === 'passport' && <AuthPassportForm />}
-      <div className="description">
+      <div className={classes.description}>
         <a href="#">{russianLanguage.demoText}</a>
         <a href="#">{russianLanguage.forgetText}</a>
       </div>
-      <button className="register-button" onClick={onRegisterPopupOpen}>
+      <button className={classes.button} onClick={onRegisterPopupOpen}>
         {russianLanguage.registerButtonText}
       </button>
     </div>

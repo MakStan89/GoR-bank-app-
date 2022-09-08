@@ -1,14 +1,8 @@
-import * as React from "react";
-import { ItemCurrency } from "./types";
-import "./styles.scss";
+import * as React from 'react';
+import { ItemCurrency } from './types';
+import './styles.scss';
 
-export const CurrencyItem = ({
-  name,
-  fullName,
-  image,
-  buying,
-  selling,
-}: ItemCurrency) => {
+export const CurrencyItem = ({ name, fullName, image, buying, selling }: ItemCurrency) => {
   return (
     <div className="row">
       <div className="currency-info">

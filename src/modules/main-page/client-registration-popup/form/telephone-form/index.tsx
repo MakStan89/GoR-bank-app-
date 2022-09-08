@@ -4,7 +4,7 @@ import { useFormValidation } from '../../../../hooks/useFormValidation';
 import { TelephoneInput, ContinueButton } from '../../../../ui-kit';
 import { russianLanguage } from './constants';
 import { Props } from '../types';
-import './styles.scss';
+import * as classes from './styles.module.scss';
 
 export const TelephoneForm = ({ onNextStep, onJoin }: Props) => {
   const [requestError, setRequestError] = useState(false);
@@ -18,7 +18,7 @@ export const TelephoneForm = ({ onNextStep, onJoin }: Props) => {
   };
 
   return (
-    <form className="telephone-form" onSubmit={handleSubmit}>
+    <form className={classes.form} onSubmit={handleSubmit}>
       <TelephoneInput
         value={values.telephone}
         handleChange={handleChange}
@@ -26,11 +26,11 @@ export const TelephoneForm = ({ onNextStep, onJoin }: Props) => {
         request={null}
       />
       {requestError && (
-        <button className="join-button" onClick={onJoin}>
+        <button className={classes.button} onClick={onJoin}>
           {russianLanguage.joinButtonText}
         </button>
       )}
-      <div className="form-text">
+      <div className={classes.text}>
         <p>
           {russianLanguage.subtitleText}
           <a

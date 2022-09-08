@@ -3,7 +3,7 @@ import cx from 'classnames';
 import { useState, useEffect } from 'react';
 import { SliderTitle } from './title';
 import { sliderContent } from './constants';
-import './styles.scss';
+import * as classes from './styles.module.scss';
 
 export const Slider = () => {
   const [currentSlide, changeSlide] = useState<number>(0);
@@ -22,8 +22,8 @@ export const Slider = () => {
   });
 
   const getImageClassName = (index: number) =>
-    cx('slide-image', {
-      'slide-image-active': currentSlide === index,
+    cx([classes.image], {
+      [classes.imageActive]: currentSlide === index,
     });
 
   const slideImage = sliderContent.map((slide, index) => {
@@ -34,7 +34,7 @@ export const Slider = () => {
       <button
         id={String(index)}
         key={index}
-        className={currentSlide === index ? 'pagination-active' : 'pagination'}
+        className={currentSlide === index ? classes.paginationActive : classes.pagination}
         onClick={handleSlideChange}
       />
     );
@@ -43,8 +43,8 @@ export const Slider = () => {
   return (
     <>
       <SliderTitle currentSlide={currentSlide} />
-      <div className="slider-image-container">{slideImage}</div>
-      <div className="slider-pagination-container">{paginationButtons}</div>
+      <div className={classes.images}>{slideImage}</div>
+      <div className={classes.paginating}>{paginationButtons}</div>
     </>
   );
 };

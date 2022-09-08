@@ -4,7 +4,7 @@ import { MainFormWrapper } from '../form';
 import { Slider } from '../slider';
 import { ClientRegister } from '../../client-registration-popup';
 import { russianLanguage } from './constants';
-import './styles.scss';
+import * as classes from './styles.module.scss';
 
 export const Main = () => {
   const [isPopupOpen, setPopupOpen] = useState<boolean>(false);
@@ -18,14 +18,14 @@ export const Main = () => {
   }, [isPopupOpen]);
 
   return (
-    <section className="main-container">
+    <section className={classes.main}>
       <Slider />
       <MainFormWrapper onRegisterPopupOpen={handlePopupOpenCLick} />
-      <button className="scroll-button" />
-      <div className="info-container">
+      <button className={classes.scroll} />
+      <div className={classes.info}>
         <p>{russianLanguage.info}</p>
-        <button className="apple" />
-        <button className="google" />
+        <button className={classes.apple} />
+        <button className={classes.google} />
       </div>
       <ClientRegister onClose={handlePopupCloseCLick} isOpen={isPopupOpen} />
     </section>

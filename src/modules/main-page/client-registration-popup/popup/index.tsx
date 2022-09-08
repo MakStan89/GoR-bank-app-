@@ -3,10 +3,10 @@ import infoPopupImage from '../../../../content/images/successPopupImage.png';
 import { ContinueButton } from '../../../ui-kit';
 import { russianLanguage } from './constants';
 import { Props } from './types';
-import './styles.scss';
+import * as classes from './styles.module.scss';
 
 export const SuccessPopup = ({ onContinue }: Props) => (
-  <section className="popup-container">
+  <section className={classes.popup}>
     <h2>{russianLanguage.titleText}</h2>
     <p>{russianLanguage.subtitleText}</p>
     <img src={infoPopupImage} />

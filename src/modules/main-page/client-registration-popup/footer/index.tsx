@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { russianLanguage } from './constants';
-import './styles.scss';
+import * as classes from './styles.module.scss';
 
 export const Footer = () => {
   return (
-    <footer className="register-footer">
+    <footer className={classes.footer}>
       <h3>{russianLanguage.titleText}</h3>
-      <div className="register-footer-icons-container">
-        <span className="google" />
-        <span className="apple" />
+      <div className={classes.icons}>
+        <span className={classes.google} />
+        <span className={classes.apple} />
         <h3>{russianLanguage.downloadText}</h3>
       </div>
     </footer>

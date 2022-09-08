@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useValidation, useClassNames } from './hooks';
 import { russianLanguage, name } from './constants';
 import { Props } from '../types';
-import '../styles.scss';
+import * as classes from '../styles.module.scss';
 
 export const TelephoneInput = ({ value, handleChange, handleValid, request }: Props) => {
   const [isHasFocus, setHasFocus] = useState<boolean>(false);
@@ -13,7 +13,7 @@ export const TelephoneInput = ({ value, handleChange, handleValid, request }: Pr
     useClassNames(isHasFocus, error, value);
 
   return (
-    <div className="input-container">
+    <div className={classes.container}>
       <span className={inputLabelClassName}>{russianLanguage.labelText}</span>
       <ReactInputMask
         className={inputClassName}
@@ -21,14 +21,14 @@ export const TelephoneInput = ({ value, handleChange, handleValid, request }: Pr
         placeholder={russianLanguage.placeholderText}
         type="tel"
         autoComplete="off"
-        mask="+\7 999 9999 9999"
+        mask="+\7 999 999 9999"
         maskChar="x"
         value={value ?? ''}
         onChange={handleChange}
         onFocus={() => setHasFocus(true)}
         onBlur={() => setHasFocus(false)}
       />
-      <div className="icons-container">
+      <div className={classes.icons}>
         <span className={warningIconClassName} />
       </div>
       <span className={inputMessageClassName}>{errorMessage}</span>

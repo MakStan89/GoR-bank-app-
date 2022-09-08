@@ -5,7 +5,7 @@ import fourthImage from '../../../../content/images/main4.png';
 
 export const sliderContent = [
   {
-    title: '1 Мобильное приложение Affinity Online',
+    title: '1 Мобильное приложение GoR Online',
     subtitle: 'Банк в вашем смартфоне',
     image: firstImage,
     button: 'Узнать больше',

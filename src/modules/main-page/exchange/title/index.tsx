@@ -1,8 +1,8 @@
-import * as React from "react";
-import { Link } from "react-router-dom";
-import { Props } from "./types";
-import { BackButton } from "../../../ui-kit";
-import "./styles.scss";
+import * as React from 'react';
+import { Link } from 'react-router-dom';
+import { Props } from './types';
+import { BackButton } from '../../../ui-kit';
+import './styles.scss';
 
 export const Title = ({ handleClick, text, title }: Props) => {
   return (

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { PassportInput, PasswordInput, ContinueButton } from '../../../../ui-kit';
 import { useFormValidation } from '../../../../hooks/useFormValidation';
 import { russianLanguage } from './constants';
-import './styles.scss';
+import * as classes from './styles.module.scss';
 
 export const AuthPassportForm = () => {
   const { values, handleChange, handleValid, valid } = useFormValidation();
@@ -12,7 +12,7 @@ export const AuthPassportForm = () => {
   };
 
   return (
-    <form className="main-form" noValidate onSubmit={handleSubmit}>
+    <form className={classes.form} noValidate onSubmit={handleSubmit}>
       <PassportInput
         value={values.passport}
         handleChange={handleChange}

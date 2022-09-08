@@ -1,10 +1,10 @@
 import * as React from 'react';
 import cn from 'classnames';
 import { Props } from './types';
-import './styles.scss';
+import * as classes from './styles.module.scss';
 
 export const ContinueButton = ({ handleClick, text, isActive }: Props) => {
-  const ContinueButtonClassName = cn(isActive ? 'continue-active' : 'continue');
+  const ContinueButtonClassName = cn(isActive ? classes.acceptActive : classes.accept);
 
   return (
     <button
