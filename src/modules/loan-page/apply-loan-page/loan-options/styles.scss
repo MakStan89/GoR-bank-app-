@@ -1,0 +1,20 @@
+.loan {
+  &-container {
+    display: block;
+    width: 343px;
+    height: 144px;
+  }
+  &-title,
+  &-subtitle {
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #616161;
+    margin-bottom: 8px;
+  }
+  &-subtitle {
+    margin-bottom: 0px;
+    margin-top: 8px;
+  }
+}
