@@ -1,4 +1,4 @@
-.outerContainer {
+.outer-container {
   grid-area: his;
 }
 
@@ -10,11 +10,11 @@
   justify-content: space-between;
 }
 
-.paymentLine {
+.payment-line {
   display: flex;
   align-items: center;
 
-  .dateTime {
+  .date-time {
     width: 80px;
     display: flex;
     flex-direction: column;
@@ -48,11 +48,11 @@
       margin-right: 12px;
     }
 
-    .iconTransferBack {
+    .icon-transfer-back {
       background: center / contain no-repeat url(../../../../content/icons/main-auth-page/transferBack.svg);
     }
 
-    .iconPayment {
+    .icon-payment {
       background: center / contain no-repeat url(../../../../content/icons/main-auth-page/payment.svg);
     }
 
@@ -81,7 +81,7 @@
     color: #FFD600;
   }
 
-  .negativeSum {
+  .negative-sum {
     color: #212529;
   }
 }

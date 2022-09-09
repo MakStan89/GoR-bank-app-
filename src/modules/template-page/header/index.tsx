@@ -9,14 +9,14 @@ import {
   LANGUAGE_BUTTON_RU_TEXT,
   LANGUAGE_BUTTON_EN_TEXT,
 } from './constants';
-import s from './styles.module.scss';
+import styles from './styles.module.scss';
 
 export const Header = ({ isDark = false }: Props) => {
   const [language, setLanguage] = useState<string>('english');
 
-  const russianName = cn(s.language, { [s.languageActive] : language === 'russian' });
-  const englishName = cn(s.language, { [s.languageActive] : language === 'english' });
-  const headerClassName = cn(isDark ? s.headerWhite : s.headerBlack);
+  const russianName = cn(styles.language, { [styles['language-active']] : language === 'russian' });
+  const englishName = cn(styles.language, { [styles['language-active']] : language === 'english' });
+  const headerClassName = cn(isDark ? styles['headerW-wite'] : styles['header-black']);
 
   const changeLanguage = (e: React.MouseEvent<HTMLButtonElement>) => {
     const { name } = e.target as HTMLButtonElement;
@@ -25,19 +25,19 @@ export const Header = ({ isDark = false }: Props) => {
 
   return (
     <header className={headerClassName}>
-      <div className={s.headerContainer}>
-        <div className={s.logo} />
-        <nav className={s.navigation}>
+      <div className={styles['header-container']}>
+        <div className={styles.logo} />
+        <nav className={styles.navigation}>
           <div>
-            <span className={s.location} />
+            <span className={styles.location} />
             <a href="#">{englishLanguage.locationText}</a>
           </div>
           <div>
-            <span className="courses" />
+            <span className={styles.courses} />
             <Link to="/exchange">{englishLanguage.coursesText}</Link>
           </div>
           <div>
-            <span className="contacts" />
+            <span className={styles.contacts} />
             <Link to="/contacts">{englishLanguage.contactsText}</Link>
           </div>
         </nav>

@@ -1,32 +1,32 @@
 import * as React from 'react';
 import { englishLanguage, russianLanguage } from '../../main-page/contacts/constants';
 import { TelephoneFooter } from '../../main-page/contacts/telephone';
-import s from './styles.module.scss';
+import styles from './styles.module.scss';
 
 export const Footer = () => {
   return (
-    <footer className={s.footer}>
-      <div className={s.footerContainer}>
-        <div className={s.cards}>
-          <h2 className={s.text}>{englishLanguage.subtitleCards}</h2>
-          <p className={s.time}>{englishLanguage.timeCards}</p>
-          <p className={s.time}>{englishLanguage.timeCardsWeekend}</p>
+    <footer className={styles.footer}>
+      <div className={styles['footer-container']}>
+        <div className={styles.cards}>
+          <h2 className={styles.text}>{englishLanguage.subtitleCards}</h2>
+          <p className={styles.time}>{englishLanguage.timeCards}</p>
+          <p className={styles.time}>{englishLanguage.timeCardsWeekend}</p>
           <TelephoneFooter numberFree={englishLanguage.numberFreeCards} textFree={englishLanguage.freeCalls}
             numberInter={englishLanguage.numberInterCards} textInter={englishLanguage.internationalCalls} />
         </div>
-        <div className={s.individuals}>
-          <h2 className={s.text}>{englishLanguage.subtitleInd}</h2>
-          <p className={s.time}>{englishLanguage.timeInd}</p>
+        <div className={styles.individuals}>
+          <h2 className={styles.text}>{englishLanguage.subtitleInd}</h2>
+          <p className={styles.time}>{englishLanguage.timeInd}</p>
           <TelephoneFooter numberFree={englishLanguage.numberFreeInd} textFree={englishLanguage.freeCalls}
             numberInter={englishLanguage.numberInterInd} textInter={englishLanguage.internationalCalls} />
         </div>
-        <div className={s.address}>
-          <h2 className={`${s.addressText} ${s.text}`}>{englishLanguage.legalAddress}</h2>
-          <div className={s.addressLocation}>{englishLanguage.location}</div>
+        <div className={styles.address}>
+          <h2 className={`${styles['address-text']} ${styles.text}`}>{englishLanguage.legalAddress}</h2>
+          <div className={styles['address-location']}>{englishLanguage.location}</div>
         </div>
-        <div className={s.appLinks}>
-          <button className={s.apple} />
-          <button className={s.google} />
+        <div className={styles['app-links']}>
+          <button className={styles.apple} />
+          <button className={styles.google} />
         </div>
       </div>
     </footer>

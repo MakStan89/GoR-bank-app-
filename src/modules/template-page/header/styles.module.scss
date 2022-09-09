@@ -1,4 +1,4 @@
-.headerWhite {
+.header-white {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -73,13 +73,13 @@
     line-height: 1.5;
     color: #ffffff;
   }
-  .languageActive {
+  .language-active {
     background-color: #ffd600;
     color: #000000;
   }
 }
 
-.headerBlack {
+.header-black {
   height: 80px;
   margin: 0 auto;
   border-bottom: 1px solid #eeeeee;
@@ -151,7 +151,7 @@
     color: #212529;
   }
 
-  .languageActive {
+  .language-active {
     background-color: #ffd600;
     color: #000000;
   }
@@ -185,7 +185,7 @@
   }
 }
 
-.headerContainer {
+.header-container {
   max-width: 1296px;
   display: flex;
   flex-direction: row;

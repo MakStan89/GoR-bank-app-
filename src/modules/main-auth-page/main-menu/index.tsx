@@ -3,12 +3,12 @@ import { ExchangeRates } from './exchange-rates';
 import { FeaturedServices } from './featured-services';
 import { History } from './history';
 import { MyCards } from './my-cards';
-import s from './styles.module.scss';
+import styles from './styles.module.scss';
 
 export const MainMenu = () => {
 
   return (
-    <div className={s.mainContainer}>
+    <div className={styles['main-container']}>
       <MyCards />
       <History />
       <ExchangeRates />

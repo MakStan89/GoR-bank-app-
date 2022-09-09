@@ -5,13 +5,13 @@
   padding: 24px 32px 16px 32px;
 }
 
-.currencyInfo {
+.currency-info {
   display: flex;
   align-items: center;
   gap: 16px;
   width: 170px;
 
-  .currencyName {
+  .currency-name {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -25,7 +25,7 @@
       color: #212529;
     }
 
-    .fullName {
+    .full-name {
       font-style: normal;
       font-weight: 400;
       font-size: 12px;
@@ -35,7 +35,7 @@
   }
 }
 
-.currencyRates {
+.currency-rates {
   display: flex;
 
   :first-child {

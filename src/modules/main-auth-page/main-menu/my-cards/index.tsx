@@ -3,16 +3,16 @@ import { FC } from 'react';
 import { ContainerComponent } from '../container-component';
 import { CardItem } from './card-item';
 import { CARDS, englishLanguage } from './constants';
-import s from './styles.module.scss';
+import styles from './styles.module.scss';
 
-export const MyCards: FC = () => {
+export const MyCards = () => {
 
   return (
-    <div className={s.outerContainer}>
+    <div className={styles['outer-container']}>
       <ContainerComponent title={englishLanguage.title}>
-        <div className={s.content}>
+        <div className={styles.content}>
           {CARDS.map((obj) => (
-            <div key={obj.id} className={s.cardItemContainer}>
+            <div key={obj.id} className={styles['card-item-container']}>
               <CardItem
                 name={obj.name}
                 logo={obj.logo}

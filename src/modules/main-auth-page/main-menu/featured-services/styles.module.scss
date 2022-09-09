@@ -1,4 +1,4 @@
-.outerContainer {
+.outer-container {
   grid-area: fs;
 }
 
@@ -20,7 +20,7 @@
   justify-content: space-between;
   text-decoration: none;
   
-  .iconBlock {
+  .icon-block {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,18 +50,18 @@
     .icon4 {
       background: center / contain no-repeat url(../../../../content/icons/main-auth-page/currencyExchange.svg);
     }
-    .iconAdd {
+    .icon-add {
       background: center / contain no-repeat url(../../../../content/icons/main-auth-page/add.svg);
       width: 23px;
       height: 23px;
     }
   }
 
-  .iconBlockAdd {
+  .icon-block-add {
     border: 4px dashed #FFF176;
   }
 
-  .textBlock {
+  .text-block {
 
     .text {
       font-weight: 400;

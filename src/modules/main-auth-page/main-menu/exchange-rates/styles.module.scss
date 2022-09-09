@@ -1,4 +1,4 @@
-.outerContainer {
+.outer-container {
   grid-area: er;
 }
 
@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
 
-  .tableNames {
+  .table-names {
     width: 100%;
     font-style: normal;
     font-weight: 400;
@@ -32,7 +32,7 @@
   }
 }
 
-.exchangeItemContainer {
+.exchange-item-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -41,6 +41,6 @@
   border-bottom: 2px solid #EEEEEE;
 }
 
-.exchangeItemContainer:last-child {
+.exchange-item-container:last-child {
   border: none;
 }
