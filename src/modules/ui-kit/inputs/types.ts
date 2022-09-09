@@ -1,4 +1,4 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent } from "react";
 
 export type Props = {
   value: string;
@@ -6,6 +6,24 @@ export type Props = {
   handleValid: (valid: boolean, name: string) => void;
   request: number;
   isMessage?: boolean;
+};
+
+export type IncomeProps = {
+  value: string;
+  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleValid: (valid: boolean, name: string) => void;
+  request: number;
+  isEIN: boolean;
+  minValue: number;
+  maxValue: number;
+};
+
+export type RangeProps = {
+  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  width: number;
+  value: string;
+  minValue: number;
+  maxValue: number;
 };
 
 export enum TelephoneErrors {
@@ -35,5 +53,13 @@ export enum PassportErrors {
   CapsLock = 1,
   Length = 2,
   IncorrectPassport = 3,
+  Request = 4,
+}
+
+export enum IncomeErrors {
+  None = 0,
+  CapsLock = 1,
+  Length = 2,
+  IncorrectIncome = 3,
   Request = 4,
 }
