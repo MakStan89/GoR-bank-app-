@@ -6,7 +6,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  &Open {
+  &-open {
     transition: visibility 0s, opacity 0.2s linear;
     opacity: 1;
     visibility: visible;

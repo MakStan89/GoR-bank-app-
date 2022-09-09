@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { russianLanguage, REFRESH_TIME, BLOCK_TIME } from './constants';
 import { Props } from './types';
-import * as classes from '../styles.module.scss';
+import styles from '../styles.module.scss';
 
 export const SmsTimer = React.memo(({ attempt, onAttempt }: Props) => {
   const [secondsCounter, setSecondsCounter] = useState<number>(REFRESH_TIME);
@@ -28,7 +28,7 @@ export const SmsTimer = React.memo(({ attempt, onAttempt }: Props) => {
       {russianLanguage.secondsText}
     </p>
   ) : (
-    <button className={classes.button} onClick={onAttempt}>
+    <button className={styles.button} onClick={onAttempt}>
       {russianLanguage.buttonText}
     </button>
   );

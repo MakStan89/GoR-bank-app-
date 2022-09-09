@@ -3,7 +3,7 @@ import { useFormValidation } from './hooks';
 import { ContinueButton, QuestionTextArea, SecurityQuestionSelect } from '../../../../ui-kit';
 import { russianLanguage } from './constants';
 import { Props } from '../types';
-import * as classes from './styles.module.scss';
+import styles from './styles.module.scss';
 
 export const SecurityQuestionForm = ({ onNextStep }: Props) => {
   const { values, handleChange, handleSelect, handleValid, valid } = useFormValidation();
@@ -16,7 +16,7 @@ export const SecurityQuestionForm = ({ onNextStep }: Props) => {
   };
 
   return (
-    <form className={classes.form} onSubmit={handleSubmit}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       <SecurityQuestionSelect onSelect={handleSelect} value={values.questions} />
       {values.questions === russianLanguage.questions[5] && (
         <QuestionTextArea

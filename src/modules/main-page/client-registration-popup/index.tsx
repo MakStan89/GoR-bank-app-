@@ -9,13 +9,15 @@ import { SuccessPopup } from './popup';
 import { defaultFormData } from '../../hooks/useFormValidation/constants';
 import { FormDataProps } from '../../hooks/useFormValidation/types';
 import { Props, Steps } from './types';
-import * as classes from './styles.module.scss';
+import styles from './styles.module.scss';
 
 export const ClientRegister = React.memo(({ isOpen, onClose }: Props) => {
   const [currentStep, setCurrentStep] = useState<number>(Steps.EnterTelephone);
   const [formData, setFormData] = useState<FormDataProps>(defaultFormData);
 
-  const ClientRegisterPopupClassName = cn(isOpen ? classes.registrationOpen : classes.registration);
+  const ClientRegisterPopupClassName = cn(
+    isOpen ? styles['registration-open'] : styles.registration
+  );
 
   const handleClosePopup = () => {
     onClose();

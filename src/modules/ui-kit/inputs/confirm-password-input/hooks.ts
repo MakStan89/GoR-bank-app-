@@ -2,7 +2,7 @@ import cx from 'classnames';
 import { useState, useEffect } from 'react';
 import { name, russianLanguage } from './constants';
 import { PasswordErrors } from '../types';
-import * as classes from '../styles.module.scss';
+import styles from '../styles.module.scss';
 
 export const useValidation = (
   value: string,
@@ -52,21 +52,21 @@ export const useClassNames = (
   const isCapsLockError = isHasFocus && error === PasswordErrors.CapsLock;
   const isValidityError = !isHasFocus && error !== PasswordErrors.None && value;
 
-  const inputClassName = cx([classes.input], {
-    [classes.inputError]: isCapsLockError || isValidityError,
+  const inputClassName = cx(styles.input, {
+    [styles['input-error']]: isCapsLockError || isValidityError,
   });
-  const inputLabelClassName = cx([classes.label], {
-    [classes.labelVisible]: isHasFocus || value,
+  const inputLabelClassName = cx(styles.label, {
+    [styles['label-visible']]: isHasFocus || value,
   });
-  const inputMessageClassName = cx([classes.message], {
-    [classes.messageError]: isCapsLockError || isValidityError,
+  const inputMessageClassName = cx(styles.message, {
+    [styles['message-error']]: isCapsLockError || isValidityError,
   });
-  const warningIconClassName = cx([classes.warning], {
-    [classes.warningActive]: isCapsLockError || isValidityError,
+  const warningIconClassName = cx(styles.warning, {
+    [styles['warning-active']]: isCapsLockError || isValidityError,
   });
-  const passwordButtonClassName = cx([classes.password], {
-    [classes.passwordVisible]: value && isPasswordVisible,
-    [classes.passwordHidden]: value && !isPasswordVisible,
+  const passwordButtonClassName = cx(styles.password, {
+    [styles['password-visible']]: value && isPasswordVisible,
+    [styles['password-hidden']]: value && !isPasswordVisible,
   });
 
   return {

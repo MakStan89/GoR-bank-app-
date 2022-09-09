@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useClassNames, useValidation } from './hooks';
 import { russianLanguage, name } from './constants';
 import { Props } from '../types';
-import * as classes from '../styles.module.scss';
+import styles from '../styles.module.scss';
 
 export const SmsInput = ({ value, handleChange, handleValid, request }: Props) => {
   const [isHasFocus, setHasFocus] = useState<boolean>(false);
@@ -13,7 +13,7 @@ export const SmsInput = ({ value, handleChange, handleValid, request }: Props) =
     useClassNames(isHasFocus, error, value);
 
   return (
-    <div className={classes.container}>
+    <div className={styles.container}>
       <span className={inputLabelClassName}>{russianLanguage.labelText}</span>
       <ReactInputMask
         className={inputClassName}
@@ -28,7 +28,7 @@ export const SmsInput = ({ value, handleChange, handleValid, request }: Props) =
         onFocus={() => setHasFocus(true)}
         onBlur={() => setHasFocus(false)}
       />
-      <div className={classes.icons}>
+      <div className={styles.icons}>
         <span className={warningIconClassName} />
       </div>
       <span className={inputMessageClassName}>{errorMessage}</span>

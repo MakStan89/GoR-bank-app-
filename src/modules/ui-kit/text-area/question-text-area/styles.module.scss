@@ -1,11 +1,11 @@
-.text-area-container {
+.container {
   width: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
-.text-area {
+.area {
   min-height: 50px;
   position: relative;
   width: 100%;
@@ -54,7 +54,7 @@
   }
 }
 
-.text-area-label {
+.label {
   display: none;
   &-active {
     display: block;
@@ -65,7 +65,7 @@
   }
 }
 
-.error-message {
+.message {
   display: none;
   &-active {
     align-self: start;
@@ -78,7 +78,7 @@
   }
 }
 
-.error-icon {
+.icon {
   display: none;
   &-active {
     display: block;
@@ -91,7 +91,7 @@
   }
 }
 
-.text-area-counter {
+.counter {
   display: none;
   &-active {
     display: block;

@@ -5,7 +5,7 @@ import { SmsInput, ContinueButton } from '../../../../ui-kit';
 import { SmsTimer } from './sms-timer';
 import { russianLanguage } from './constants';
 import { Props } from '../types';
-import * as classes from './styles.module.scss';
+import styles from './styles.module.scss';
 
 export const SmsForm = ({ onNextStep, telephone }: Props) => {
   const [attempt, setAttempt] = useState<number>(1);
@@ -23,7 +23,7 @@ export const SmsForm = ({ onNextStep, telephone }: Props) => {
   }, [attempt]);
 
   return (
-    <form className={classes.form} onSubmit={handleSubmit}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       <h3>
         {russianLanguage.titleText}
         {telephone}

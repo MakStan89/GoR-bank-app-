@@ -6,16 +6,16 @@ import { AuthPassportForm } from '../passport-auth-form';
 import { BackButton } from '../../../../ui-kit';
 import { russianLanguage } from './constants';
 import { Props } from './types';
-import * as classes from './styles.module.scss';
+import styles from './styles.module.scss';
 
 export const AuthFormWrapper = ({ onClose }: Props) => {
   const [selectedForm, setSelectedForm] = useState<string>('telephone');
 
-  const telephoneClassName = cn(classes.toggle, {
-    [classes.toggleActive]: selectedForm === 'telephone',
+  const telephoneClassName = cn(styles.toggle, {
+    [styles['toggle-active']]: selectedForm === 'telephone',
   });
-  const passportClassName = cn(classes.toggle, {
-    [classes.toggleActive]: selectedForm === 'passport',
+  const passportClassName = cn(styles.toggle, {
+    [styles['toggle-active']]: selectedForm === 'passport',
   });
 
   const changeForm = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -24,11 +24,11 @@ export const AuthFormWrapper = ({ onClose }: Props) => {
   };
 
   return (
-    <section className={classes.popup}>
+    <section className={styles.popup}>
       <BackButton text={russianLanguage.BackButtonText} handleClick={onClose} />
-      <div className={classes.container}>
-        <h2 className={classes.title}>{russianLanguage.title}</h2>
-        <div className={classes.toggles}>
+      <div className={styles.container}>
+        <h2 className={styles.title}>{russianLanguage.title}</h2>
+        <div className={styles.toggles}>
           <button name="telephone" className={telephoneClassName} onClick={changeForm}>
             {russianLanguage.telephoneButtonText}
           </button>
@@ -38,7 +38,7 @@ export const AuthFormWrapper = ({ onClose }: Props) => {
         </div>
         {selectedForm === 'telephone' && <AuthTelephoneForm />}
         {selectedForm === 'passport' && <AuthPassportForm />}
-        <div className={classes.description}>
+        <div className={styles.description}>
           <a href="#">{russianLanguage.demoText}</a>
           <a href="#">{russianLanguage.forgetText}</a>
         </div>

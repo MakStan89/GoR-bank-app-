@@ -7,12 +7,12 @@ import { SecurityQuestionForm } from '../form/security-question-form';
 import { CloseButton, BackButton } from '../../../ui-kit';
 import { russianLanguage } from './constants';
 import { Props } from './types';
-import * as classes from './styles.module.scss';
+import styles from './styles.module.scss';
 
 export const Main = ({ onNextStep, onBack, onClose, currentStep, onJoin, formData }: Props) => {
   const getStepClassName = (index: number) =>
-    cx([classes.step], {
-      [classes.stepActive]: currentStep === index + 1 || currentStep > index + 1,
+    cx(styles.step, {
+      [styles['step-active']]: currentStep === index + 1 || currentStep > index + 1,
     });
 
   const steps = russianLanguage.steps.map(
@@ -25,14 +25,14 @@ export const Main = ({ onNextStep, onBack, onClose, currentStep, onJoin, formDat
   );
 
   return (
-    <section className={classes.registration}>
-      <div className={classes.buttons}>
+    <section className={styles.registration}>
+      <div className={styles.buttons}>
         <BackButton text={russianLanguage.backButtonText} handleClick={onBack} />
         <CloseButton handleClick={onClose} />
       </div>
-      <div className={classes.title}>
+      <div className={styles.title}>
         <h2>{russianLanguage.titleText}</h2>
-        <div className={classes.steps}>{steps}</div>
+        <div className={styles.steps}>{steps}</div>
         {currentStep === 0 && <TelephoneForm onNextStep={onNextStep} onJoin={onJoin} />}
         {currentStep === 1 && <SmsForm onNextStep={onNextStep} telephone={formData.telephone} />}
         {currentStep === 2 && <PasswordForm onNextStep={onNextStep} />}

@@ -2,7 +2,7 @@ import cx from 'classnames';
 import { useState, useEffect } from 'react';
 import { russianLanguage, name } from './constants';
 import { TelephoneErrors } from '../types';
-import * as classes from '../styles.module.scss';
+import styles from '../styles.module.scss';
 
 export const useValidation = (
   value: string,
@@ -42,17 +42,17 @@ export const useValidation = (
 };
 
 export const useClassNames = (isHasFocus: boolean, error: TelephoneErrors, value: string) => {
-  const inputClassName = cx([classes.input], {
-    [classes.inputError]: !isHasFocus && error && value,
+  const inputClassName = cx(styles.input, {
+    [styles['input-error']]: !isHasFocus && error && value,
   });
-  const inputLabelClassName = cx([classes.label], {
-    [classes.labelVisible]: isHasFocus || value,
+  const inputLabelClassName = cx(styles.label, {
+    [styles['label-visible']]: isHasFocus || value,
   });
-  const inputMessageClassName = cx([classes.message], {
-    [classes.messageError]: !isHasFocus && error && value,
+  const inputMessageClassName = cx(styles.message, {
+    [styles['message-error']]: !isHasFocus && error && value,
   });
-  const warningIconClassName = cx([classes.warning], {
-    [classes.warningActive]: !isHasFocus && error && value,
+  const warningIconClassName = cx(styles.warning, {
+    [styles['warning-active']]: !isHasFocus && error && value,
   });
 
   return {

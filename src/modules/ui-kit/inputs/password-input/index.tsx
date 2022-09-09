@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useClassNames, useValidation } from './hooks';
 import { maxLength, name, russianLanguage } from './constants';
 import { Props } from '../types';
-import * as classes from '../styles.module.scss';
+import styles from '../styles.module.scss';
 
 export const PasswordInput = ({ value, handleChange, handleValid, request, isMessage }: Props) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
@@ -18,7 +18,7 @@ export const PasswordInput = ({ value, handleChange, handleValid, request, isMes
   } = useClassNames(isHasFocus, error, value, isPasswordVisible, isMessage);
 
   return (
-    <div className={classes.container}>
+    <div className={styles.container}>
       <span className={inputLabelClassName}>{russianLanguage.labelText}</span>
       <input
         className={inputClassName}
@@ -32,7 +32,7 @@ export const PasswordInput = ({ value, handleChange, handleValid, request, isMes
         onFocus={() => setHasFocus(true)}
         onBlur={() => setHasFocus(false)}
       />
-      <div className={classes.icons}>
+      <div className={styles.icons}>
         <button
           className={passwordButtonClassName}
           type="button"

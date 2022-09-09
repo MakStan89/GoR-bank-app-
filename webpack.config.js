@@ -39,7 +39,6 @@ module.exports = {
         exclude: /\.module\.(s*)css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
-
       {
         test: /\.(s*)css$/,
         exclude: /node_modules/,
@@ -56,7 +55,6 @@ module.exports = {
             options: {
               esModule: true,
               modules: {
-                namedExport: true,
                 localIdentName: '[local]-[hash:base64:5]',
               },
             },

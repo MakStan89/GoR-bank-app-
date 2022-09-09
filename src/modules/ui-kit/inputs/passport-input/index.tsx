@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useClassNames, useValidation } from './hooks';
 import { russianLanguage, maxLength, name } from './constants';
 import { Props } from '../types';
-import * as classes from '../styles.module.scss';
+import styles from '../styles.module.scss';
 
 export const PassportInput = ({ value, handleChange, handleValid, request }: Props) => {
   const [isHasFocus, setHasFocus] = useState<boolean>(false);
@@ -12,7 +12,7 @@ export const PassportInput = ({ value, handleChange, handleValid, request }: Pro
     useClassNames(isHasFocus, error, value);
 
   return (
-    <div className={classes.container}>
+    <div className={styles.container}>
       <span className={inputLabelClassName}>{russianLanguage.labelText}</span>
       <input
         className={inputClassName}
@@ -26,7 +26,7 @@ export const PassportInput = ({ value, handleChange, handleValid, request }: Pro
         onFocus={() => setHasFocus(true)}
         onBlur={() => setHasFocus(false)}
       />
-      <div className={classes.icons}>
+      <div className={styles.icons}>
         <span className={warningIconClassName} />
       </div>
       <span className={inputMessageClassName}>{errorMessage}</span>

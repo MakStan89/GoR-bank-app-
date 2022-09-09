@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import { useClassNames, useValidation } from './hooks';
 import { Props } from './types';
-import './';
+import styles from './styles.module.scss';
 
 export const QuestionTextArea = ({ name, text, value, handleChange, handleValid }: Props) => {
   const [isHasFocus, setHasFocus] = useState<boolean>(false);
@@ -16,7 +16,7 @@ export const QuestionTextArea = ({ name, text, value, handleChange, handleValid 
   } = useClassNames(isHasFocus, error, value);
 
   return (
-    <div className="text-area-container">
+    <div className={styles.container}>
       <span className={labelClassName}>{text}</span>
       <textarea
         name={name}

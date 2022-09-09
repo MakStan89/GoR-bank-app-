@@ -2,6 +2,7 @@ import cx from 'classnames';
 import { useState, useEffect } from 'react';
 import { SecurityQuestionErrors } from './types';
 import { russianLanguage, maxLength, minLength } from './constants';
+import styles from './styles.module.scss';
 
 export const useValidation = (
   value: string,
@@ -39,21 +40,21 @@ export const useClassNames = (
   error: SecurityQuestionErrors,
   value: string
 ) => {
-  const textAreaClassName = cx('text-area', {
-    'text-area-active': value,
-    'text-area-error': value && error && !isHasFocus,
+  const textAreaClassName = cx(styles.area, {
+    [styles['area-active']]: value,
+    [styles['area-error']]: value && error && !isHasFocus,
   });
-  const labelClassName = cx('text-area-label', {
-    'text-area-label-active': isHasFocus || value,
+  const labelClassName = cx(styles.label, {
+    [styles['label-active']]: isHasFocus || value,
   });
-  const errorMessageClassName = cx('error-message', {
-    'error-message-active': value && error && !isHasFocus,
+  const errorMessageClassName = cx(styles.message, {
+    [styles['message-active']]: value && error && !isHasFocus,
   });
-  const errorIconClassName = cx('error-icon', {
-    'error-icon-active': value && error && !isHasFocus,
+  const errorIconClassName = cx(styles.icon, {
+    [styles['icon-active']]: value && error && !isHasFocus,
   });
-  const counterClassName = cx('text-area-counter', {
-    'text-area-counter-active': value,
+  const counterClassName = cx(styles.counter, {
+    [styles['counter-active']]: value,
   });
 
   return {
