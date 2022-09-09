@@ -23,7 +23,7 @@ export const englishLanguage = {
   backButton: 'Back',
 } as const;
 
-export const currencies: ItemCurrency[] = [
+export const CURRENCIES: ItemCurrency[] = [
   {
     id: 0,
     name: 'EUR',

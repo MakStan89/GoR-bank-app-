@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ContainerComponent } from '../container-component/index';
-import { currencies, englishLanguage, russianLanguage } from './constants';
+import { CURRENCIES, englishLanguage, russianLanguage } from './constants';
 import { ExchangeItem } from './exchange-item';
 import s from './styles.module.scss';
 
@@ -15,7 +15,7 @@ export const ExchangeRates = () => {
             <p className={s.buying}>{englishLanguage.tableBuying}</p>
             <p className={s.selling}>{englishLanguage.tableSelling}</p>
           </div>
-          {currencies.map((obj) => (
+          {CURRENCIES.map((obj) => (
             <div key={obj.id} className={s.exchangeItemContainer}>
               <ExchangeItem
                 name={obj.name}

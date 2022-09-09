@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ItemExchange } from "./types";
+import { ItemCurrency } from "../../../../main-page/exchange/currency-item/types";
 import s from './styles.module.scss';
 
 export const ExchangeItem = ({
@@ -8,7 +8,7 @@ export const ExchangeItem = ({
   image,
   buying,
   selling,
-}: ItemExchange) => {
+}: ItemCurrency) => {
   return (
     <div className={s.row}>
       <div className={s.currencyInfo}>
