@@ -6,6 +6,8 @@ export type Props = {
   handleValid: (valid: boolean, name: string) => void;
   request: number;
   isMessage?: boolean;
+  labelText?: string;
+  placeholderText?: string;
 };
 
 export enum TelephoneErrors {

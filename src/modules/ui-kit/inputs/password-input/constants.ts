@@ -1,4 +1,5 @@
 export const name = 'password';
+export const minLength = 6;
 export const maxLength = 20;
 
 export const russianLanguage = {

@@ -25,12 +25,16 @@ export const PasswordForm = ({ onNextStep }: Props) => {
         handleValid={handleValid}
         request={null}
         isMessage={true}
+        labelText={russianLanguage.passwordLabelText}
+        placeholderText={russianLanguage.passwordPlaceholderText}
       />
       <ConfirmPasswordInput
         value={values.confirmPassword}
         handleChange={handleChange}
         handleValid={handleValid}
         request={request}
+        labelText={russianLanguage.confirmPasswordLabelText}
+        placeholderText={russianLanguage.confirmPasswordPlaceholderText}
       />
       <ContinueButton
         isActive={valid.password && valid.confirmPassword}
