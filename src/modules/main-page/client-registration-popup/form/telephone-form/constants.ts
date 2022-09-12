@@ -5,4 +5,6 @@ export const russianLanguage = {
   and: 'и ',
   confidentialityText: 'Политикой конфиденциальности ',
   serviceText: 'Правилами дистанционного банковского обслуживания',
+  telephonePlaceholderText: 'Телефон',
+  telephoneLabelText: 'Введите номер телефона',
 };
