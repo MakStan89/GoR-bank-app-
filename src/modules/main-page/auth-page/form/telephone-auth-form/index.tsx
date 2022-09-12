@@ -18,12 +18,16 @@ export const AuthTelephoneForm = () => {
         handleChange={handleChange}
         handleValid={handleValid}
         request={null}
+        labelText={russianLanguage.telephoneLabelText}
+        placeholderText={russianLanguage.telephonePlaceholderText}
       />
       <PasswordInput
         value={values.password}
         handleChange={handleChange}
         handleValid={handleValid}
         request={null}
+        labelText={russianLanguage.passwordLabelText}
+        placeholderText={russianLanguage.passwordPlaceholderText}
       />
       <ContinueButton
         isActive={valid.telephone && valid.password}

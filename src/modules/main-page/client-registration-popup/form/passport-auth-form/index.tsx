@@ -18,12 +18,16 @@ export const AuthPassportForm = () => {
         handleChange={handleChange}
         handleValid={handleValid}
         request={null}
+        labelText={russianLanguage.passportLabelText}
+        placeholderText={russianLanguage.passportPlaceholderText}
       />
       <PasswordInput
         value={values.password}
         handleChange={handleChange}
         handleValid={handleValid}
         request={null}
+        labelText={russianLanguage.passwordLabelText}
+        placeholderText={russianLanguage.passwordPlaceholderText}
       />
       <ContinueButton
         isActive={valid.passport && valid.password}

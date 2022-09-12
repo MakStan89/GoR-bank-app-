@@ -5,7 +5,14 @@ import { russianLanguage, maxLength, name } from './constants';
 import { Props } from '../types';
 import styles from '../styles.module.scss';
 
-export const PassportInput = ({ value, handleChange, handleValid, request }: Props) => {
+export const PassportInput = ({
+  value,
+  handleChange,
+  handleValid,
+  request,
+  labelText,
+  placeholderText,
+}: Props) => {
   const [isHasFocus, setHasFocus] = useState<boolean>(false);
   const { error, errorMessage } = useValidation(value, request, isHasFocus, handleValid);
   const { inputLabelClassName, inputClassName, warningIconClassName, inputMessageClassName } =
@@ -13,11 +20,11 @@ export const PassportInput = ({ value, handleChange, handleValid, request }: Pro
 
   return (
     <div className={styles.container}>
-      <span className={inputLabelClassName}>{russianLanguage.labelText}</span>
+      <span className={inputLabelClassName}>{labelText}</span>
       <input
         className={inputClassName}
         name={name}
-        placeholder={russianLanguage.placeholderText}
+        placeholder={placeholderText}
         type="text"
         autoComplete="off"
         value={value ?? ''}

@@ -24,6 +24,8 @@ export const TelephoneForm = ({ onNextStep, onJoin }: Props) => {
         handleChange={handleChange}
         handleValid={handleValid}
         request={null}
+        labelText={russianLanguage.telephoneLabelText}
+        placeholderText={russianLanguage.telephonePlaceholderText}
       />
       {requestError && (
         <button className={styles.button} onClick={onJoin}>

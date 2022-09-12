@@ -33,6 +33,8 @@ export const SmsForm = ({ onNextStep, telephone }: Props) => {
         handleChange={handleChange}
         handleValid={handleValid}
         request={null}
+        labelText={russianLanguage.smsLabelText}
+        placeholderText={russianLanguage.smsPlaceholderText}
       />
       <SmsTimer attempt={attempt} onAttempt={handleNewAttempt} />
       <ContinueButton

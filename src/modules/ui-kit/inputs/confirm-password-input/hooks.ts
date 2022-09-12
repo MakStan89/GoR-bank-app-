@@ -1,6 +1,6 @@
 import cx from 'classnames';
 import { useState, useEffect } from 'react';
-import { name, russianLanguage } from './constants';
+import { minLength, name, russianLanguage } from './constants';
 import { PasswordErrors } from '../types';
 import styles from '../styles.module.scss';
 
@@ -29,7 +29,7 @@ export const useValidation = (
 
     if (caps && isHasFocus) {
       setError(PasswordErrors.CapsLock);
-    } else if (!passwordRegExp.test(value) || spaceRegExp.test(value)) {
+    } else if (!passwordRegExp.test(value) || spaceRegExp.test(value) || value.length < minLength) {
       setError(PasswordErrors.IncorrectPassword);
       handleValid(false, name);
     } else if (requestError) {
@@ -65,8 +65,8 @@ export const useClassNames = (
     [styles['warning-active']]: isCapsLockError || isValidityError,
   });
   const passwordButtonClassName = cx(styles.password, {
-    [styles['password-visible']]: value && isPasswordVisible,
-    [styles['password-hidden']]: value && !isPasswordVisible,
+    [styles['password-visible']]: (isHasFocus || value) && isPasswordVisible,
+    [styles['password-hidden']]: (isHasFocus || value) && !isPasswordVisible,
   });
 
   return {
