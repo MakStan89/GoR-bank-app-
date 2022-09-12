@@ -16,7 +16,7 @@ export const Header = ({ isDark = false }: Props) => {
 
   const russianName = cn(styles.language, { [styles['language-active']] : language === 'russian' });
   const englishName = cn(styles.language, { [styles['language-active']] : language === 'english' });
-  const headerClassName = cn(isDark ? styles['headerW-wite'] : styles['header-black']);
+  const headerClassName = cn(isDark ? styles['header-white'] : styles['header-black']);
 
   const changeLanguage = (e: React.MouseEvent<HTMLButtonElement>) => {
     const { name } = e.target as HTMLButtonElement;

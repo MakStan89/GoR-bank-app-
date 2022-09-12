@@ -3,4 +3,6 @@ export type NavbarType = {
   image?: string;
   imageSelect?: string;
   name: string;
+  isActive: boolean;
+  isHidden: boolean;
 };

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ItemCurrency } from "../../../../main-page/exchange/currency-item/types";
+import { ItemCurrency } from "./types";
 import styles from './styles.module.scss';
 
 export const ExchangeItem = ({
