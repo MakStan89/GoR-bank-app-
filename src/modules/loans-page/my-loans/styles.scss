@@ -1,0 +1,106 @@
+// variables
+$main-col: #212529;
+$extra-col: #9e9e9e;
+$mark-col: #ffd600;
+$border-col: #eeeeee;
+$font-text: "Roboto", sans-serif;
+
+// mixins
+@mixin font($font-size, $line-height, $font-weight: null) {
+  font: $font-weight #{$font-size} / #{$line-height} $font-text;
+}
+
+// 
+
+.flex {
+  display: flex;
+}
+
+.wrapper {
+  max-width: 70%;
+  margin: 0 auto;
+  margin-left: 100px;
+  margin-top: 65px;
+
+  &__list {
+    border: 1px solid $border-col;
+    border-radius: 6px;
+  }
+
+  &--applicate {
+    max-width: 80%;
+  }
+}
+
+.loans {
+  color: $main-col;
+  @include font(16px, 24px, 700);
+
+  span {
+    display: block;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    @include font(24px, 36px, 700);
+    color: $main-col;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 40px;
+    @include font(16px, 24px, 700);
+    color: $main-col;
+
+    &-main {
+      margin-left: 16px;
+
+      span {
+        display: block;
+      }
+    }
+
+    &-name {
+      margin-bottom: 4px;
+      // color: $main-col;
+    }
+
+    &-duration {
+      color: $extra-col;
+      font-weight: 400;
+    }
+
+    &-status {
+      &-box {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+      }
+
+      &--process {
+        background-color: rgba(255, 249, 196, 0.5);
+        border-radius: 20px;
+        color: $mark-col;
+        @include font(14px, 20px, 400);
+        padding: 6px 12px;
+        margin-left: 16px;
+      }
+    }
+
+    &-more {
+      background: url(../../../content/icons/arrowdown.svg) no-repeat right top;
+      padding-right: 22px;    
+      display: flex;
+      align-items: flex-start;
+      cursor: pointer;
+    }
+  }
+
+  &__message {
+    background-color: $border-col;
+    padding: 16px 57px;
+    @include font(16px, 24px, 400);
+    color: $main-col;
+  }
+}
