@@ -9,10 +9,14 @@ export const NavbarItem = ({path, image, imageSelect, name, isActive, isHidden}:
   let item = cn(styles['item-base'], { [styles['item-active']] : isActive, [styles['item-hidden']] : isHidden });
   //let img = (isActive ? {imageSelect} : {image})
 
+  const imageComponent = typeof image === 'string'
+  ? <img className={styles.icon} src={image} alt=''/>
+  : image;
+
   return (
     <NavLink to={path} className={item}>
       <div className={styles['item-icon']}> 
-        <img className={styles.icon} src={image} alt=''/>
+      {imageComponent}
       </div>
       <span className={styles['item-text']}>{name}</span>
     </NavLink>
