@@ -4,22 +4,22 @@ import { Header } from '../../template-page/header';
 import { Telephone } from './telephone';
 import { Title } from './title';
 import { englishLanguage, russianLanguage } from './constants';
-import s from './styles.module.scss';
+import styles from './styles.module.scss';
 
 export const Contacts = () => {
   return (
-    <div className="wrapper">
+    <div className={styles.wrapper}>
       <Header />
       <Title text={englishLanguage.backButton} title={englishLanguage.title} />
-      <div className={s.innerContainer}>
-        <div className={s.category}>
-          <div className={s.subtitle}>
-            <h2 className={s.subtitleText}>{englishLanguage.subtitleInd}</h2>
-            <span className={`${s.subtitleImg} ${s.individuals}`} />
+      <div className={styles['inner-container']}>
+        <div className={styles.category}>
+          <div className={styles.subtitle}>
+            <h2 className={styles['subtitle-text']}>{englishLanguage.subtitleInd}</h2>
+            <span className={`${styles['subtitle-img']} ${styles.individuals}`} />
           </div>
-          <p className={s.text}>{englishLanguage.textInd}</p>
-          <p className={s.time}>{englishLanguage.timeInd}</p>
-          <div className={s.telephone}>
+          <p className={styles.text}>{englishLanguage.textInd}</p>
+          <p className={styles.time}>{englishLanguage.timeInd}</p>
+          <div className={styles.telephone}>
             <Telephone number={englishLanguage.numberFreeInd} text={englishLanguage.freeCalls} />
             <Telephone
               number={englishLanguage.numberInterInd}
@@ -27,15 +27,15 @@ export const Contacts = () => {
             />
           </div>
         </div>
-        <div className={s.category}>
-          <div className={s.subtitle}>
-            <h2 className={s.subtitleText}>{englishLanguage.subtitleCards}</h2>
-            <span className={`${s.subtitleImg} ${s.cards}`} />
+        <div className={styles.category}>
+          <div className={styles.subtitle}>
+            <h2 className={styles['subtitle-text']}>{englishLanguage.subtitleCards}</h2>
+            <span className={`${styles['subtitle-img']} ${styles.cards}`} />
           </div>
-          <p className={s.text}>{englishLanguage.textCards}</p>
-          <p className={s.time}>{englishLanguage.timeCards}</p>
-          <p className={s.time}>{englishLanguage.timeCardsWeekend}</p>
-          <div className={s.telephone}>
+          <p className={styles.text}>{englishLanguage.textCards}</p>
+          <p className={styles.time}>{englishLanguage.timeCards}</p>
+          <p className={styles.time}>{englishLanguage.timeCardsWeekend}</p>
+          <div className={styles.telephone}>
             <Telephone number={englishLanguage.numberFreeCards} text={englishLanguage.freeCalls} />
             <Telephone
               number={englishLanguage.numberInterCards}
@@ -43,7 +43,7 @@ export const Contacts = () => {
             />
           </div>
         </div>
-        <div className={s.notice}>{englishLanguage.notice}</div>
+        <div className={styles.notice}>{englishLanguage.notice}</div>
       </div>
       <Footer />
     </div>

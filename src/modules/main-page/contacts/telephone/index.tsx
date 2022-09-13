@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { Props, PropsFooter } from './types';
-import s from './styles.module.scss';
+import styles from './styles.module.scss';
 
 export const Telephone = ({ number, text }: Props) => {
   return (
-    <div className={s.telephoneBlock}>
-      <span className={s.telephoneBlockImg}/>
-      <div className={`${s.telephoneBlockItem} ${s.item}`}>
-        <div className={s.itemNumber}>{number}</div>
-        <div className={s.itemText}>{text}</div>
+    <div className={styles['telephone-block']}>
+      <span className={styles['telephone-block-img']}/>
+      <div className={`${styles['telephone-block-item']} ${styles.item}`}>
+        <div className={styles['item-number']}>{number}</div>
+        <div className={styles['item-text']}>{text}</div>
       </div>
     </div>
   );
@@ -16,15 +16,15 @@ export const Telephone = ({ number, text }: Props) => {
 
 export const TelephoneFooter = ({ numberFree, textFree, numberInter, textInter }: PropsFooter) => {
   return (
-    <div className={s.telephoneFooter}>
-      <span className={s.telephoneBlockImg}/>
-      <div className={`${s.telephoneBlockItem} ${s.item}`}>
-        <div className={s.itemNumber}>{numberFree}</div>
-        <div className={s.itemText}>{textFree}</div>
+    <div className={styles['telephone-footer']}>
+      <span className={styles['telephone-block-img']}/>
+      <div className={`${styles['telephone-block-item']} ${styles.item}`}>
+        <div className={styles['item-number']}>{numberFree}</div>
+        <div className={styles['item-text']}>{textFree}</div>
       </div>
-      <div className={`${s.telephoneBlockItem} ${s.item}`}>
-        <div className={s.itemNumber}>{numberInter}</div>
-        <div className={s.itemText}>{textInter}</div>
+      <div className={`${styles['telephone-block-item']} ${styles.item}`}>
+        <div className={styles['item-number']}>{numberInter}</div>
+        <div className={styles['item-text']}>{textInter}</div>
       </div>
     </div>
   );

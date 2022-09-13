@@ -1,4 +1,4 @@
-.innerContainer {
+.inner-container {
   margin: 0 auto;
   padding-bottom: 80px;
   display: flex;
@@ -16,14 +16,14 @@
       display: flex;
       align-items: center;
 
-      .subtitleText {
+      .subtitle-text {
         font-size: 16px;
         font-weight: 700;
         line-height: 24px;
         margin-right: 14px;
       }
 
-      .subtitleImg {
+      .subtitle-img {
         display: block;
         width: 20px;
       }

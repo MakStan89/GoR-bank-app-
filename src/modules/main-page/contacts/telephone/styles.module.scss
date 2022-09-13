@@ -1,10 +1,10 @@
-.telephoneBlock {
+.telephone-block {
   width: 270px;
   display: flex;
   align-items: center;
 
 
-  .telephoneBlockImg {
+  .telephone-block-img {
     background: center / contain no-repeat url(../../../../content/icons/telephone.svg);
     width: 13px;
     height: 22px;
@@ -14,23 +14,23 @@
 }
 
 
-.telephoneBlockItem {
+.telephone-block-item {
 
-  .itemText {
+  .item-text {
     font-size: 12px;
     line-height: 16px;
     color: #9e9e9e;
   }
 }
 
-.telephoneFooter {
+.telephone-footer {
   margin-top: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 279px;
 
-  .telephoneBlockImg {
+  .telephone-block-img {
     background: center / contain no-repeat url(../../../../content/icons/telephone.svg);
     width: 13px;
     height: 22px;
