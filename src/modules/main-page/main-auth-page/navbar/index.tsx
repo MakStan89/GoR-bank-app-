@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { englishLanguage, PATH, russianLanguage} from './constants';
 import { NavbarSubitem } from './navbar-subitem';
 import { NavbarItem } from './navbar-item';
+import cn from 'classnames';
 import {
   MainPageIcon, PaymentsIcon, TransfersIcon, CardsIcon, LoansIcon, DepositsIcon, InvestingIcon, InsuranceIcon, DealsAndOffersIcon
 } from '../../../../content/icons/main-auth-page';
@@ -28,8 +29,10 @@ export const Navbar = () => {
   active[8] ? (hidden[7] = false, hidden[8] = false, hidden[9] = false, hidden[1] = true, hidden[2] = true, active[6] = true) : (hidden[7], hidden[8], hidden[9]);
   active[9] ? (hidden[7] = false, hidden[8] = false, hidden[9] = false, hidden[1] = true, hidden[2] = true, active[6] = true) : (hidden[7], hidden[8], hidden[9]);
 
+  const flexibleContainer = cn(styles.container, { [styles['container-large']] : active[6] === true });
+
   return (
-    <div className={styles.container}>
+    <div className={flexibleContainer}>
       <NavbarItem path={PATH.mainPage} image={<MainPageIcon isWhite={active[0]} />} name={englishLanguage.mainPage} isActive={active[0]} isHidden={hidden[0]} />
       <NavbarItem path={PATH.payments} image={<PaymentsIcon isWhite={active[1]}/>} name={englishLanguage.payments} isActive={active[1]} isHidden={hidden[1]} />
       <NavbarItem path={PATH.transfers} image={<TransfersIcon isWhite={active[2]}/>} name={englishLanguage.transfers} isActive={active[2]} isHidden={hidden[2]} />
