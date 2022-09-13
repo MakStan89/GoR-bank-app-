@@ -1,28 +1,20 @@
-import * as React from "react";
-import NumberFormat from "react-number-format";
-import { useState, useEffect } from "react";
-import { useClassNames, useValidation } from "./hooks";
-import { IncomeProps } from "../types";
-import { englishLanguage, name } from "./constants";
-import "../styles.scss";
+import * as React from 'react';
+import NumberFormat from 'react-number-format';
+import { useState, useEffect } from 'react';
+import { useClassNames, useValidation } from './hooks';
+import { IncomeProps } from '../types';
+import { englishLanguage, name } from './constants';
+import styles from '../styles.module.scss';
 
-export const IncomeInput = ({
-  value,
-  handleChange,
-  handleValid,
-  request,
-  isEIN,
-}: IncomeProps) => {
+export const IncomeInput = ({ value, handleChange, handleValid, request, isEIN }: IncomeProps) => {
   const [isHasFocus, setHasFocus] = useState<boolean>(false);
-  const { error, errorMessage } = useValidation(
-    value,
-    request,
-    isHasFocus,
-    handleValid
-  );
+  const { error, errorMessage } = useValidation(value, request, isHasFocus, handleValid);
 
-  const { inputClassName, warningIconClassName, inputMessageClassName } =
-    useClassNames(isHasFocus, error, value);
+  const { inputClassName, warningIconClassName, inputMessageClassName } = useClassNames(
+    isHasFocus,
+    error,
+    value
+  );
   return (
     <div className="input-container">
       {isEIN ? (
@@ -34,7 +26,7 @@ export const IncomeInput = ({
           autoComplete="off"
           required={true}
           onChange={handleChange}
-          value={value ?? ""}
+          value={value ?? ''}
           maxLength={20}
           onFocus={() => setHasFocus(true)}
           onBlur={() => setHasFocus(false)}
@@ -47,8 +39,8 @@ export const IncomeInput = ({
           decimalScale={2}
           name={name}
           onChange={handleChange}
-          value={value ?? ""}
-          prefix={"$"}
+          value={value ?? ''}
+          prefix={'$'}
         />
       )}
 

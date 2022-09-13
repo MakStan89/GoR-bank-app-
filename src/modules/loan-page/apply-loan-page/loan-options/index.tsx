@@ -1,10 +1,10 @@
-import * as React from "react";
-import { useFormValidation } from "../../../hooks/useFormValidation";
-import { RangeInput } from "../../../ui-kit/inputs/range-input";
-import { IncomeInput } from "../../../ui-kit/inputs/income-input";
-import { LoanProps } from "./types";
-import { rangeValues } from "./constants";
-import "./styles.scss";
+import * as React from 'react';
+import { useFormValidation } from '../../../hooks/useFormValidation';
+import { RangeInput } from '../../../ui-kit/inputs/range-input';
+import { IncomeInput } from '../../../ui-kit/inputs/income-input';
+import { LoanProps } from './types';
+import { rangeValues } from './constants';
+import './styles.scss';
 
 export const LoanOptions = ({ title, subtitle }: LoanProps) => {
   const { values, handleChange, handleValid } = useFormValidation();

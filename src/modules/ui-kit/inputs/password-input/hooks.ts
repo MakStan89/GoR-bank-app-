@@ -1,6 +1,6 @@
 import cx from 'classnames';
 import { useState, useEffect } from 'react';
-import { russianLanguage, name, minLength, minLength } from './constants';
+import { russianLanguage, name, minLength } from './constants';
 import { PasswordErrors } from '../types';
 import styles from '../styles.module.scss';
 
@@ -28,12 +28,7 @@ export const useValidation = (
 
     if (caps && isHasFocus) {
       setError(PasswordErrors.CapsLock);
-    } else if (
-      !passwordRegExp.test(value) ||
-      spaceRegExp.test(value) ||
-      value.length < minLength ||
-      value.length < minLength
-    ) {
+    } else if (!passwordRegExp.test(value) || spaceRegExp.test(value) || value.length < minLength) {
       setError(PasswordErrors.IncorrectPassword);
       handleValid(false, name);
     } else if (requestError) {

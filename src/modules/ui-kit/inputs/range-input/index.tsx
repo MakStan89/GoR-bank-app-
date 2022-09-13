@@ -1,8 +1,8 @@
-import * as React from "react";
-import { useEffect } from "react";
-import { RangeProps } from "../types";
-import { defaultValues, name } from "./constants";
-import "../styles.scss";
+import * as React from 'react';
+import { useEffect } from 'react';
+import { RangeProps } from '../types';
+import { defaultValues, name } from './constants';
+import styles from '../styles.module.scss';
 
 export const RangeInput = ({ width, value, handleChange }: RangeProps) => {
   const MAX = defaultValues.maxAmount;
@@ -12,20 +12,16 @@ export const RangeInput = ({ width, value, handleChange }: RangeProps) => {
     return {
       width: `${width}px`,
       backgroundSize: `${
-        ((+tranformedValue - defaultValues.minAmount) * 100) /
-        (MAX - defaultValues.minAmount)
+        ((+tranformedValue - defaultValues.minAmount) * 100) / (MAX - defaultValues.minAmount)
       }% 100%`,
     };
   };
 
   const changeBack = () => {
     const size =
-      ((+tranformedValue - defaultValues.minAmount) * 100) /
-      (MAX - defaultValues.minAmount);
+      ((+tranformedValue - defaultValues.minAmount) * 100) / (MAX - defaultValues.minAmount);
     const elem = Array.from(
-      document.getElementsByClassName(
-        "input-range"
-      ) as HTMLCollectionOf<HTMLElement>
+      document.getElementsByClassName('input-range') as HTMLCollectionOf<HTMLElement>
     );
     elem[0].style.backgroundSize = `${size < 0 ? 0 : size}% 100%`;
   };
@@ -35,9 +31,9 @@ export const RangeInput = ({ width, value, handleChange }: RangeProps) => {
   }, [value]);
 
   return (
-    <div className="input-container">
+    <div className={styles.container}>
       <input
-        className="input-range"
+        className={styles['input-range']}
         type="range"
         min={defaultValues.minAmount}
         max={defaultValues.maxAmount}
@@ -51,8 +47,8 @@ export const RangeInput = ({ width, value, handleChange }: RangeProps) => {
 };
 
 function transformValue(value: string) {
-  if (value[0] === "$") {
-    let transformedValue = value.split(",").join("").slice(1);
+  if (value[0] === '$') {
+    let transformedValue = value.split(',').join('').slice(1);
 
     return String(Number.parseFloat(transformedValue));
   }
