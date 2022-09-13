@@ -1,23 +1,16 @@
-import * as React from "react";
-import { useState } from "react";
-import cn from "classnames";
-import { SelectItem } from "../select-item";
-import { currencies } from "../../constants";
-import { CurrencySelectItem } from "./types";
-import "./styles.scss";
+import * as React from 'react';
+import { useState } from 'react';
+import cn from 'classnames';
+import { SelectItem } from '../select-item';
+import { currencies } from '../../constants';
+import { CurrencySelectItem } from './types';
+import styles from './styles.module.scss';
 
-export const CurrencySelect = ({
-  currentCurrency,
-  onSelect,
-}: CurrencySelectItem) => {
+export const CurrencySelect = ({ currentCurrency, onSelect }: CurrencySelectItem) => {
   const [isOptionsOpen, setOptionsOpen] = useState<boolean>(false);
 
-  const optionsCurrencies = currencies.map((obj) => (
-    <div
-      key={obj.id}
-      className="options-currency-container"
-      onClick={() => handleChooseCurrency(obj.id)}
-    >
+  const optionsCurrencies = currencies.map(obj => (
+    <div key={obj.id} className={styles.content} onClick={() => handleChooseCurrency(obj.id)}>
       <SelectItem name={obj.name} fullName={obj.fullName} image={obj.image} />
     </div>
   ));
@@ -27,7 +20,7 @@ export const CurrencySelect = ({
   };
 
   const fetchCurrencyInfo = (id: number) => {
-    onSelect(currencies.filter((obj) => obj.id === id)[0]);
+    onSelect(currencies.filter(obj => obj.id === id)[0]);
   };
 
   const handleChooseCurrency = (id: number) => {
@@ -35,21 +28,17 @@ export const CurrencySelect = ({
     setOptionsOpen(!isOptionsOpen);
   };
 
-  const selectClassName = cn(
-    isOptionsOpen ? "options-container-open" : "options-container"
-  );
+  const selectClassName = cn(isOptionsOpen ? [styles['options-open']] : styles.options);
 
   return (
     <>
-      <div className="select-container" onClick={handleOptionsOpen}>
-        <div className="select-content">
-          <SelectItem
-            image={currentCurrency.image}
-            name={currentCurrency.name}
-            fullName={currentCurrency.fullName}
-          />
-        </div>
-        <div className="select-arrow"></div>
+      <div className={styles.container} onClick={handleOptionsOpen}>
+        <SelectItem
+          image={currentCurrency.image}
+          name={currentCurrency.name}
+          fullName={currentCurrency.fullName}
+        />
+        <div className={styles.arrow}></div>
       </div>
       <div className={selectClassName}>{optionsCurrencies}</div>
     </>

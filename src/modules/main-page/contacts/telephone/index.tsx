@@ -2,8 +2,7 @@ import * as React from 'react';
 import { Props, PropsFooter } from './types';
 import s from './styles.module.scss';
 
-export const Telephone = ({ number, text}: Props) => {
-
+export const Telephone = ({ number, text }: Props) => {
   return (
     <div className={s.telephoneBlock}>
       <span className={s.telephoneBlockImg}/>
@@ -12,11 +11,10 @@ export const Telephone = ({ number, text}: Props) => {
         <div className={s.itemText}>{text}</div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export const TelephoneFooter = ({ numberFree, textFree, numberInter, textInter}: PropsFooter) => {
-
+export const TelephoneFooter = ({ numberFree, textFree, numberInter, textInter }: PropsFooter) => {
   return (
     <div className={s.telephoneFooter}>
       <span className={s.telephoneBlockImg}/>
@@ -29,5 +27,5 @@ export const TelephoneFooter = ({ numberFree, textFree, numberInter, textInter}:
         <div className={s.itemText}>{textInter}</div>
       </div>
     </div>
-  )
-}
+  );
+};

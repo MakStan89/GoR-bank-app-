@@ -1,11 +1,19 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { useClassNames, useValidation } from './hooks';
-import { maxLength, name, russianLanguage } from './constants';
+import { maxLength, name } from './constants';
 import { Props } from '../types';
-import '../styles.scss';
+import styles from '../styles.module.scss';
 
-export const PasswordInput = ({ value, handleChange, handleValid, request, isMessage }: Props) => {
+export const PasswordInput = ({
+  value,
+  handleChange,
+  handleValid,
+  request,
+  isMessage,
+  labelText,
+  placeholderText,
+}: Props) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
   const [isHasFocus, setHasFocus] = useState<boolean>(false);
   const { error, errorMessage } = useValidation(value, request, isHasFocus, handleValid);
@@ -18,12 +26,12 @@ export const PasswordInput = ({ value, handleChange, handleValid, request, isMes
   } = useClassNames(isHasFocus, error, value, isPasswordVisible, isMessage);
 
   return (
-    <div className="input-container">
-      <span className={inputLabelClassName}>{russianLanguage.labelText}</span>
+    <div className={styles.container}>
+      <span className={inputLabelClassName}>{labelText}</span>
       <input
         className={inputClassName}
         name={name}
-        placeholder={russianLanguage.placeholderText}
+        placeholder={placeholderText}
         type={isPasswordVisible ? 'text' : 'password'}
         autoComplete="off"
         value={value ?? ''}
@@ -32,7 +40,7 @@ export const PasswordInput = ({ value, handleChange, handleValid, request, isMes
         onFocus={() => setHasFocus(true)}
         onBlur={() => setHasFocus(false)}
       />
-      <div className="icons-container">
+      <div className={styles.icons}>
         <button
           className={passwordButtonClassName}
           type="button"

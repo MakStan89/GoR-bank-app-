@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { SelectItemCurrency } from './types';
-import './styles.scss';
+import styles from './styles.module.scss';
 
 export const SelectItem = ({ image, name, fullName }: SelectItemCurrency) => {
   return (
-    <>
-      <img src={image} className="select-flag" alt={image} />
+    <div className={styles.content}>
+      <img className={styles.flag} src={image} alt={image} />
       <strong>{name}</strong>
-      <label className="full-name">{fullName}</label>
-    </>
+      <label className={styles.name}>{fullName}</label>
+    </div>
   );
 };

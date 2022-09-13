@@ -4,7 +4,7 @@ import { useFormValidation } from '../../../../hooks/useFormValidation';
 import { PasswordInput, ConfirmPasswordInput, ContinueButton } from '../../../../ui-kit';
 import { russianLanguage } from './constants';
 import { Props } from '../types';
-import './styles.scss';
+import styles from './styles.module.scss';
 
 export const PasswordForm = ({ onNextStep }: Props) => {
   const [request, setRequest] = useState(null);
@@ -18,19 +18,23 @@ export const PasswordForm = ({ onNextStep }: Props) => {
   useEffect(() => setRequest(null), [values]);
 
   return (
-    <form className="password-form" onSubmit={handleSubmit}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       <PasswordInput
         value={values.password}
         handleChange={handleChange}
         handleValid={handleValid}
         request={null}
         isMessage={true}
+        labelText={russianLanguage.passwordLabelText}
+        placeholderText={russianLanguage.passwordPlaceholderText}
       />
       <ConfirmPasswordInput
         value={values.confirmPassword}
         handleChange={handleChange}
         handleValid={handleValid}
         request={request}
+        labelText={russianLanguage.confirmPasswordLabelText}
+        placeholderText={russianLanguage.confirmPasswordPlaceholderText}
       />
       <ContinueButton
         isActive={valid.password && valid.confirmPassword}

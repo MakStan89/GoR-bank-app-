@@ -3,9 +3,16 @@ import { useState } from 'react';
 import { useClassNames, useValidation } from './hooks';
 import { maxLength, name, russianLanguage } from './constants';
 import { Props } from '../types';
-import '../styles.scss';
+import styles from '../styles.module.scss';
 
-export const ConfirmPasswordInput = ({ value, handleChange, handleValid, request }: Props) => {
+export const ConfirmPasswordInput = ({
+  value,
+  handleChange,
+  handleValid,
+  request,
+  labelText,
+  placeholderText,
+}: Props) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
   const [isHasFocus, setHasFocus] = useState<boolean>(false);
   const { error, errorMessage } = useValidation(value, request, isHasFocus, handleValid);
@@ -18,12 +25,12 @@ export const ConfirmPasswordInput = ({ value, handleChange, handleValid, request
   } = useClassNames(isHasFocus, error, value, isPasswordVisible);
 
   return (
-    <div className="input-container">
-      <span className={inputLabelClassName}>{russianLanguage.labelText}</span>
+    <div className={styles.container}>
+      <span className={inputLabelClassName}>{labelText}</span>
       <input
         className={inputClassName}
         name={name}
-        placeholder={russianLanguage.placeholderText}
+        placeholder={placeholderText}
         type={isPasswordVisible ? 'text' : 'password'}
         autoComplete="off"
         onChange={handleChange}
@@ -32,7 +39,7 @@ export const ConfirmPasswordInput = ({ value, handleChange, handleValid, request
         onFocus={() => setHasFocus(true)}
         onBlur={() => setHasFocus(false)}
       />
-      <div className="icons-container">
+      <div className={styles.icons}>
         <button
           className={passwordButtonClassName}
           type="button"

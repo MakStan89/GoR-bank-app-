@@ -1,31 +1,31 @@
-import * as React from "react";
-import { CurrencyItem } from "./currency-item";
-import { CurrencyConverter } from "./currency-converter";
-import { currencies, englishLanguage } from "./constants";
-import { Footer } from "../../template-page/footer";
-import { Header } from "../../template-page/header";
-import { Title } from "./title";
-import "./styles.scss";
+import * as React from 'react';
+import { CurrencyItem } from './currency-item';
+import { CurrencyConverter } from './currency-converter';
+import { currencies, englishLanguage } from './constants';
+import { Footer } from '../../template-page/footer';
+import { Header } from '../../template-page/header';
+import { Title } from './title';
+import styles from './styles.module.scss';
 
 export const Exchange = () => {
   return (
     <>
       <Header />
-      <div className="container-exchange">
-        <Title text={"Back"} title={""} />
-        <div className="wrapper-exchange">
+      <div className={styles.container}>
+        <Title text={englishLanguage.backButton} title={''} />
+        <div className={styles.wrapper}>
           <h5>{englishLanguage.exchangeTitle}</h5>
-          <div className="converter">
+          <div className={styles.converter}>
             <CurrencyConverter />
           </div>
-          <div className="table">
-            <div className="table-names">
-              <p className="currency">{englishLanguage.tableCurrency}</p>
-              <p className="buying">{englishLanguage.tableBuying}</p>
-              <p className="selling">{englishLanguage.tableSelling}</p>
+          <div className={styles.table}>
+            <div className={styles.title}>
+              <p className={styles.currency}>{englishLanguage.tableCurrency}</p>
+              <p className={styles.buying}>{englishLanguage.tableBuying}</p>
+              <p className={styles.selling}>{englishLanguage.tableSelling}</p>
             </div>
-            {currencies.map((obj) => (
-              <div key={obj.id} className="currency-item-container">
+            {currencies.map(obj => (
+              <div key={obj.id} className={styles.content}>
                 <CurrencyItem
                   name={obj.name}
                   fullName={obj.fullName}

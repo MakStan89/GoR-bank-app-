@@ -1,7 +1,7 @@
-import * as React from "react";
-import { useEffect, useState } from "react";
-import { CurrencySelect } from "./currency-select";
-import { ItemCurrency } from "./types";
+import * as React from 'react';
+import { useEffect, useState } from 'react';
+import { CurrencySelect } from './currency-select';
+import { ItemCurrency } from './types';
 import {
   DEFAULT_AMOUNT,
   FIRST_CURRENCY_DEFAULT,
@@ -11,10 +11,10 @@ import {
   RELATIVE_RATE,
   SECOND_CURRENCY_DEFAULT,
   SEPARATOR_DOT,
-} from "./constants";
-import ExchangeIcon from "../../../../content/icons/exchangeIcon.svg";
-import { englishLanguage } from "../constants";
-import "./styles.scss";
+} from './constants';
+import ExchangeIcon from '../../../../content/icons/exchangeIcon.svg';
+import { englishLanguage } from '../constants';
+import styles from './styles.module.scss';
 
 export const CurrencyConverter = () => {
   const [firstCurrentCurrency, setFirstCurrentCurrency] =
@@ -31,11 +31,11 @@ export const CurrencyConverter = () => {
   };
 
   const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const result = e.target.value.replace(REG_EXP_FOR_NUMBER, "");
+    const result = e.target.value.replace(REG_EXP_FOR_NUMBER, '');
     setAmountValue(result);
   };
 
-  const [priceValue, setPriceValue] = useState<string>("");
+  const [priceValue, setPriceValue] = useState<string>('');
 
   const sliceString = priceValue.split(SEPARATOR_DOT);
   const stringBeforeDot = sliceString[0];
@@ -43,13 +43,11 @@ export const CurrencyConverter = () => {
 
   const darkString =
     stringBeforeDot +
-    (stringAfterDot
-      ? SEPARATOR_DOT + stringAfterDot.slice(0, LENGTH_DARK_STRING_AFTER_DOT)
-      : "");
+    (stringAfterDot ? SEPARATOR_DOT + stringAfterDot.slice(0, LENGTH_DARK_STRING_AFTER_DOT) : '');
 
   const brightString = stringAfterDot
     ? stringAfterDot.slice(LENGTH_DARK_STRING_AFTER_DOT, MAX_LENGTH_AFTER_DOT)
-    : "";
+    : '';
 
   useEffect(() => {
     const sum = String(Number(amountValue) * RELATIVE_RATE);
@@ -57,42 +55,39 @@ export const CurrencyConverter = () => {
   }, [amountValue]);
 
   return (
-    <div className="container">
+    <div className={styles.wrapper}>
       <h5>{englishLanguage.converterTitle}</h5>
-      <div className="amount-container">
-        <CurrencySelect
-          currentCurrency={firstCurrentCurrency}
-          onSelect={setFirstCurrentCurrency}
-        />
-        <div className="amount">
-          <label className="sign-currency">{englishLanguage.amount}</label>
-          <div className="input-currency-container">
-            <p className="sign-currency">{firstCurrentCurrency.sign}</p>
+      <div className={styles.container}>
+        <CurrencySelect currentCurrency={firstCurrentCurrency} onSelect={setFirstCurrentCurrency} />
+        <div className={styles.amount}>
+          <label>{englishLanguage.amount}</label>
+          <div className={styles.field}>
+            <span className={styles.sign}>{firstCurrentCurrency.sign}</span>
             <input
-              className="input-currency"
+              className={styles.input}
               type="text"
               value={amountValue}
               onChange={handleChangeInput}
             />
-            <hr className="bottom-line"></hr>
+            <hr className={styles.line}></hr>
           </div>
         </div>
       </div>
-      <button className="exchange-button" onClick={handleViceVersa}>
+      <button className={styles.button} onClick={handleViceVersa}>
         <img src={ExchangeIcon} alt={ExchangeIcon} />
       </button>
-      <div className="price-container">
+      <div className={styles.price}>
         <CurrencySelect
           currentCurrency={secondCurrentCurrency}
           onSelect={setSecondCurrentCurrency}
         />
-        <div className="amount">
+        <div className={styles.amount}>
           <label>{englishLanguage.price}</label>
-          <div className="input-currency-container">
-            <p className="sign-currency">{secondCurrentCurrency.sign}</p>
-            <p className="dark-price">{darkString}</p>
-            <p className="bright-price">{brightString}</p>
-            <hr className="bottom-line"></hr>
+          <div className={styles.field}>
+            <span>{secondCurrentCurrency.sign}</span>
+            <span className={styles.dark}>{darkString}</span>
+            <span className={styles.bright}>{brightString}</span>
+            <hr className={styles.line}></hr>
           </div>
         </div>
       </div>
