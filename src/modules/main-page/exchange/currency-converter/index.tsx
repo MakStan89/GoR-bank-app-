@@ -14,7 +14,7 @@ import {
 } from './constants';
 import ExchangeIcon from '../../../../content/icons/exchangeIcon.svg';
 import { englishLanguage } from '../constants';
-import './styles.scss';
+import styles from './styles.module.scss';
 
 export const CurrencyConverter = () => {
   const [firstCurrentCurrency, setFirstCurrentCurrency] =
@@ -55,39 +55,39 @@ export const CurrencyConverter = () => {
   }, [amountValue]);
 
   return (
-    <div className="container">
+    <div className={styles.wrapper}>
       <h5>{englishLanguage.converterTitle}</h5>
-      <div className="amount-container">
+      <div className={styles.container}>
         <CurrencySelect currentCurrency={firstCurrentCurrency} onSelect={setFirstCurrentCurrency} />
-        <div className="amount">
-          <label className="sign-currency">{englishLanguage.amount}</label>
-          <div className="input-currency-container">
-            <p className="sign-currency">{firstCurrentCurrency.sign}</p>
+        <div className={styles.amount}>
+          <label>{englishLanguage.amount}</label>
+          <div className={styles.field}>
+            <span className={styles.sign}>{firstCurrentCurrency.sign}</span>
             <input
-              className="input-currency"
+              className={styles.input}
               type="text"
               value={amountValue}
               onChange={handleChangeInput}
             />
-            <hr className="bottom-line"></hr>
+            <hr className={styles.line}></hr>
           </div>
         </div>
       </div>
-      <button className="exchange-button" onClick={handleViceVersa}>
+      <button className={styles.button} onClick={handleViceVersa}>
         <img src={ExchangeIcon} alt={ExchangeIcon} />
       </button>
-      <div className="price-container">
+      <div className={styles.price}>
         <CurrencySelect
           currentCurrency={secondCurrentCurrency}
           onSelect={setSecondCurrentCurrency}
         />
-        <div className="amount">
+        <div className={styles.amount}>
           <label>{englishLanguage.price}</label>
-          <div className="input-currency-container">
-            <p className="sign-currency">{secondCurrentCurrency.sign}</p>
-            <p className="dark-price">{darkString}</p>
-            <p className="bright-price">{brightString}</p>
-            <hr className="bottom-line"></hr>
+          <div className={styles.field}>
+            <span>{secondCurrentCurrency.sign}</span>
+            <span className={styles.dark}>{darkString}</span>
+            <span className={styles.bright}>{brightString}</span>
+            <hr className={styles.line}></hr>
           </div>
         </div>
       </div>
