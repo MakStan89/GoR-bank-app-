@@ -1,0 +1,8 @@
+.applyButton {
+    background: #ffd600;
+    --buttonWidth: 30px;;
+    --buttonHeight: 48px;
+    width: var(--buttonWidth);
+    height: var(--buttonHeight);
+    font: 700 16px/16px "Roboto";
+  }
