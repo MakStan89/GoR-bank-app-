@@ -1,13 +1,11 @@
-.container-exchange {
+.container {
   height: 688px;
   width: 1296px;
   margin: 0 auto;
 }
 
-.wrapper-exchange {
+.wrapper {
   position: relative;
-  margin-top: 4px;
-
 }
 
 h5 {
@@ -40,7 +38,7 @@ h5 {
   left: 105px;
   top: 76px;
 
-  .table-names {
+  .title {
     width: 415px;
     height: 20px;
     font-style: normal;
@@ -77,7 +75,7 @@ h5 {
   }
 }
 
-.currency-item-container {
+.content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -87,6 +85,6 @@ h5 {
   border-bottom: 2px solid #EEEEEE;
 }
 
-.currency-item-container:last-child {
+.content:last-child {
   border: none;
 }

@@ -1,0 +1,57 @@
+.container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  gap: 12px;
+  width: 207px;
+  height: 48px;
+  border: 1px solid #9E9E9E;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-bottom: 24px;
+
+  .arrow {
+    width: 24px;
+    height: 24px;
+    background-image: url(../../../../../content/icons/arrowdown.svg);
+  }
+}
+
+.options {
+  display: none;
+
+  &-open {
+    position: absolute;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    top: 60px;
+    background: #FFFFFF;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    border-radius: 2px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px;
+  gap: 8px;
+  border: 1px solid #9E9E9E;
+  border-radius: 2px;
+  width: 207px;
+  height: 48px;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  &:hover {
+    width: 100%;
+    background-color: #FFF176;
+  }
+}

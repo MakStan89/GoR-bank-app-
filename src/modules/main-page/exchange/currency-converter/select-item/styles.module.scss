@@ -1,4 +1,4 @@
-.select-content {
+.content {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -6,7 +6,7 @@
   width: 147px;
   height: 24px;
 
-  .select-flag {
+  .flag {
     width: 34px;
     height: 24px;
   }
@@ -22,7 +22,7 @@
     color: #212529;
   }
 
-  .full-name {
+  .name {
     width: 170px;
     height: 24px;
     font-style: normal;

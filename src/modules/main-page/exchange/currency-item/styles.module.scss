@@ -7,7 +7,7 @@
   height: 48px;
 }
 
-.currency-info {
+.content {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -16,7 +16,7 @@
   width: 220px;
   height: 48px;
 
-  .currency-name {
+  .name {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -34,7 +34,7 @@
       color: #212529;
     }
 
-    .full-name {
+    .full {
       width: 170px;
       height: 24px;
       font-style: normal;
@@ -46,7 +46,7 @@
   }
 }
 
-.currency-rates {
+.rates {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
