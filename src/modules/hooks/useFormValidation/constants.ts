@@ -7,7 +7,11 @@ export const defaultFormData = {
   smsCode: '',
   telephone: '',
   passport: '',
-  income: ''
+  income: '',
+  month: '',
+  salary: '',
+  expense: '',
+  ein: '',
 };
 
 export const defaultFormValid = {
@@ -19,5 +23,6 @@ export const defaultFormValid = {
   smsCode: false,
   telephone: false,
   passport: false,
-  income: false
+  income: false,
+  ein: false,
 };
