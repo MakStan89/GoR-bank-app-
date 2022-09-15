@@ -1,10 +1,8 @@
 export const name = 'password';
-export const minLength = 6;
-export const maxLength = 20;
+export const VALUE_MIN_LENGTH = 6;
+export const VALUE_MAX_LENGTH = 20;
 
 export const russianLanguage = {
-  placeholderText: 'Пароль',
-  labelText: 'Пароль',
   errorsText: [
     null,
     'Включен CapsLock',

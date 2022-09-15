@@ -17,6 +17,7 @@
   outline: 1px solid #9e9e9e;
   border: none;
   border-radius: 2px;
+  position: relative;
   &:focus::-webkit-input-placeholder {
     color: transparent;
   }
@@ -70,6 +71,19 @@
   }
 }
 
+.name {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #616161;
+  display: none;
+  &-visible {
+    position: absolute;
+    top: -25px;
+    display: block;
+  }
+}
+
 .icons {
   position: absolute;
   right: 10px;
@@ -80,6 +94,18 @@
   &-loan {
     top: 15px;
   }
+}
+
+.name-icon {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+}
+
+.name-icon {
+  position: absolute;
+  right: 10px;
+  top: 15px;
 }
 
 .warning {

@@ -1,30 +1,23 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { useClassNames, useValidation } from './hooks';
-import { VALUE_MAX_LENGTH, name } from './constants';
+import { russianLanguage, VALUE_MAX_LENGTH, name } from './constants';
 import { Props } from '../types';
 import styles from '../styles.module.scss';
 
-export const PassportInput = ({
-  value,
-  handleChange,
-  handleValid,
-  request,
-  labelText,
-  placeholderText,
-}: Props) => {
+export const SurnameInput = ({ value, handleChange, handleValid }: Props) => {
   const [isHasFocus, setHasFocus] = useState<boolean>(false);
-  const { error, errorMessage } = useValidation(value, request, isHasFocus, handleValid);
+  const { error, errorMessage } = useValidation(value, isHasFocus, handleValid);
   const { inputLabelClassName, inputClassName, warningIconClassName, inputMessageClassName } =
     useClassNames(isHasFocus, error, value);
 
   return (
     <div className={styles.container}>
-      <span className={inputLabelClassName}>{labelText}</span>
+      <span className={inputLabelClassName}>{russianLanguage.labelText}</span>
       <input
         className={inputClassName}
         name={name}
-        placeholder={placeholderText}
+        placeholder={russianLanguage.placeholderText}
         type="text"
         autoComplete="off"
         value={value ?? ''}

@@ -7,6 +7,9 @@ export type FormDataProps = {
   smsCode?: string;
   telephone?: string;
   passport?: string;
+  name?: string;
+  surname?: string;
+  patronymic?: string;
   income?: string;
   month?: string;
   salary?: string;
@@ -23,6 +26,9 @@ export type FormValidityProps = {
   smsCode?: boolean;
   telephone?: boolean;
   passport?: boolean;
+  name?: boolean;
+  surname?: boolean;
+  patronymic?: boolean;
   income?: boolean;
   month?: boolean;
   salary?: boolean;

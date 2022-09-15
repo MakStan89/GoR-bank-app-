@@ -1,9 +1,9 @@
 import { ChangeEvent, useState } from 'react';
-import { defaultFormData, defaultFormValid } from './constants';
+import { defaultFormValid } from './constants';
 import { FormDataProps, FormValidityProps } from './types';
 
 export const useFormValidation = () => {
-  const [values, setValues] = useState<FormDataProps>(defaultFormData);
+  const [values, setValues] = useState<FormDataProps>({});
   const [valid, setValid] = useState<FormValidityProps>(defaultFormValid);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {

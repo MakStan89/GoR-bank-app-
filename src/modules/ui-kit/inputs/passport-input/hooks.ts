@@ -1,6 +1,6 @@
 import cx from 'classnames';
 import { useState, useEffect } from 'react';
-import { russianLanguage, minLength, name } from './constants';
+import { russianLanguage, VALUE_MIN_LENGTH, name } from './constants';
 import { PassportErrors } from '../types';
 import styles from '../styles.module.scss';
 
@@ -21,17 +21,17 @@ export const useValidation = (
   }, []);
 
   useEffect(() => {
-    const passportRegExp = /[0-9a-zA-Z!"#$%&'()*+,№./:;<=>?@[\]^_`{|}~-]/;
+    const allowedSymbolsRegExp = /^[-0-9a-zA-Zа-яА-Я]+$/g;
     const spaceRegExp = /\s/;
 
     setErrorMessage(russianLanguage.errorsText[error]);
 
     if (caps && isHasFocus) {
       setError(PassportErrors.CapsLock);
-    } else if (value.length < minLength) {
+    } else if (!value || value.length < VALUE_MIN_LENGTH) {
       setError(PassportErrors.Length);
       handleValid(false, name);
-    } else if (!passportRegExp.test(value) || spaceRegExp.test(value)) {
+    } else if (!allowedSymbolsRegExp.test(value) || spaceRegExp.test(value)) {
       setError(PassportErrors.IncorrectPassport);
       handleValid(false, name);
     } else if (requestError) {

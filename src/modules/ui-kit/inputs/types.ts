@@ -1,10 +1,10 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent } from 'react';
 
 export type Props = {
   value: string;
   handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
   handleValid: (valid: boolean, name: string) => void;
-  request: number;
+  request?: number;
   isMessage?: boolean;
   labelText?: string;
   placeholderText?: string;
@@ -80,6 +80,19 @@ export enum PassportErrors {
   Request = 4,
 }
 
+export enum NameErrors {
+  None = 0,
+  Length = 1,
+  IncorrectSymbols = 2,
+}
+
+export enum PatronymicErrors {
+  None = 0,
+  Message = 1,
+  Length = 2,
+  IncorrectSymbols = 3,
+}
+
 export enum IncomeErrors {
   None = 0,
   CapsLock = 1,
@@ -89,10 +102,9 @@ export enum IncomeErrors {
 }
 
 export enum EinErrors {
-	None = 0,
-	CapsLock = 1,
-	Length = 2,
-	IncorrectIncome = 3,
-	Request = 4,
-  }
-  
+  None = 0,
+  CapsLock = 1,
+  Length = 2,
+  IncorrectIncome = 3,
+  Request = 4,
+}

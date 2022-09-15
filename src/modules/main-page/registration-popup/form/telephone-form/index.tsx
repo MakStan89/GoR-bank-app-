@@ -6,7 +6,7 @@ import { russianLanguage } from './constants';
 import { Props } from '../types';
 import styles from './styles.module.scss';
 
-export const TelephoneForm = ({ onNextStep, onJoin }: Props) => {
+export const TelephoneForm = ({ onNextStep, onJoin, clientStatus }: Props) => {
   const [requestError, setRequestError] = useState(false);
   const { values, handleChange, handleValid, valid } = useFormValidation();
 

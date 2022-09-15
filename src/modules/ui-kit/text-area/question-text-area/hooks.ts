@@ -1,7 +1,7 @@
 import cx from 'classnames';
 import { useState, useEffect } from 'react';
 import { SecurityQuestionErrors } from './types';
-import { russianLanguage, maxLength, minLength } from './constants';
+import { russianLanguage, MAX_LENGTH, MIN_LENGTH } from './constants';
 import styles from './styles.module.scss';
 
 export const useValidation = (
@@ -13,17 +13,17 @@ export const useValidation = (
   const [error, setError] = useState<SecurityQuestionErrors>(SecurityQuestionErrors.None);
 
   useEffect(() => {
-    const textAreaRegExp = /[0-9a-zA-Zа-яА-Я!"#$%&'()*+,№./:;<=>?@[\]^_`{|}~-]/;
+    const allowedSymbolsRegExp = /^[+"#*%\s0-9a-zA-Zа-яА-Я]+$/g;
 
     setErrorMessage(russianLanguage.errorsText[error]);
 
-    if (value.length < minLength) {
+    if (value.length < MIN_LENGTH) {
       setError(SecurityQuestionErrors.LowLength);
       handleValid(false, name);
-    } else if (!textAreaRegExp.test(value)) {
+    } else if (!allowedSymbolsRegExp.test(value)) {
       setError(SecurityQuestionErrors.IncorrectQuestion);
       handleValid(false, name);
-    } else if (value.length > maxLength) {
+    } else if (value.length > MAX_LENGTH) {
       setError(SecurityQuestionErrors.HighLength);
       handleValid(false, name);
     } else {
