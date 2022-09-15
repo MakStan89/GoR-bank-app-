@@ -2,8 +2,8 @@ import * as React from 'react';
 import { FC } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { AuthPage } from './auth-page/';
-import { Contacts } from './contacts/index';
-import { Exchange } from './exchange';
+import { Contacts } from './contacts/';
+import { Exchange } from './exchange/';
 
 export const MainPage: FC = () => (
   <Routes>

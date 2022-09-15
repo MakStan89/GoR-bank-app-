@@ -41,7 +41,7 @@
     &::before {
       content: "";
       position: absolute;
-      top: 27px;
+      bottom: -10px;
       left: 0;
       background-color: #eeeeee;
       width: 16px;
@@ -56,7 +56,7 @@
       &::before {
         content: "";
         position: absolute;
-        top: 27px;
+        bottom: -10px;
         left: 0;
         background-color: #ffd600;
         width: 16px;

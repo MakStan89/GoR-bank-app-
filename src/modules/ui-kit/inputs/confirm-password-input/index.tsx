@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { useClassNames, useValidation } from './hooks';
-import { maxLength, name, russianLanguage } from './constants';
+import { VALUE_MAX_LENGTH, name } from './constants';
 import { Props } from '../types';
 import styles from '../styles.module.scss';
 
@@ -35,7 +35,7 @@ export const ConfirmPasswordInput = ({
         autoComplete="off"
         onChange={handleChange}
         value={value ?? ''}
-        maxLength={maxLength}
+        maxLength={VALUE_MAX_LENGTH}
         onFocus={() => setHasFocus(true)}
         onBlur={() => setHasFocus(false)}
       />

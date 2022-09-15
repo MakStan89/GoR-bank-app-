@@ -2,7 +2,7 @@ import * as React from 'react';
 import ReactInputMask from 'react-input-mask';
 import { useState } from 'react';
 import { useClassNames, useValidation } from './hooks';
-import { russianLanguage, name } from './constants';
+import { name } from './constants';
 import { Props } from '../types';
 import styles from '../styles.module.scss';
 

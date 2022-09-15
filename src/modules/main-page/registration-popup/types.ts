@@ -3,7 +3,7 @@ export type Props = {
   onClose: () => void;
 };
 export enum Steps {
-  EnterTelephone = 0,
-  Success = 4,
-  Auth = 5,
+  EnterInfo = 1,
+  Success = 2,
+  Auth = 3,
 }

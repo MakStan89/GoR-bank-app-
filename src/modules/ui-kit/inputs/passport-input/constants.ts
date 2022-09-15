@@ -1,14 +1,12 @@
 export const name = 'passport';
-export const minLength = 3;
-export const maxLength = 20;
+export const VALUE_MIN_LENGTH = 6;
+export const VALUE_MAX_LENGTH = 20;
 
 export const russianLanguage = {
-  placeholderText: 'Паспорт',
-  labelText: 'Номер паспорта',
   errorsText: [
     null,
     'Включен CapsLock',
-    'Введите более 3 символов',
+    'Недостаточно символов',
     'Использованы недопустимые символы',
     '',
   ],
