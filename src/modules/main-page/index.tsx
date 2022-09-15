@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { MainAuthPage } from './main-auth-page/';
+import { MainAuthPage } from '../main-auth-page';
 import { AuthPage } from './auth-page/';
 import { Contacts } from './contacts/index';
 import { Exchange } from './exchange';

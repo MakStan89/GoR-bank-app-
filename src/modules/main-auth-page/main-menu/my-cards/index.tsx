@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { FC } from 'react';
 import { ContainerComponent } from '../container-component';
 import { CardItem } from './card-item';
 import { CARDS, englishLanguage } from './constants';

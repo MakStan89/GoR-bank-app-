@@ -1,11 +1,11 @@
 import { ItemCurrency } from './exchange-item/types';
-import EU from '../../../../../content/icons/currencies/EU.svg';
-import USD from '../../../../../content/icons/currencies/US.svg';
-import CAD from '../../../../../content/icons/currencies/Canada.svg';
-import GBP from '../../../../../content/icons/currencies/GBP.svg';
-import CHF from '../../../../../content/icons/currencies/Switzerland.svg';
-import EURUSD from '../../../../../content/icons/currencies/EU_USD.svg';
-import EURCHF from '../../../../../content/icons/currencies/EU_CHF.svg';
+import EU from '../../../../content/icons/currencies/EU.svg';
+import USD from '../../../../content/icons/currencies/US.svg';
+import CAD from '../../../../content/icons/currencies/Canada.svg';
+import GBP from '../../../../content/icons/currencies/GBP.svg';
+import CHF from '../../../../content/icons/currencies/Switzerland.svg';
+import EURUSD from '../../../../content/icons/currencies/EU_USD.svg';
+import EURCHF from '../../../../content/icons/currencies/EU_CHF.svg';
 
 export const russianLanguage = {
   title: 'Курсы валют',

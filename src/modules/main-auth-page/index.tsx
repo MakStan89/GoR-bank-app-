@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Footer } from '../../template-page/footer';
-import { Header } from '../../template-page/header';
+import { Footer } from '../template-page/footer';
+import { Header } from '../template-page/header';
 import { MainMenu } from './main-menu';
 import { Navbar } from './navbar';
 import styles from './styles.module.scss'
@@ -14,7 +14,7 @@ export const MainAuthPage = () => {
       <div className={styles.wrapper}>
         <Navbar />
         <Routes>
-          <Route path="/main" element={<MainMenu />} />
+          <Route path="/" element={<MainMenu />} />
         </Routes>
       </div>
       <Footer />

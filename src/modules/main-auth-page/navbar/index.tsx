@@ -6,7 +6,7 @@ import { NavbarItem } from './navbar-item';
 import cn from 'classnames';
 import {
   MainPageIcon, PaymentsIcon, TransfersIcon, CardsIcon, LoansIcon, DepositsIcon, InvestingIcon, InsuranceIcon, DealsAndOffersIcon
-} from '../../../../content/icons/main-auth-page';
+} from '../../../content/icons/main-auth-page';
 import styles from './styles.module.scss';
 
 export const Navbar = () => {

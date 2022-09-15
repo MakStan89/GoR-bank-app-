@@ -1,7 +1,7 @@
-import BGD from '../../../../../content/icons/main-auth-page/cardBgd.svg';
-import LOGO from '../../../../../content/icons/main-auth-page/bankLogo.svg';
-import DOTS from '../../../../../content/icons/main-auth-page/dots.svg';
-import SYS from '../../../../../content/icons/main-auth-page/paymentSystem.svg';
+import BGD from '../../../../content/icons/main-auth-page/cardBgd.svg';
+import LOGO from '../../../../content/icons/main-auth-page/bankLogo.svg';
+import DOTS from '../../../../content/icons/main-auth-page/dots.svg';
+import SYS from '../../../../content/icons/main-auth-page/paymentSystem.svg';
 import { CardsType } from './card-item/types';
 
 export const russianLanguage = {
