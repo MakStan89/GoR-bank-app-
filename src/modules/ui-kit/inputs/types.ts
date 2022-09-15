@@ -14,10 +14,31 @@ export type IncomeProps = {
   value: string;
   handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
   handleValid: (valid: boolean, name: string) => void;
+  name: string;
+  placeholder: string;
   request: number;
-  isEIN: boolean;
   minValue: number;
   maxValue: number;
+};
+
+export type MonthProps = {
+  value: string;
+  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleValid: (valid: boolean, name: string) => void;
+  name: string;
+  placeholder: string;
+  request: number;
+  minValue: number;
+  maxValue: number;
+};
+
+export type EinProps = {
+  value: string;
+  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleValid: (valid: boolean, name: string) => void;
+  name: string;
+  placeholder: string;
+  request: number;
 };
 
 export type RangeProps = {
@@ -26,6 +47,7 @@ export type RangeProps = {
   value: string;
   minValue: number;
   maxValue: number;
+  name: string;
 };
 
 export enum TelephoneErrors {
@@ -65,3 +87,12 @@ export enum IncomeErrors {
   IncorrectIncome = 3,
   Request = 4,
 }
+
+export enum EinErrors {
+	None = 0,
+	CapsLock = 1,
+	Length = 2,
+	IncorrectIncome = 3,
+	Request = 4,
+  }
+  

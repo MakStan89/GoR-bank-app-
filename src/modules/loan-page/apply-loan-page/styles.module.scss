@@ -1,0 +1,41 @@
+.container {
+  margin-top: 64px;
+  margin-left: 200px;
+  margin-bottom: 144px;
+}
+
+.title {
+  display: block;
+  margin-bottom: 41px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  color: #212529;
+}
+
+.subtitle {
+  display: block;
+  margin-bottom: 7px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: #212529;
+  &:last-child {
+    margin-bottom: 66px;
+  }
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 766px;
+  column-gap: 80px;
+  row-gap: 64px;
+}
+
+.button {
+  width: 343px;
+}

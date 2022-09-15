@@ -8,6 +8,10 @@ export type FormDataProps = {
   telephone?: string;
   passport?: string;
   income?: string;
+  month?: string;
+  salary?: string;
+  expense?: string;
+  ein?: string;
 };
 
 export type FormValidityProps = {
@@ -20,4 +24,8 @@ export type FormValidityProps = {
   telephone?: boolean;
   passport?: boolean;
   income?: boolean;
+  month?: boolean;
+  salary?: boolean;
+  expense?: boolean;
+  ein?: boolean;
 };

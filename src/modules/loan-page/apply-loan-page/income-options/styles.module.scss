@@ -1,0 +1,32 @@
+.title {
+  display: block;
+  margin-bottom: 40px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  color: #000000;
+}
+.subtitle {
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #616161;
+  margin-bottom: 10px;
+}
+
+.container {
+  display: block;
+  min-width: 343px;
+  height: 412px;
+}
+
+.income {
+  margin-bottom: 39px;
+}
+
+.expense {
+  margin-bottom: 35px;
+}

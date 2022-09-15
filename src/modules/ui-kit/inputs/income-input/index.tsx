@@ -1,57 +1,54 @@
-import * as React from 'react';
-import NumberFormat from 'react-number-format';
-import { useState, useEffect } from 'react';
-import { useClassNames, useValidation } from './hooks';
-import { IncomeProps } from '../types';
-import { englishLanguage, name } from './constants';
-import styles from '../styles.module.scss';
+import * as React from "react";
+import NumberFormat from "react-number-format";
+import { useState } from "react";
+import { useClassNames, useValidation } from "./hooks";
+import { IncomeProps } from "../types";
+import {
+  useTransformValueInNumber,
+  useToFormat,
+} from "../../../loan-page/apply-loan-page/hooks";
+import styles from "../styles.module.scss";
 
-export const IncomeInput = ({ value, handleChange, handleValid, request, isEIN }: IncomeProps) => {
+export const IncomeInput = ({
+  value,
+  handleChange,
+  handleValid,
+  request,
+  placeholder,
+  name,
+  minValue,
+  maxValue,
+}: IncomeProps) => {
   const [isHasFocus, setHasFocus] = useState<boolean>(false);
-  const { error, errorMessage } = useValidation(value, request, isHasFocus, handleValid);
+  const { error } = useValidation(value, request, isHasFocus, handleValid);
+  const { inputClassName } = useClassNames(isHasFocus, error, value);
 
-  const { inputClassName, warningIconClassName, inputMessageClassName } = useClassNames(
-    isHasFocus,
-    error,
-    value
-  );
+  const handleBlur = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (+useTransformValueInNumber(value) < minValue) {
+      e.target.value = useToFormat(minValue);
+      handleChange(e);
+    }
+
+    if (+useTransformValueInNumber(value) > maxValue) {
+      e.target.value = useToFormat(minValue);
+      handleChange(e);
+    }
+  };
+
   return (
-    <div className="input-container">
-      {isEIN ? (
-        <input
-          className={inputClassName}
-          placeholder={englishLanguage.placeholderText}
-          type="text"
-          name={name}
-          autoComplete="off"
-          required={true}
-          onChange={handleChange}
-          value={value ?? ''}
-          maxLength={20}
-          onFocus={() => setHasFocus(true)}
-          onBlur={() => setHasFocus(false)}
-        />
-      ) : (
-        <NumberFormat
-          className={inputClassName}
-          thousandSeparator={true}
-          fixedDecimalScale={true}
-          decimalScale={2}
-          name={name}
-          onChange={handleChange}
-          value={value ?? ''}
-          prefix={'$'}
-        />
-      )}
-
-      {isEIN ? (
-        <>
-          <span className={inputMessageClassName}>{errorMessage}</span>
-          <div className="icons-container icons-container-loan">
-            <span className={warningIconClassName} />
-          </div>
-        </>
-      ) : null}
+    <div className={styles.container}>
+      <NumberFormat
+        className={inputClassName}
+        placeholder={placeholder}
+        thousandSeparator={true}
+        fixedDecimalScale={true}
+        decimalScale={2}
+        name={name}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        value={value ?? ""}
+        prefix={"$"}
+      />
     </div>
   );
 };

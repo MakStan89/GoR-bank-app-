@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { englishLanguage, name } from "./constants";
-import { IncomeErrors } from "../types";
+import { EinErrors } from "../types";
 import cx from "classnames";
 import styles from '../styles.module.scss';
 
@@ -11,7 +11,7 @@ export const useValidation = (
   handleValid: (valid: boolean, name: string) => void
 ) => {
   const [errorMessage, setErrorMessage] = useState<string>("");
-  const [error, setError] = useState<IncomeErrors>(IncomeErrors.None);
+  const [error, setError] = useState<EinErrors>(EinErrors.None);
   const [caps, setCaps] = useState<boolean>(false);
 
   useEffect(() => {
@@ -22,17 +22,17 @@ export const useValidation = (
   }, []);
 
   useEffect(() => {
-    const incomeRegExp = /^[0-9'$',.-]+$/i;
+    const incomeRegExp = /^[0-9-]+$/i;
     setErrorMessage(englishLanguage.errorsText[error]);
 
     if (!incomeRegExp.test(value)) {
-      setError(IncomeErrors.IncorrectIncome);
+      setError(EinErrors.IncorrectIncome);
       handleValid(false, name);
     } else if (requestError) {
-      setError(IncomeErrors.Request);
+      setError(EinErrors.Request);
       handleValid(true, name);
     } else {
-      setError(IncomeErrors.None);
+      setError(EinErrors.None);
       handleValid(true, name);
     }
   }, [value, caps, requestError, isHasFocus, error]);
@@ -42,11 +42,11 @@ export const useValidation = (
 
 export const useClassNames = (
   isHasFocus: boolean,
-  error: IncomeErrors,
+  error: EinErrors,
   value: string
 ) => {
-  const isCapsLockError = isHasFocus && error === IncomeErrors.CapsLock;
-  const isValidityError = !isHasFocus && error !== IncomeErrors.None && value;
+  const isCapsLockError = isHasFocus && error === EinErrors.CapsLock;
+  const isValidityError = !isHasFocus && error !== EinErrors.None && value;
 
   const inputClassName = cx(styles.input, {
     [styles["input-error"]]: isCapsLockError || isValidityError,
@@ -55,7 +55,7 @@ export const useClassNames = (
     [styles["label-visible"]]: isHasFocus || value,
   });
   const inputMessageClassName = cx(styles.message, {
-    [styles["message-error"]]: isCapsLockError || isValidityError,
+    [styles["message-errorEin"]]: isCapsLockError || isValidityError,
   });
   const warningIconClassName = cx(styles.warning, {
     [styles["warning-active"]]: isCapsLockError || isValidityError,
