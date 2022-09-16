@@ -1,0 +1,43 @@
+.heading {
+  margin-bottom: 40px;
+}
+
+.table {
+  margin-bottom: 64px;
+}
+
+.table,
+.tableHeader,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  font: 400 16px/24px "Roboto", sans-serif;
+  color: #616161;
+}
+
+.tableHeader {
+  padding: 56px 219px 56px 219px;
+}
+
+.table,
+.tableRow,
+.cell:first-child {
+  padding: 49px 0 43px 40px;
+  color: #616161;
+}
+
+.table,
+.tableRow,
+.cell:last-child {
+  padding: 40px;
+  font: 700 24px/36px "Roboto", sans-serif;
+  color: #000000;
+}
+
+.colgroup col {
+  width: 50%;
+}
+
+.scale {
+  margin-bottom: 64px;
+}

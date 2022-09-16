@@ -1,10 +1,11 @@
 import * as React from "react";
-import { ApplyButton } from "../../../ui-kit/buttons/ApplyButton";
+import { Link } from "react-router-dom";
+import { ApplyButton } from "../../../ui-kit/buttons/apply-button";
 import { Loan } from "../types";
 import { linkText, buttonText } from "../constants";
-import styles from "./LoanCard.module.scss";
+import styles from "./styles.module.scss";
 
-export const LoanCard = ({ name, description, percent, image }: Loan) => {
+export const LoanCard = ({ id, name, description, percent, image }: Loan) => {
   const style = {
     "--descriptionWidth": image ? "50%" : "100%",
   } as React.CSSProperties;
@@ -19,7 +20,7 @@ export const LoanCard = ({ name, description, percent, image }: Loan) => {
         <div className={styles.description} style={style}>
           <p>{description}</p>
           <li>
-            <a href="#">{linkText}</a>
+            <Link to={{ pathname: `/${id}` }}>{linkText}</Link>
           </li>
           <ApplyButton text={buttonText} width="143px" height="48px" />
         </div>

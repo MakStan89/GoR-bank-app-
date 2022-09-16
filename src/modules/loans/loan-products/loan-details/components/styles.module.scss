@@ -1,0 +1,42 @@
+.scale {
+  width: fit-content;
+}
+
+.amount {
+  display: flex;
+  justify-content: space-between;
+}
+
+.maxAmount,
+.minAmount {
+  & p:first-child {
+    font: 400 14px/20px "Roboto", sans-serif;
+    color: #616161;
+  }
+  & p:last-child {
+    font: 700 24px/36px "Roboto", sans-serif;
+    color: #212529;
+  }
+}
+
+.progress {
+  width: 526px;
+  background: #fff9c4;
+  height: 10px;
+}
+
+.progress {
+  color: lightblue;
+}
+
+.progress::-moz-progress-bar {
+  background: #fff176;
+}
+
+.progress::-webkit-progress-value {
+  background: #fff9c4;
+}
+
+.progress::-webkit-progress-bar {
+  background: #fff176;
+}
