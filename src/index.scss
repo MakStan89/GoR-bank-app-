@@ -18,3 +18,11 @@ button {
   cursor: pointer;
   background-color: transparent;
 }
+
+// variables
+$font-text: "Roboto", sans-serif;
+
+// mixins
+@mixin font($font-size, $line-height, $font-weight: null) {
+  font: $font-weight #{$font-size} / #{$line-height} $font-text;
+}
