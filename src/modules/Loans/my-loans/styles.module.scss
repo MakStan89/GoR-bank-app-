@@ -22,12 +22,12 @@ $font-text: "Roboto", sans-serif;
   margin-left: 100px;
   margin-top: 65px;
 
-  &__list {
+  &List {
     border: 1px solid $border-col;
     border-radius: 6px;
   }
 
-  &--applicate {
+  &Applicate {
     max-width: 80%;
   }
 }
@@ -40,20 +40,20 @@ $font-text: "Roboto", sans-serif;
     display: block;
   }
 
-  &__title {
+  &Title {
     margin-bottom: 40px;
     @include font(24px, 36px, 700);
     color: $main-col;
   }
 
-  &__item {
+  &Item {
     display: flex;
     justify-content: space-between;
     padding: 24px 40px;
     @include font(16px, 24px, 700);
     color: $main-col;
 
-    &-main {
+    &Main {
       margin-left: 16px;
 
       span {
@@ -61,34 +61,45 @@ $font-text: "Roboto", sans-serif;
       }
     }
 
-    &-name {
+    &Name {
       margin-bottom: 4px;
       // color: $main-col;
     }
 
-    &-duration {
+    &Duration {
       color: $extra-col;
       font-weight: 400;
     }
 
-    &-status {
-      &-box {
+    &Status {
+      &Box {
         display: flex;
         flex-wrap: nowrap;
         align-items: flex-start;
       }
 
-      &--process {
+      &Process {
         background-color: rgba(255, 249, 196, 0.5);
         border-radius: 20px;
         color: $mark-col;
         @include font(14px, 20px, 400);
         padding: 6px 12px;
         margin-left: 16px;
+        margin-top: -2px;
+      }
+
+      &Rejected {
+        background-color: rgba(242, 69, 61, 0.2);
+        border-radius: 20px;
+        color: #f2453d;
+        @include font(14px, 20px, 400);
+        padding: 6px 12px;
+        margin-left: 16px;
+        margin-top: -2px;
       }
     }
 
-    &-more {
+    &More {
       background: url(../../../content/icons/arrowdown.svg) no-repeat right top;
       padding-right: 22px;    
       display: flex;
@@ -97,7 +108,7 @@ $font-text: "Roboto", sans-serif;
     }
   }
 
-  &__message {
+  &Message {
     background-color: $border-col;
     padding: 16px 57px;
     @include font(16px, 24px, 400);
