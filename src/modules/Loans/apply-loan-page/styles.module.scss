@@ -33,9 +33,19 @@
   flex-wrap: wrap;
   width: 766px;
   column-gap: 80px;
-  row-gap: 64px;
+  row-gap: 57px;
 }
 
 .button {
   width: 343px;
+}
+
+.span {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #212529;
 }
