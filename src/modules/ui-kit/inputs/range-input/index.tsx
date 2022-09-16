@@ -1,6 +1,6 @@
 import * as React from "react";
 import { RangeProps } from "../types";
-import { useTransformValueInNumber } from "../../../Loans/apply-loan-page/hooks";
+import { useTransformValueInNumber } from "../../../loans/apply-loan-page/hooks";
 import styles from "../styles.module.scss";
 
 export const RangeInput = ({
