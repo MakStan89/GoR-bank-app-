@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Props } from "./types";
-import styles from "./ApplyButton.module.scss";
+import styles from "./styles.module.scss";
 
 export const ApplyButton = ({ text, width, height }: Props) => {
   const style = {

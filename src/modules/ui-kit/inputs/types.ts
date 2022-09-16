@@ -42,12 +42,12 @@ export type EinProps = {
 };
 
 export type RangeProps = {
-  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   width: number;
   value: string;
   minValue: number;
   maxValue: number;
-  name: string;
+  name?: string;
 };
 
 export enum TelephoneErrors {
