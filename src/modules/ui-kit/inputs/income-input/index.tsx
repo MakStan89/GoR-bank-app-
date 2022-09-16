@@ -6,7 +6,7 @@ import { IncomeProps } from "../types";
 import {
   useTransformValueInNumber,
   useToFormat,
-} from "../../../Loans/apply-loan-page/hooks";
+} from "../../../loans/apply-loan-page/hooks";
 import styles from "../styles.module.scss";
 
 export const IncomeInput = ({
