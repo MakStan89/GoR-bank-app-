@@ -1,0 +1,10 @@
+.main-container {
+  display: grid;
+  grid-template-columns: 660px 330px;
+  grid-template-rows: 344px 308px 280px;
+  grid-template-areas: 
+  "mc er"
+  "his er"
+  "fs fs";
+  grid-gap: 38px;
+}

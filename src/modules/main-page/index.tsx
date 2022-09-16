@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { FC } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { MainAuthPage } from '../main-auth-page';
 import { AuthPage } from './auth-page/';
 import { Contacts } from './contacts/';
 import { Exchange } from './exchange/';
 
-export const MainPage: FC = () => (
+export const MainPage = () => (
   <Routes>
     <Route path="/" element={<AuthPage />} />
     <Route path="/contacts" element={<Contacts />} />

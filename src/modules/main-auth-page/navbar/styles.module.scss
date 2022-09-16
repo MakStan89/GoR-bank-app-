@@ -1,0 +1,14 @@
+.container {
+  grid-area: nav;
+  width: 240px;
+  height: 690px;
+  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container-large {
+  height: 780px;
+}
+
