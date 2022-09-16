@@ -1,6 +1,6 @@
 import cx from 'classnames';
 import { useState, useEffect } from 'react';
-import { russianLanguage, name, VALUE_MIN_LENGTH, VALUE_MIN_LENGTH } from './constants';
+import { russianLanguage, name, VALUE_MIN_LENGTH } from './constants';
 import { PasswordErrors } from '../types';
 import styles from '../styles.module.scss';
 
