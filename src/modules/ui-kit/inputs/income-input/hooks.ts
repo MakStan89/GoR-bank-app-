@@ -8,7 +8,8 @@ export const useValidation = (
   value: string,
   requestError: number,
   isHasFocus: boolean,
-  handleValid: (valid: boolean, name: string) => void
+  handleValid: (valid: boolean, name: string) => void,
+  name: string
 ) => {
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [error, setError] = useState<IncomeErrors>(IncomeErrors.None);
@@ -24,8 +25,8 @@ export const useValidation = (
   useEffect(() => {
     const incomeRegExp = /^[0-9'$',.-]+$/i;
     setErrorMessage(englishLanguage.errorsText[error]);
-
-    if (!incomeRegExp.test(value)) {
+    if (!incomeRegExp.test(value) || value == "") {
+	console.log('tut')
       setError(IncomeErrors.IncorrectIncome);
       handleValid(false, name);
     } else if (requestError) {

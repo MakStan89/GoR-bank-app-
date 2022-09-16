@@ -5,3 +5,9 @@ export const englishLanguage = {
     "Please note that successful application does not guarantee loan approval.",
   buttonText: "Apply",
 } as const;
+
+export const applyStatus = {
+  isSuccess: true,
+  successTitle: "Application successfully accepted",
+  rejectTitle: "Application not accepted",
+} as const;

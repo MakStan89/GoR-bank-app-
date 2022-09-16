@@ -6,7 +6,7 @@ import { IncomeProps } from "../types";
 import {
   useTransformValueInNumber,
   useToFormat,
-} from "../../../loan-page/apply-loan-page/hooks";
+} from "../../../Loans/apply-loan-page/hooks";
 import styles from "../styles.module.scss";
 
 export const IncomeInput = ({
@@ -20,7 +20,7 @@ export const IncomeInput = ({
   maxValue,
 }: IncomeProps) => {
   const [isHasFocus, setHasFocus] = useState<boolean>(false);
-  const { error } = useValidation(value, request, isHasFocus, handleValid);
+  const { error } = useValidation(value, request, isHasFocus, handleValid, name);
   const { inputClassName } = useClassNames(isHasFocus, error, value);
 
   const handleBlur = (e: React.ChangeEvent<HTMLInputElement>) => {

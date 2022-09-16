@@ -1,0 +1,35 @@
+.wrapper {
+  background: rgba(0, 0, 0, 0.75);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: not-allowed;
+}
+
+.content {
+  width: 603px;
+  height: 236px;
+  cursor: auto;
+  position: relative;
+  background-color: #fefefe;
+  padding: 40px 0px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  background: #ffffff;
+  border-radius: 8px;
+}
+
+.btn {
+  cursor: pointer;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
