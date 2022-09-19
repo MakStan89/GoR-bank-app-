@@ -33,3 +33,9 @@ export const MAX_LENGTH_AFTER_DOT: number = 5;
 export const LENGTH_DARK_STRING_AFTER_DOT: number = 2;
 
 export const RELATIVE_RATE: number = 1.0529131;
+
+export const REG_EXP_ADD_SPACE = /\B(?=(\d{3})+(?!\d))/g;
+
+export const REG_EXP_DELETE_SPACE = /\s/g;
+
+export const REG_EXP_CHECK_MORE_DOT = /^([^.]*\.)|\./g;
