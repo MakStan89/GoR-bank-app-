@@ -7,6 +7,9 @@ import {
   FIRST_CURRENCY_DEFAULT,
   LENGTH_DARK_STRING_AFTER_DOT,
   MAX_LENGTH_AFTER_DOT,
+  REG_EXP_ADD_SPACE,
+  REG_EXP_CHECK_MORE_DOT,
+  REG_EXP_DELETE_SPACE,
   REG_EXP_FOR_NUMBER,
   RELATIVE_RATE,
   SECOND_CURRENCY_DEFAULT,
@@ -31,7 +34,10 @@ export const CurrencyConverter = () => {
   };
 
   const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const result = e.target.value.replace(REG_EXP_FOR_NUMBER, '');
+    let result = e.target.value
+      .replace(REG_EXP_FOR_NUMBER, '')
+      .replace(REG_EXP_CHECK_MORE_DOT, '$1');
+    result = result.replace(REG_EXP_ADD_SPACE, ' ');
     setAmountValue(result);
   };
 
@@ -46,12 +52,15 @@ export const CurrencyConverter = () => {
     (stringAfterDot ? SEPARATOR_DOT + stringAfterDot.slice(0, LENGTH_DARK_STRING_AFTER_DOT) : '');
 
   const brightString = stringAfterDot
-    ? stringAfterDot.slice(LENGTH_DARK_STRING_AFTER_DOT, MAX_LENGTH_AFTER_DOT)
+    ? stringAfterDot
+        .slice(LENGTH_DARK_STRING_AFTER_DOT, MAX_LENGTH_AFTER_DOT)
+        .replace(REG_EXP_DELETE_SPACE, '')
     : '';
 
   useEffect(() => {
-    const sum = String(Number(amountValue) * RELATIVE_RATE);
-    setPriceValue(sum);
+    const sum = Number(amountValue.replace(REG_EXP_DELETE_SPACE, '')) * RELATIVE_RATE;
+    const newSumValue = sum.toString().replace(REG_EXP_ADD_SPACE, ' ');
+    setPriceValue(newSumValue);
   }, [amountValue]);
 
   return (
