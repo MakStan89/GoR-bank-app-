@@ -1,16 +1,23 @@
+.loanDetails{
+  margin-left: 200px;
+}
+
 .heading {
   margin-bottom: 40px;
 }
 
 .table {
   margin-bottom: 64px;
+  border-collapse: collapse;
+  border-radius: 6px;
+  border-style: hidden; /* hide standard table (collapsed) border */
+  box-shadow: 0 0 0 1px #EEEEEE; /* this draws the table border  */
 }
 
 .table,
 .tableHeader,
 td {
-  border: 1px solid black;
-  border-collapse: collapse;
+  border: 1px solid #EEEEEE;
   font: 400 16px/24px "Roboto", sans-serif;
   color: #616161;
 }
