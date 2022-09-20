@@ -1,8 +1,7 @@
 import * as React from 'react';
 import cn from 'classnames';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Props } from './types';
+import { Link, useLocation } from 'react-router-dom';
 import {
   russianLanguage,
   englishLanguage,
@@ -17,19 +16,20 @@ import { LogOutHeader } from '../../../content/icons/main-auth-page/logoutHeader
 import { AuthContext } from '../../..';
 
 
-export const Header = ({ isDark = false}: Props) => {
+export const Header = () => {
   const [language, setLanguage] = useState<string>('english');
 
   const russianName = cn(styles.language, { [styles['language-active']] : language === 'russian' });
-  const englishName = cn(styles.language, { [styles['language-active']] : language === 'english' });
-  const headerClassName = isDark ? styles['header-white'] : styles['header-black'];
-
+  const englishName = cn(styles.language, { [styles['language-active']]: language === 'english' });
   const changeLanguage = (e: React.MouseEvent<HTMLButtonElement>) => {
     const { name } = e.target as HTMLButtonElement;
     setLanguage(name);
   };
 
-  const { isAuth, fn } = React.useContext(AuthContext)
+  const { isAuth, fn } = React.useContext(AuthContext);
+  let location = useLocation();
+
+  const headerClassName = (!isAuth && location.pathname ==='/')  ? styles['header-white'] : styles['header-black'];
   const navigation = isAuth ? styles['auth-navigation'] : styles.navigation;
 
   return (

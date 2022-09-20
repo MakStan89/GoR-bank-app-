@@ -27,7 +27,7 @@ export const Registration = React.memo(({ isOpen, onClose }: Props) => {
 
   return (
     <section className={RegistrationPopupClassName}>
-      <Header isDark />
+      <Header />
       {currentStep === Steps.EnterInfo && (
         <Main onClose={handleClosePopup} onContinue={handleSuccess} onJoin={handleJoin} />
       )}

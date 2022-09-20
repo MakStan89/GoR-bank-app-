@@ -4,9 +4,6 @@ import { Main } from './main';
 
 export const AuthPage = () => {
   return (
-    <>
-      <Header isDark />
-      <Main />
-    </>
+    <Main />
   );
 };

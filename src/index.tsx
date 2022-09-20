@@ -3,6 +3,7 @@ import * as ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { StartPage } from './modules/start-page';
 import { MainPage } from './modules/main-page';
+import { Header } from './modules/template-page/header';
 import './index.scss';
 
 const container = document.getElementById('root');
@@ -14,7 +15,8 @@ export const AuthContext = React.createContext({ isAuth: true, fn: () => { } });
 
 root.render(
   <BrowserRouter>
-    <AuthContext.Provider value={{isAuth: true, fn: logOut }}>
+    <AuthContext.Provider value={{ isAuth: isAuth, fn: logOut }}>
+      <Header />
       {!isAuth && (
         <StartPage />
       )}

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Footer } from '../../template-page/footer';
-import { Header } from '../../template-page/header';
 import { Telephone } from './telephone';
 import { Title } from './title';
 import { englishLanguage, russianLanguage } from './constants';
@@ -9,7 +8,6 @@ import styles from './styles.module.scss';
 export const Contacts = () => {
   return (
     <div className={styles.wrapper}>
-      <Header />
       <Title text={englishLanguage.backButton} title={englishLanguage.title} />
       <div className={styles['inner-container']}>
         <div className={styles.category}>

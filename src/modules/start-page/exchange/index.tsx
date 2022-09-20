@@ -3,14 +3,12 @@ import { CurrencyItem } from './currency-item';
 import { CurrencyConverter } from './currency-converter';
 import { currencies, englishLanguage } from './constants';
 import { Footer } from '../../template-page/footer';
-import { Header } from '../../template-page/header';
 import { Title } from './title';
 import styles from './styles.module.scss';
 
 export const Exchange = () => {
   return (
     <>
-      <Header />
       <div className={styles.container}>
         <Title text={englishLanguage.backButton} title={''} />
         <div className={styles.wrapper}>
