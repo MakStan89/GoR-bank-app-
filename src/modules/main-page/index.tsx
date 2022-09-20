@@ -4,9 +4,11 @@ import { Footer } from '../template-page/footer';
 import { Header } from '../template-page/header';
 import { MainMenu } from './main-menu';
 import { Navbar } from './navbar';
-import styles from './styles.module.scss';
+import styles from './styles.module.scss'
+
 
 export const MainPage = () => {
+
   return (
     <>
       <Header />

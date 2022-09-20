@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { MainPage } from '../main-page';
-import { AuthPage } from './auth-page';
-import { Contacts } from './contacts';
-import { Exchange } from './exchange';
+import { AuthPage } from './auth-page/';
+import { Contacts } from './contacts/';
+import { Exchange } from './exchange/';
 
 export const StartPage = () => (
   <Routes>

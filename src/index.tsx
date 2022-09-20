@@ -8,11 +8,20 @@ import './index.scss';
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
 
-const isAuth = true;
+let isAuth = true;
+const logOut = () => isAuth = false;
+export const AuthContext = React.createContext({ isAuth: true, fn: () => { } });
 
 root.render(
   <BrowserRouter>
-    {!isAuth && <StartPage />}
-    {isAuth && <MainPage />}
+    <AuthContext.Provider value={{isAuth: true, fn: logOut }}>
+      {!isAuth && (
+        <StartPage />
+      )}
+      {isAuth && (
+        <MainPage />
+      )}
+    </AuthContext.Provider>
+    
   </BrowserRouter>
 );

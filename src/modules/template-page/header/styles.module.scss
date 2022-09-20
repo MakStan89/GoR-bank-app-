@@ -12,15 +12,18 @@
   }
 
   .navigation {
-    margin-left: 350px;
+    margin-left: 300px;
     display: flex;
     flex-direction: row;
-    gap: 25px;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
 
     div {
       display: flex;
       flex-direction: row;
       gap: 10px;
+      align-items: center;
       align-content: center;
       cursor: pointer;
 
@@ -34,8 +37,8 @@
       }
 
       %icon {
-        width: 22px;
-        height: auto;
+        width: 25px;
+        height: 30px;
         background: no-repeat center/contain;
         display: block;
       }
@@ -47,7 +50,6 @@
 
       .courses {
         @extend %icon;
-        width: 20px;
         background-image: url(../../../content/icons/coursesIcon.svg);
       }
 
@@ -88,16 +90,19 @@
     @extend %logo;
   }
 
-  .navigation {
-    margin-left: 350px;
+  .auth-navigation {
+    margin-left: 260px;
     display: flex;
     flex-direction: row;
-    gap: 25px;
+    justify-content: space-between;
+    align-items: center;
+    width: 495px;
 
     div {
       display: flex;
       flex-direction: row;
       gap: 10px;
+      align-items: center;
       align-content: center;
       cursor: pointer;
 
@@ -111,8 +116,8 @@
       }
 
       %icon {
-        width: 22px;
-        height: auto;
+        width: 25px;
+        height: 30px;
         background: no-repeat center/contain;
         display: block;
       }
@@ -124,7 +129,61 @@
 
       .courses {
         @extend %icon;
-        width: 20px;
+        background-image: url(../../../content/icons/coursesIconBlack.svg);
+      }
+
+      .contacts {
+        @extend %icon;
+        background-image: url(../../../content/icons/contactIconBlack.svg);
+      }
+
+      &:hover {
+        a {
+          border-bottom: 1px solid #ffd600;
+        }
+      }
+    }
+  }
+
+  .navigation {
+    margin-left: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 495px;
+
+    div {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      align-items: center;
+      align-content: center;
+      cursor: pointer;
+
+      a {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #212529;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+      }
+
+      %icon {
+        width: 25px;
+        height: 30px;
+        background: no-repeat center/contain;
+        display: block;
+      }
+
+      .location {
+        @extend %icon;
+        background-image: url(../../../content/icons/locationIconBlack.svg);
+      }
+
+      .courses {
+        @extend %icon;
         background-image: url(../../../content/icons/coursesIconBlack.svg);
       }
 
@@ -195,3 +254,4 @@
   margin: 0 auto;
   height: 100%;
 }
+

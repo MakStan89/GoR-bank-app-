@@ -12,3 +12,4 @@ export const englishLanguage = {
 
 export const LANGUAGE_BUTTON_RU_TEXT = 'Ru';
 export const LANGUAGE_BUTTON_EN_TEXT = 'En';
+export const USER_NAME = 'Madeline Webb';
