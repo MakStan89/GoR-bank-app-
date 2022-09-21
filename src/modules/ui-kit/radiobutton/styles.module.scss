@@ -1,0 +1,93 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+%radio {
+  position: relative;
+  height: 21px;
+  width: 21px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+}
+
+.black,
+.yellow,
+.gray {
+  @extend %radio;
+}
+
+%pseudo {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+%before {
+  @extend %pseudo;
+  width: 21px;
+  height: 21px;
+}
+
+%checked-before {
+  @extend %pseudo;
+  width: 24px;
+  height: 24px;
+}
+
+%checked-after {
+  @extend %pseudo;
+  width: 16px;
+  height: 16px;
+}
+
+.black::before {
+  @extend %before;
+  border: 1px solid #212529;
+}
+.black-checked::before {
+  @extend %checked-before;
+  border: 1px solid #212529;
+}
+.black-checked::after {
+  @extend %checked-after;
+  background-color: #212529;
+}
+
+.yellow::before {
+  @extend %before;
+  border: 1px solid #ffd600;
+}
+.yellow-checked::before {
+  @extend %checked-before;
+  border: 1px solid #ffd600;
+}
+.yellow-checked::after {
+  @extend %checked-after;
+  background-color: #ffd600;
+}
+
+.gray::before {
+  @extend %before;
+  border: 1px solid #bdbdbd;
+}
+.gray-checked::before {
+  @extend %checked-before;
+  border: 1px solid #bdbdbd;
+}
+.gray-checked::after {
+  @extend %checked-after;
+  background-color: #bdbdbd;
+}
+
+.label {
+  font-size: 14px;
+  line-height: 20px;
+}

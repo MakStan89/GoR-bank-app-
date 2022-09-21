@@ -13,7 +13,7 @@ import { BackButton } from './buttons/back-button';
 import { CloseButton } from './buttons/close-button';
 import { SecurityQuestionSelect } from './select/security-question-select';
 import { QuestionTextArea } from './text-area/question-text-area';
-import { ResidentRadiobutton } from './radiobuttons/resident-button';
+import { RadioButton } from './radiobutton/';
 export {
   TelephoneInput,
   SmsInput,
@@ -30,5 +30,5 @@ export {
   CloseButton,
   SecurityQuestionSelect,
   QuestionTextArea,
-  ResidentRadiobutton,
+  RadioButton,
 };
