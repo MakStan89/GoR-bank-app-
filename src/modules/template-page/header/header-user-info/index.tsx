@@ -8,7 +8,6 @@ export const HeaderUserInfo = ({isAuth, logout, photo, name, logoutIcon}: Props)
 
   const user = isAuth ? styles['user-visible'] : styles['user-hidden'];
 
-
   return (
     <div className={user}>
       <Link to="#">

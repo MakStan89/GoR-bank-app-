@@ -1,24 +1,27 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom/client';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 import { StartPage } from './modules/start-page';
 import { MainPage } from './modules/main-page';
 import { Header } from './modules/template-page/header';
 import './index.scss';
+import { useState } from 'react';
 
 const container = document.getElementById("root");
 const root = ReactDOM.createRoot(container);
 
 let isAuth = true;
-const logOut = () => isAuth = false;
+const logout = () => isAuth = false;
+//let [isAuth, setIsAuth] = useState(true);
+//const logout = () => setIsAuth(isAuth = false)
 export const AuthContext = React.createContext({ isAuth: true, fn: () => { } });
 
 root.render(
-  <HashRouter>
-    <AuthContext.Provider value={{ isAuth: isAuth, fn: logOut }}>
+  <BrowserRouter>
+    <AuthContext.Provider value={{ isAuth: isAuth, fn: logout }}>
       <Header />
       {!isAuth && (<StartPage />)}
       {isAuth && (<MainPage />)}
     </AuthContext.Provider>
-  </HashRouter>
+  </BrowserRouter>
 );
