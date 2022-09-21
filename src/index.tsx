@@ -6,7 +6,6 @@ import { MainPage } from './modules/main-page';
 import { Header } from './modules/template-page/header';
 import './index.scss';
 
-
 const container = document.getElementById("root");
 const root = ReactDOM.createRoot(container);
 

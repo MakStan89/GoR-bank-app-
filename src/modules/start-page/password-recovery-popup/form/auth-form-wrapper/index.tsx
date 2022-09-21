@@ -8,7 +8,7 @@ import { russianLanguage } from './constants';
 import { Props } from './types';
 import styles from './styles.module.scss';
 
-export const AuthFormWrapper = ({ onClose, onRecovery }: Props) => {
+export const AuthFormWrapper = ({ onClose, onRecoveryOpen }: Props) => {
   const [selectedForm, setSelectedForm] = useState<string>('telephone');
 
   const telephoneClassName = cn(styles.toggle, {
@@ -40,7 +40,7 @@ export const AuthFormWrapper = ({ onClose, onRecovery }: Props) => {
         {selectedForm === 'passport' && <AuthPassportForm />}
         <div className={styles.description}>
           <a href="#">{russianLanguage.demoText}</a>
-          <button onClick={onRecovery}>{russianLanguage.forgetText}</button>
+          <button onClick={onRecoveryOpen}>{russianLanguage.forgetText}</button>
         </div>
       </div>
     </section>
