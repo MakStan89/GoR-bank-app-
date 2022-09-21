@@ -28,7 +28,7 @@ export const PasswordRecovery = React.memo(({ isOpen, onClose, onRegistration }:
 
   return (
     <section className={PasswordRecoveryPopupClassName}>
-      <Header isDark />
+      <Header />
       {currentStep === Steps.EnterInfo && (
         <Main onClose={handleClosePopup} onContinue={handleNextStep} onRegister={handleRegister} />
       )}
