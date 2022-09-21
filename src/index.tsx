@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { StartPage } from './modules/start-page';
 import { MainPage } from './modules/main-page';
 import { Header } from './modules/template-page/header';

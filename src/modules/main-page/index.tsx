@@ -23,6 +23,8 @@ export const MainBlock = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<MainMenu />} />
+          <Route path="/loan_products" element={<LoanList />} />
+          <Route path="/loan_products/:id" element={<LoanDetails />} />
         </Routes>
       </div>
       <Footer />

@@ -20,7 +20,7 @@ export const LoanCard = ({ id, name, description, percent, image }: Loan) => {
         <div className={styles.description} style={style}>
           <p>{description}</p>
           <li>
-            <Link to={{ pathname: `/${id}` }}>{linkText}</Link>
+            <Link to={{ pathname: `/loan_products/${id}` }}>{linkText}</Link>
           </li>
           <ApplyButton text={buttonText} width="143px" height="48px" />
         </div>
