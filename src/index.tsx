@@ -23,7 +23,7 @@ const logOut = () => isAuth = false;
 export const AuthContext = React.createContext({ isAuth: true, fn: () => { } });
 
 root.render(
-  <BrowserRouter>
+  <HashRouter>
     <AuthContext.Provider value={{ isAuth: isAuth, fn: logOut }}>
       <Header />
       {!isAuth && (
@@ -33,5 +33,5 @@ root.render(
         <MainPage />
       )}
     </AuthContext.Provider>
-  </BrowserRouter>
+  </HashRouter>
 );
