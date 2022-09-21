@@ -21,20 +21,12 @@ export const useValidation = (
   }, []);
 
   useEffect(() => {
-    const passwordRegExp =
-      /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!"#$%&'()*+,./:;<=>?@[\]^_`{|}~-]/;
-    const spaceRegExp = /\s/;
-
+    const passwordRegExp = /(?=.*[0-9])(?=.*[A-Z])/i;
     setErrorMessage(russianLanguage.errorsText[error]);
 
     if (caps && isHasFocus) {
       setError(PasswordErrors.CapsLock);
-    } else if (
-      !passwordRegExp.test(value) ||
-      spaceRegExp.test(value) ||
-      value.length < VALUE_MIN_LENGTH ||
-      value.length < VALUE_MIN_LENGTH
-    ) {
+    } else if (!passwordRegExp.test(value) || value.length < VALUE_MIN_LENGTH) {
       setError(PasswordErrors.IncorrectPassword);
       handleValid(false, name);
     } else if (requestError) {

@@ -28,7 +28,7 @@ export const defaultFormValid = {
   passport: false,
   name: false,
   surname: false,
-  patronymic: false,
+  patronymic: true,
   income: false,
   ein: false,
 };
