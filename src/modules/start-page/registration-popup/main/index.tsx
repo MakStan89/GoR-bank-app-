@@ -13,7 +13,7 @@ import { Props } from './types';
 import styles from './styles.module.scss';
 
 export const Main = ({ onClose, onContinue, onJoin }: Props) => {
-  const [isClient, setIsClient] = useState<boolean>(true);
+  const [isClient, setIsClient] = useState<boolean>(false);
   const [infoStep, setInfoSteps] = useState<number>(0);
   const [formData, setFormData] = useState<FormDataProps>(null);
 

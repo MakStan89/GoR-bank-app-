@@ -7,7 +7,7 @@ import {
   PatronymicInput,
   PassportInput,
   ContinueButton,
-  ResidentRadiobutton,
+  RadioButton,
 } from '../../../../ui-kit';
 import { russianLanguage } from './constants';
 import { Props } from '../types';
@@ -43,17 +43,21 @@ export const InformationForm = ({ onNextStep }: Props) => {
         placeholderText={russianLanguage.placeholderText}
       />
       <div className={styles.buttons}>
-        <ResidentRadiobutton
+        <RadioButton
           name="resident"
           text={russianLanguage.residentText}
           checked={isResident}
           onClick={() => setIsResident(true)}
+          defaultColor={0}
+          checkedColor={2}
         />
-        <ResidentRadiobutton
+        <RadioButton
           name="notresident"
           text={russianLanguage.noresidentText}
           checked={isResident === false}
           onClick={() => setIsResident(false)}
+          defaultColor={0}
+          checkedColor={2}
         />
       </div>
       <ContinueButton isActive={isValid} text={russianLanguage.enterButtonText} />
