@@ -13,9 +13,7 @@ export const useValidation = (
   const [errorMessage, setErrorMessage] = useState<string>('');
   const [error, setError] = useState<PasswordErrors>(PasswordErrors.None);
   const [caps, setCaps] = useState<boolean>();
-  const passwordRegExp =
-    /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!"#$%&'()*+,./:;<=>?@[\]^_`{|}~-]/;
-  const spaceRegExp = /\s/;
+  const passwordRegExp = /(?=.*[0-9])(?=.*[A-Z])/i;
 
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => setCaps(e.getModifierState('CapsLock'));
@@ -28,12 +26,7 @@ export const useValidation = (
 
     if (caps && isHasFocus) {
       setError(PasswordErrors.CapsLock);
-    } else if (
-      !passwordRegExp.test(value) ||
-      spaceRegExp.test(value) ||
-      value.length < VALUE_MIN_LENGTH ||
-      value.length < VALUE_MIN_LENGTH
-    ) {
+    } else if (!passwordRegExp.test(value) || value.length < VALUE_MIN_LENGTH) {
       setError(PasswordErrors.IncorrectPassword);
       handleValid(false, name);
     } else if (requestError) {

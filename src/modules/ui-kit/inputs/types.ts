@@ -1,4 +1,4 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent } from 'react';
 
 export type Props = {
   value: string;
@@ -75,9 +75,8 @@ export enum PasswordErrors {
 export enum PassportErrors {
   None = 0,
   CapsLock = 1,
-  Length = 2,
-  IncorrectPassport = 3,
-  Request = 4,
+  IncorrectPassport = 2,
+  Request = 3,
 }
 
 export enum NameErrors {

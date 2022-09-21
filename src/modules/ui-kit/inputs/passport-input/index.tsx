@@ -1,7 +1,8 @@
 import * as React from 'react';
+import ReactInputMask from 'react-input-mask';
 import { useState } from 'react';
 import { useClassNames, useValidation } from './hooks';
-import { VALUE_MAX_LENGTH, name } from './constants';
+import { name } from './constants';
 import { Props } from '../types';
 import styles from '../styles.module.scss';
 
@@ -21,15 +22,16 @@ export const PassportInput = ({
   return (
     <div className={styles.container}>
       <span className={inputLabelClassName}>{labelText}</span>
-      <input
+      <ReactInputMask
         className={inputClassName}
         name={name}
         placeholder={placeholderText}
         type="text"
         autoComplete="off"
+        mask="9999 999999"
+        maskChar="x"
         value={value ?? ''}
         onChange={handleChange}
-        maxLength={VALUE_MAX_LENGTH}
         onFocus={() => setHasFocus(true)}
         onBlur={() => setHasFocus(false)}
       />

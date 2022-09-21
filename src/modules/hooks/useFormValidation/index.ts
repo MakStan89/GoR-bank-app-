@@ -9,6 +9,9 @@ export const useFormValidation = () => {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target as HTMLInputElement;
     setValues({ ...values, [name]: value });
+    if (name === 'password' || 'confirmPassword') {
+      setValues({ ...values, [name]: value.replace(/\W+/g, '') });
+    }
   };
   const handleValid = (validly: boolean, name: string) => {
     setValid({ ...valid, [name]: validly });
