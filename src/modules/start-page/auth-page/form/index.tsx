@@ -7,7 +7,7 @@ import { russianLanguage } from './constants';
 import { Props } from './types';
 import styles from './styles.module.scss';
 
-export const MainFormWrapper = React.memo(({ onRegisterPopupOpen }: Props) => {
+export const MainFormWrapper = React.memo(({ onRegistration, onRecovery }: Props) => {
   const [selectedForm, setSelectedForm] = useState<string>('telephone');
 
   const telephoneClassName = cn(styles.toggle, {
@@ -37,9 +37,9 @@ export const MainFormWrapper = React.memo(({ onRegisterPopupOpen }: Props) => {
       {selectedForm === 'passport' && <AuthPassportForm />}
       <div className={styles.description}>
         <a href="#">{russianLanguage.demoText}</a>
-        <a href="#">{russianLanguage.forgetText}</a>
+        <button onClick={onRecovery}>{russianLanguage.forgetText}</button>
       </div>
-      <button className={styles.button} onClick={onRegisterPopupOpen}>
+      <button className={styles.button} onClick={onRegistration}>
         {russianLanguage.registerButtonText}
       </button>
     </div>

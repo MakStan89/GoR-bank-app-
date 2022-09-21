@@ -1,7 +1,7 @@
 export type Props = {
   isOpen: boolean;
   onClose: () => void;
-  onRecovery: () => void;
+  onRegistration: () => void;
 };
 export enum Steps {
   EnterInfo = 1,

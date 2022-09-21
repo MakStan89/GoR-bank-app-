@@ -1,0 +1,28 @@
+.form {
+  width: 60%;
+  margin: 50px auto 50px;
+  .button {
+    color: #000000;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    text-decoration: underline;
+  }
+  .text {
+    background-color: #eeeeee;
+    padding: 10px;
+    margin: 25px auto;
+    p {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+    }
+    a {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      text-decoration: none;
+      color: #4054b2;
+    }
+  }
+}

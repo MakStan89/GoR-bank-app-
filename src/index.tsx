@@ -8,7 +8,7 @@ import "./index.scss";
 const container = document.getElementById("root");
 const root = ReactDOM.createRoot(container);
 
-const isAuth = true;
+const isAuth = false;
 
 root.render(
   <HashRouter>

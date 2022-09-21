@@ -9,35 +9,35 @@ import { SuccessPopup } from './popup';
 import { Props, Steps } from './types';
 import styles from './styles.module.scss';
 
-export const Registration = React.memo(({ isOpen, onClose, onRecovery }: Props) => {
+export const PasswordRecovery = React.memo(({ isOpen, onClose, onRegistration }: Props) => {
   const [currentStep, setCurrentStep] = useState<Steps>(Steps.EnterInfo);
 
-  const RegistrationPopupClassName = cn(isOpen ? styles['registration-open'] : styles.registration);
+  const PasswordRecoveryPopupClassName = cn(isOpen ? styles['recovery-open'] : styles.recovery);
 
   const handleClosePopup = () => {
     onClose();
     setCurrentStep(Steps.EnterInfo);
   };
-  const handleSuccess = () => {
-    setCurrentStep(Steps.Success);
+  const handleNextStep = () => {
+    setCurrentStep(currentStep + 1);
   };
-  const handleJoin = () => {
-    setCurrentStep(Steps.Auth);
-  };
-  const handleRecovery = () => {
+  const handleRegister = () => {
     onClose();
-    onRecovery();
+    onRegistration();
   };
 
   return (
-    <section className={RegistrationPopupClassName}>
+    <section className={PasswordRecoveryPopupClassName}>
       <Header isDark />
       {currentStep === Steps.EnterInfo && (
-        <Main onClose={handleClosePopup} onContinue={handleSuccess} onJoin={handleJoin} />
+        <Main onClose={handleClosePopup} onContinue={handleNextStep} onRegister={handleRegister} />
       )}
-      {currentStep === Steps.Success && <SuccessPopup onContinue={handleJoin} />}
+      {currentStep === Steps.Success && <SuccessPopup onContinue={handleNextStep} />}
       {currentStep === Steps.Auth && (
-        <AuthFormWrapper onClose={handleClosePopup} onRecovery={handleRecovery} />
+        <AuthFormWrapper
+          onClose={handleClosePopup}
+          onRecoveryOpen={() => setCurrentStep(Steps.EnterInfo)}
+        />
       )}
       <Footer />
     </section>
