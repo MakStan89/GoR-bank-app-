@@ -1,3 +1,4 @@
 export type Props = {
-  onRegisterPopupOpen: () => void;
+  onRegistration: () => void;
+  onRecovery: () => void;
 };
