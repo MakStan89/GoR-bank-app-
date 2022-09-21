@@ -10,7 +10,7 @@ import { useState } from 'react';
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
 
-let isAuth = true;
+let isAuth = false;
 const logout = () => (isAuth = false);
 //let [isAuth, setIsAuth] = useState(true);
 //const logout = () => setIsAuth(isAuth = false)
