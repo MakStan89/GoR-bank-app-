@@ -5,7 +5,7 @@ import { InsuranceIcon } from "./insurance";
 import { InvestingIcon } from "./investing";
 import { LoansIcon } from "./loans";
 import { MainPageIcon } from "./mainPage";
-import { PaymentsIcon } from "./pay";
+import { PaymentsIcon } from "./payments";
 import { TransfersIcon } from "./transfers";
 import { CardBgd1 } from './cardBgd1';
 import { CardBgd2 } from './cardBgd2';

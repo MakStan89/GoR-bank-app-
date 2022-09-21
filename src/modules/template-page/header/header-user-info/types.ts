@@ -2,8 +2,8 @@ import { ReactNode } from 'react';
 
 export type Props = {
   isAuth: boolean;
-  logOut: any;
+  logout: any;
   photo?: ReactNode;
   name: string;
-  logOutIcon: ReactNode;
+  logoutIcon: ReactNode;
 };

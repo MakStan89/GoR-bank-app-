@@ -24,6 +24,5 @@ root.render(
         <MainPage />
       )}
     </AuthContext.Provider>
-    
   </BrowserRouter>
 );

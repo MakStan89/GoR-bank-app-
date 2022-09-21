@@ -50,7 +50,7 @@ export const Header = () => {
             <Link to="/contacts">{englishLanguage.contactsText}</Link>
           </div>
         </nav>
-        <HeaderUserInfo isAuth={isAuth} logOut={fn} photo={<UserHeaderPhoto />} name={USER_NAME} logOutIcon={<LogOutHeader />} />
+        <HeaderUserInfo isAuth={isAuth} logout={fn} photo={<UserHeaderPhoto />} name={USER_NAME} logoutIcon={<LogOutHeader />} />
         <div>
           <button name="russian" className={russianName} onClick={changeLanguage}>
             {LANGUAGE_BUTTON_RU_TEXT}

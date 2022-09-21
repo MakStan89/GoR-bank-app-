@@ -1,8 +1,8 @@
 export const russianLanguage = {
-  logOut: 'Выйти',
+  logout: 'Выйти',
 } as const;
 
 export const englishLanguage = {
-  logOut: 'Log out',
+  logout: 'Log out',
 } as const;
 
