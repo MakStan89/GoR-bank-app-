@@ -13,7 +13,7 @@ export const useValidation = (
   const [errorMessage, setErrorMessage] = useState<string>('');
   const [error, setError] = useState<PasswordErrors>(PasswordErrors.None);
   const [caps, setCaps] = useState<boolean>();
-  const passwordRegExp = /(?=.*[0-9])(?=.*[A-Z])/i;
+  const passwordRegExp = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])/;
 
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => setCaps(e.getModifierState('CapsLock'));
