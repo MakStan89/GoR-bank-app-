@@ -17,7 +17,7 @@ export const SmsTimer = React.memo(({ attempt, onAttempt }: Props) => {
       secondsCounter > 0 &&
       setTimeout(() => {
         setSecondsCounter(secondsCounter - 1);
-      }, 50);
+      }, 1000);
     return () => clearInterval(smsTimer);
   });
 
