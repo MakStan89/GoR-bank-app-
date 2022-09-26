@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { LoanDetails } from '../Loans/loan-products/loan-details';
-import { LoanList } from '../Loans/loan-products/loan-list';
+import { LoanDetails } from '../loans/loan-products/loan-details';
+import { LoanList } from '../loans/loan-products/loan-list';
 import { Contacts } from '../start-page/contacts';
 import { Exchange } from '../start-page/exchange';
 import { Footer } from '../template-page/footer';
