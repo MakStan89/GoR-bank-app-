@@ -9,5 +9,6 @@ COPY package-lock.json ./
 RUN npm install
 
 COPY . ./
+COPY index.d.ts /app/node_modules/@types/react-input-mask/index.d.ts
 
 CMD ["npm", "start"]
